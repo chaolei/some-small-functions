@@ -1,0 +1,60 @@
+﻿<!--
+	作者：joke.lei
+	时间：2014-09-04
+	描述：全角度浏览。
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>全角度浏览</title>
+	<style type="text/css">
+		#show{width: 400px;margin:0 auto;height: 500px;background: url(img/1.jpg) no-repeat;}
+	</style>
+	<script type="text/javascript" src="../js/zepto.min.js"></script>
+	<script type="text/javascript">
+		var now = 1;
+		var snode ;
+		var move = false,x,dre;
+		function showNow(){
+			snode.css("background","url(img/"+now+".jpg)");
+		}
+		function loadImg(){
+			var img = new Image();
+			for(var i=1;i<24;i++){
+				img.src = "img/"+i+".jpg";
+			}
+		}
+		$(function(){
+			loadImg();
+			snode = $("#show");
+			snode.on("mousedown",function(e){move = true;x = e.clientX;});
+			snode.on("mousemove",function(e){
+				if(move) {
+					var nx = e.clientX;
+					if(nx > x){
+						dre = "right";
+					}else{
+						dre = "left"
+					}
+					x = nx;
+					if(dre == "right"){
+						now = now + 1;
+						if(now > 23) now = 1; 
+					}else{
+						now = now - 1;
+						if(now < 1) now = 23; 
+					}
+					showNow();
+				}
+			});
+			snode.on("mouseup",function(e){
+				move = false;				
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="show"></div>
+</body>
+</html>
