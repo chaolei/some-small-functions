@@ -1,0 +1,46 @@
+﻿<!--
+	作者：joke.lei
+	时间：2014-07-08
+	描述：刮刮乐
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>刮刮乐</title>
+	<style type="text/css">
+		.container{width: 330px;margin:0 auto;height: 200px;background: url(images/gua.png);position: relative;}
+		.gua{width: 10px;height: 10px;position: absolute;font-size: 0;background: #ccc;}
+	</style>
+	<script type="text/javascript" src="../js/zepto.min.js"></script>
+	<script type="text/javascript">
+		function init(){
+			var temp = "<div class='gua' style='top:&toppx;left:&leftpx;'></div>",tmp,top,left,html="";
+			for(var i=0;i<660;i++){
+				tmp = temp;
+				left = Math.floor(i%33)*10;
+				top = Math.floor(i/33)*10;
+				tmp = tmp.replace("&left",left).replace("&top",top);
+				html += tmp;
+			}
+			$(".container").html(html);
+		}
+		function addEventListener(){
+			var guas= $(".gua"),remove = false;
+			guas.on("mousedown",function(e){remove = true;});
+			guas.on("mouseover",function(){
+				if(remove){
+					$(this).remove();
+				}
+			});
+		}
+		$(function(){
+			init();
+			addEventListener();
+		});
+	</script>
+</head>
+<body>
+	<div class="container"></div>
+</body>
+</html>
