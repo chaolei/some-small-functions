@@ -1,0 +1,30 @@
+/**
+ * 
+ * */
+.lc-tips{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 200px;
+	height: 100px;
+	background: #FFFFFF;
+}
+.lc-tips .tip-header{
+	height: 30px;
+	line-height: 30px;
+	background: #E5E5DF;
+}
+.lc-tips .tip-title{
+	float: left;
+}
+.lc-tips .tip-close{
+	float: right;
+	padding: 0 5px;
+	cursor: pointer;
+}
+.lc-tips .tip-close:hover{
+	color: #FF0000;
+}
+.lc-tips .tip-content{
+	
+}
