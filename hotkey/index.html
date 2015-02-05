@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快捷键设置</title>
+		<style type="text/css">
+			.inputnode{
+				text-align: center;
+			}
+			.inputnode > div{
+				margin-top: 10px;
+			}
+			.inputnode input[type=text]{
+				width: 180px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/zepto.min.js" ></script>
+		<script type="text/javascript" src="Key.js" ></script>
+	</head>
+	<body>
+		<div class="inputnode">
+			<div><input type="text" data-key="17+18+83" value="CTRL + ALT + P"/></div>
+			<div><input type="text" data-key="17+18+84" value="CTRL + ALT + Q"/></div>
+			<div><input type="text" data-key="17+18+85" value="CTRL + ALT + R"/></div>
+		</div>
+		<script type="text/javascript">
+			function addListener(){
+				$(".inputnode input[type=text]").attr("readonly","readonly");
+				$(".inputnode input[type=text]").on("keydown",function(e){
+					inputHotKey($(this),e);
+				});
+				$(".inputnode input[type=text]").on("keyup",function(e){
+					var val = $(this).val();
+					if(val.indexOf("+")>-1){
+						var keys = val.split("+");
+						if(keys[keys.length-1]==" "){
+							$(this).val("");
+							$(this).attr("data-key","");
+						}
+					}
+				});
+			}
+			function inputHotKey(node,event){
+				var ctrl = event.ctrlKey;
+				var alt = event.altKey;
+				var shift = event.shiftKey;
+				var showtxt = "",key = "";
+				if(event.which == 8 || event.which == 46){
+					node.val("");
+					node.attr("data-key","");
+					return ;
+				}
+				if(ctrl){
+					showtxt += "ctrl + ";	
+					key += "17+";
+				}  
+				if(alt){
+					showtxt += "alt + ";
+					key += "18+";
+				} 
+				if(shift){
+					showtxt += "shift + ";
+					key += "16+";
+				}
+				if(!ctrl && !alt && !shift){//未按ctrl或alt或shift时
+					if(event.which>95 && event.which < 106){//小键盘数字
+						showtxt = Key[event.which];
+						key = event.which;
+					}else{
+						showtxt = "ALT + "+ Key[event.which];
+						key = "18+"+event.which;
+					}
+				}else{
+					if(event.which!= 17 && event.which!= 18 && event.which!= 16){//不似乎ctrl或alt或shift时
+						showtxt = showtxt.toUpperCase() + Key[event.which];	
+						key += event.which;
+					}else{
+						showtxt = showtxt.toUpperCase();
+					}			
+				}		
+				node.attr("data-key",key);
+				node.val(showtxt);
+			}
+			$(function(){
+				addListener();
+			});				
+		</script>
+	</body>
+</html>
