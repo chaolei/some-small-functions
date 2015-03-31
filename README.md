@@ -13,7 +13,7 @@ a few small functions in my life or work!
 
 2、类似刮奖的功能
 
-用html5的canva是最简单的方式，但是为了兼容，我用的常规的方式实现。
+用html5的canvas是最简单的方式，但是为了兼容，我用的常规的方式实现。
 还是比较2，根据底图的大小，生成N多个10*10的div节点，然后给这些节点绑定事件，遇到mouseover的时候删除本节点。
 
 3、类似messager提示的功能
