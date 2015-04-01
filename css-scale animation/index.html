@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.img-list{
+				width: 60%;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			.img-list:after{
+				clear: both;
+			    content: " ";
+			    display: block;
+			    font-size: 0;
+			    height: 0;
+			    visibility: hidden;
+			}
+			.img-info{
+				float: left;
+				width: 30%;
+				margin-left: 2.5%;
+				position: relative;
+				margin-bottom: 30px;
+				transition-duration: 0.5s;
+			}
+			.img-info .masker{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.5);
+				transition-duration: 0.5s;
+			}
+			.img-info:hover{
+				transform: scale(1.3);
+				z-index: 1;
+			}
+			.img-info:hover .masker{
+				height: 0;
+				margin-bottom: 144px;
+			}
+			.img-info img{
+				width: 100%;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="img-list">
+			<div class="img-info">
+				<div class="masker"></div>
+				<img src="img/01.jpg"/>
+			</div>
+			<div class="img-info">
+				<div class="masker"></div>
+				<img src="img/02.jpg"/>
+			</div>
+			<div class="img-info">
+				<div class="masker"></div>
+				<img src="img/03.jpg"/>
+			</div>
+			<div class="img-info">
+				<div class="masker"></div>
+				<img src="img/04.jpg"/>
+			</div>
+			<div class="img-info">
+				<div class="masker"></div>
+				<img src="img/05.jpg"/>
+			</div>
+			<div class="img-info">
+				<div class="masker"></div>
+				<img src="img/06.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

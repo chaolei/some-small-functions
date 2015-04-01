@@ -25,3 +25,8 @@ a few small functions in my life or work!
 
 工作中涉及到了，就记录下来，主要是要简历一个键值和键内容的对照类。我这儿设计的是不支持单键的快捷键（除了小键盘数字），比如用户按下A，快捷键则是
 ALT + A.
+
+4、css3 简单的鼠标经过动画
+
+利用css3 transform的scale和transition-duration实现简单的动画。增加用户
+体验。也可以用在图片加载时。
