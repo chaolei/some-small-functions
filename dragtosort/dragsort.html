@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<title>拖动排序</title>
+	<style type="text/css">
+		body,div,p,ul,li{margin: 0;padding: 0;}
+		body{
+			background: #999;
+		}
+		.test{
+			margin-top: 100px;
+		}
+		.content{
+			border: 1px solid #ccc;
+			padding: 20px 5px;
+			width: 800px;
+			margin: 0 auto;
+		}
+		ul{			
+			/*position: relative;*/
+		}
+		li{
+			list-style: none;
+			line-height: 50px;
+			background: #c3c4c5;
+			margin-bottom: 10px;
+			text-indent: 15px; 
+			cursor: move;
+		}
+		li.sp1{
+			background: #f00;
+			color: #fff;
+		}
+		li.sp2{
+			background: #0f0;
+			color: #fff;
+		}		
+		li.moved{
+			opacity: 0.4;
+		}
+		li.move{
+			outline: 2px dotted #ccc;
+			opacity: 0.8;
+		}
+	</style>
+</head>
+<body>
+	<div class="test">
+		<div class="content">
+			<ul>
+				<li class="test_item" data-sort="1">看起来很屌哦</li>
+				<li class="test_item sp1" data-sort="2">还是你屌一些很屌哦</li>
+				<li class="test_item sp2" data-sort="3">你们都屌，对了嘛</li>
+				<li class="test_item" data-sort="4">看起来很屌哦</li>
+				<li class="test_item sp1" data-sort="5">看起来很屌哦</li>
+				<li class="test_item sp2" data-sort="6">你们都屌，对了嘛</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		var Util = {
+			initDragSort: function(classname){
+				var $nodes = $("."+classname);
+				var mousedownFlag = false,mx,my,nx,ny,movenode,mh=0;//鼠标位置和元素位置，移动距离
+				
+				/*
+					处理拖动后的排序情况
+					参数：拖动的节点，拖动后排序号，元素原排序号，拖动方向
+				*/
+				var handleSort = function($mnode,sortnum,oldsortnum,md){					
+					sortnum = sortnum <= 0?1:sortnum;
+					sortnum = sortnum>$nodes.length?$nodes.length:sortnum;
+					var newnode = $("li[data-sort="+sortnum+"]");
+					if(newnode.length){
+						var ax = newnode.offset().left;
+						var ay = newnode.offset().top;
+						movenode.animate({left:ax+"px",top:ay+"px"},200,"swing",function(){
+							movenode.remove();
+							md=="up"?$mnode.insertBefore(newnode):$mnode.insertAfter(newnode);
+							$mnode.attr("data-sort",sortnum);
+							newnode.attr("data-sort",oldsortnum);
+							refresSort();
+						});						
+					}					
+					
+				}
+				/*刷新整体排序结果*/
+				var refresSort = function(){
+					$nodes.each(function(){
+						$(this).attr("data-sort",$(this).index()+1);
+					});
+				}
+				$nodes.on("mousedown",function(e){
+					var $this = $(this);					
+					movenode = $this.clone();
+					$this.addClass("moved");
+					movenode.addClass("move");
+
+					var left = $this.offset().left;
+					var top = $this.offset().top;
+					movenode.css("position","absolute").css("left",left+"px").css("top",top+"px").width($this.width());
+					$this.parent().append(movenode);
+					mousedownFlag = true;
+					mx = e.clientX;
+					my = e.clientY;
+					nx = left;
+					ny = top;
+					mh = 0;
+				});
+				$(window).on("mouseup",function(){
+					if(!mousedownFlag) return ;
+					mousedownFlag = false;
+					var $mnode = $("li.moved"),mnum=0;
+					var sortnum = +$mnode.attr("data-sort");
+					var oldsortnum = sortnum;
+					$mnode.removeClass("moved");
+					
+					var md = mh<0?"up":"down";//元素移动方向
+					mh = Math.abs(mh);
+					mnum = Math.floor(mh/($mnode.height()+10));//超过的item数量
+					mnum += Math.floor((mh%($mnode.height()+10))/($mnode.height()/2+10));//多于的移动量是否超过了一半
+					if(md == "up"){						
+						sortnum -= mnum;
+					}else{
+						sortnum += mnum;
+					}
+					//console.log(sortnum+"//"+mnum);
+					if(mnum > 0) {
+						handleSort($mnode,sortnum,oldsortnum,md);
+					}else{
+						movenode.remove();
+					}
+				});
+				$(window).on("mousemove",function(e){
+					if(!mousedownFlag) return;
+					var mxn = e.clientX, myn = e.clientY;
+					var xm = mxn - mx;
+					var ym = myn - my;
+					mh = ym;
+					movenode.css("left",(nx + xm)+"px").css("top",(ny + ym)+"px");//鼠标位置变化，随之元素位置变化
+				});
+			}
+		}
+		$(function(){
+			Util.initDragSort("test_item");
+		});
+	</script>
+</body>
+</html>
