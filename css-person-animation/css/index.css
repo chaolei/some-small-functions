@@ -1,0 +1,550 @@
+body,div,p{margin:0;padding: 0;}
+.container{
+	width: 250px;
+	margin: 50px auto 0 auto;
+	position: relative;
+	min-height: 250px;
+}
+.bg{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -125px;
+	margin-left: -125px;
+	width: 250px;
+	height: 250px;
+	background: #609090;
+	border-radius: 100%;
+}
+.bg-leftcon{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 250px;
+	transform: rotate(220deg);
+	-wekit-transform:rotate(220deg);
+	-o-transform:rotate(220deg);
+	z-index: 99;
+	opacity: 0;
+}
+.bg-rightcon{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 250px;
+	transform: rotate(140deg);
+	-wekit-transform:rotate(140deg);
+	-o-transform:rotate(140deg);	
+	opacity: 0;
+}
+.bg-left{
+	position: absolute;
+	width: 250px;
+	height: 30px;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.bg-left:after{
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	background: rgba(64,112,112,0.7);
+}
+.bg-right{
+	position: absolute;
+	top: 0;
+	width: 250px;
+	height: 50px;
+	left: 0;
+	overflow: hidden;
+}
+.bg-right:after{
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	background: #B0D0D0
+}
+.pbody{
+	position: absolute;
+	width: 250px;
+	height: 250px;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	border-radius: 100%;
+	opacity: 0;
+}
+.pbody:after{
+	position: absolute;
+	content: "I LOVE WEB";
+	left: 50%;
+	top: 150px;
+	margin-left: -70px;
+	width: 140px;
+	height: 200px;
+	border-radius: 50px;
+	background: #000;
+	text-align: center;
+	z-index: 2;
+	color: #fff;
+	padding-top: 35px;
+}
+.head{
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+}
+.face{
+	position: absolute;
+	top: 20px;
+	width: 120px;
+	background: #F0F0E0;
+	left: 65px;
+	height: 150px;
+	border-radius: 30px;
+	z-index: 3;
+}
+.mouth{
+	position: absolute;
+	left: 40px;
+	bottom: 10px;
+	width: 40px;
+	height: 20px;
+	overflow: hidden;
+}
+.mouth:after{
+	position: absolute;
+	content: "";
+	width: 40px;
+	height: 40px;
+	top: -20px;
+	left: 0;
+	border-radius: 100%;
+	background: #fff;
+}
+.eyebow1{
+	position: absolute;
+	top: 32px;
+	left: 20px;
+	width: 25px;
+	height: 8px;
+	background: #F0D010;
+}
+.eyebow2{
+	position: absolute;
+	top: 32px;	
+	right: 20px;
+	width: 25px;
+	height: 8px;
+	background: #F0D010;
+	transform:rotate(20deg);
+}
+.eye1{
+	position: absolute;
+	top: 50px;
+	left: 30px;
+	height: 25px;
+	width: 16px;
+	border-radius: 8px;
+	background: #204070;
+}
+.eye2{
+	position: absolute;
+	top: 50px;
+	right: 30px;
+	height: 25px;
+	width: 16px;
+	border-radius: 8px;
+	background: #204070;
+}
+.hair{
+	position: absolute;
+	width: 140px;
+	height: 100px;
+	left: 55px;
+	top: 0px;
+	z-index: 2;
+	background: #FFD11A;
+	border-radius:40px 40px 10px 10px ; 
+}
+.hair:before{
+	position: absolute;
+	content: "";
+	top: -8px;
+	width: 80px;
+	left: 30px;
+	height: 10px;	
+	background: #FFD11A;
+	border-radius:0 10px 0 0 ; 
+}
+.face:before{
+	position: absolute;
+	content: "";
+	top: 0;
+	width: 40px;
+	left: 40px;
+	height: 20px;	
+	background: #FFD11A;
+	border-radius:0 0 0 20px ; 
+}
+.ear1{
+	position: absolute;
+	left: 2px;
+	width: 8px;
+	height: 20px;
+	bottom: 2px;
+	background: #fff;
+	border-radius:0 0 0 10px; 
+}
+.ear2{
+	position: absolute;
+	right: 2px;
+	width: 8px;
+	height: 20px;
+	bottom: 2px;
+	background: #fff;	
+	border-radius:0 0 10px 0; 
+}
+.nose{
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	left: 55px;
+	bottom: 45px;
+	border-radius: 20px 0 0 0;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #999;
+	border-bottom: 1px solid #666;
+}
+.blink1{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 250px;
+	height: 250px;
+	border-radius: 100%;
+	box-sizing:border-box;
+	border: 1px solid #FFD11A;
+	opacity: 0;
+}
+.blink2{
+	position: absolute;
+	left: -5px;
+	top: -5px;
+	width: 260px;
+	height: 260px;
+	border-radius: 100%;
+	box-sizing:border-box;
+	border: 1px solid #FFD11A;
+	opacity: 0;
+}
+.music1{
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	width: 64px;
+	height: 64px;
+	background: url(../images/music2.png) no-repeat;
+	z-index: 100;
+	opacity: 0;
+}
+.music2{
+	position: absolute;
+	bottom: -40px;
+	right: 0;
+	width: 64px;
+	height: 64px;
+	background: url(../images/music1.png) no-repeat;
+	z-index: 100;
+	opacity: 0;
+}
+@keyframes music1flow1{
+	0%{	
+		bottom: -20px;
+		left: -40;
+		opacity: 0.5;
+		transform:rotate(0deg);
+	}
+	20%{
+		bottom: 30px;
+		left: -30px; 
+		opacity: 0.7;
+		transform:rotate(10deg);
+	}
+	50%{
+		bottom: 80px;
+		left: -20px; 
+		opacity: 0.8;		
+		transform:rotate(0deg);
+	}
+	75%{
+		bottom: 130px;
+		left: -10px; 
+		opacity: 0.9;
+		transform:rotate(-10deg);
+	}
+	100%{
+		bottom: 180px;
+		left: 0px; 
+		opacity: 1;
+	}
+}
+@keyframes music2flow2{
+	0%{	
+		bottom: -40px;
+		right: 0;
+		opacity: 1;
+		transform:rotate(0deg);
+	}
+	20%{
+		bottom: 0;
+		right: -20px; 
+		opacity: 0.9;
+		transform:rotate(-5deg);
+	}
+	50%{
+		bottom: 40px;
+		right: 0px; 
+		opacity: 0.8;
+
+		transform:rotate(0deg);
+	}
+	75%{
+		bottom: 90px;
+		right: -10px; 
+		opacity: 0.6;
+		transform:rotate(5deg);
+	}
+	100%{
+		bottom: 130px;
+		right: 0; 
+		opacity: 0.4;
+	}
+}
+@keyframes wave1{
+	0%{opacity: 1;}
+	20%{
+		width: 260px;
+		height: 260px;
+		left: -5px;
+		top: -5px;
+		opacity: 1;
+	}
+	40%{
+		width: 270px;
+		height: 270px;
+		left: -10px;
+		top: -10px;
+		opacity: 1;
+	}
+	80%{
+		width: 280px;
+		height: 280px;
+		left: -15px;
+		top: -15px;
+		opacity: 1;
+	}
+	90%{
+		width: 290px;
+		height: 290px;
+		left: -20px;
+		top: -20px;
+		opacity: 1;
+	}
+	100%{
+		width: 300px;
+		height: 300px;
+		left: -25px;
+		top: -25px;
+		opacity: 1;
+	}
+}
+@keyframes wave2{
+	0%{opacity: 1;}
+	10%{
+		width: 270px;
+		height: 270px;
+		left: -10px;
+		top: -10px;
+		opacity: 1;
+	}
+	20%{
+		width: 280px;
+		height: 280px;
+		left: -15px;
+		top: -15px;
+		opacity: 1;
+	}
+	30%{
+		width: 290px;
+		height: 290px;
+		left: -20px;
+		top: -20px;
+		opacity: 1;
+	}
+	80%{
+		width: 300px;
+		height: 300px;
+		left: -25px;
+		top: -25px;
+		opacity: 1;
+	}
+	100%{
+		width: 310px;
+		height: 310px;
+		left: -30px;
+		top: -30px;
+		opacity: 1;
+	}
+}
+
+@keyframes shake{
+	0%{
+		transform:rotate(0deg);
+		opacity: 1;
+	}
+	10%{
+		transform:rotate(10deg);
+		opacity: 1;
+	}
+	20%{
+		transform:rotate(0deg);
+		opacity: 1;
+	}
+	30%{
+		transform:rotate(-8deg);
+		opacity: 1;
+	}
+	40%{
+		transform:rotate(-4deg);
+		opacity: 1;
+	}
+	50%{
+		transform:rotate(-10deg);
+		opacity: 1;
+	}
+	60%{
+		transform:rotate(0deg);
+		opacity: 1;
+	}
+	70%{
+		transform:rotate(8deg);
+		opacity: 1;
+	}
+	80%{
+		transform:rotate(4deg);
+		opacity: 1;
+	}
+	90%{
+		transform:rotate(10deg);
+		opacity: 1;
+	}
+	100%{
+		transform:rotate(0deg);
+		opacity: 1;
+	}
+}
+@keyframes blink{
+	0%{
+		height:25px;
+		top: 50px;
+	}
+	50%{
+		height:10px;
+		top: 58px;
+	}
+	100%{
+		height:25px;
+		top: 50px;
+	}
+}
+@keyframes eyebowblink{
+	0%{
+		top: 32px;
+	}
+	50%{
+		top: 27px;
+	}
+	100%{
+		top: 32px;
+	}
+}
+@keyframes bgscale{
+	from{
+		width: 0;
+		height: 0;
+	}
+	to{
+		width: 250px;
+		height: 250px;
+	}
+}
+@keyframes bodyshow{
+	from{opacity:0;}
+	to{opacity: 1;}
+}
+@keyframes bodyshow2{
+	from{opacity:0;}
+	to{opacity: 1;}
+}
+.bg{
+	animation:bgscale 0.5s ease;
+}
+.bg-leftcon,.bg-rightcon{
+	animation:bodyshow 0.1s ease 0.5s;
+	animation-fill-mode:both;
+}
+.pbody{
+	animation:bodyshow2 0.2s ease 0.7s;
+	animation-fill-mode:both;
+}
+.head{
+	width: 250px;
+	height: 140px;
+	z-index: 99;
+	animation-fill-mode:both;
+}
+.music1,.music2{
+	animation:bodyshow 0.1s ease 1.2s;
+	animation-fill-mode:both;
+}
+.blink1{
+	animation:wave1 0.5s ease infinite 1.5s;
+	animation-fill-mode:both;
+}
+.blink2{
+	animation:wave2 0.5s ease infinite 1.5s;
+	animation-fill-mode:both;
+}
+.head{
+	transform-origin:center bottom;
+	animation:shake 2s ease infinite 1s;
+}
+.eye2{
+	animation:blink 0.7s ease 1.7s;
+}
+.eye1{
+	animation:blink 0.7s ease 1.7s;
+}
+.eyebow2{
+	animation:eyebowblink .7s ease 2s;
+}
+.music1{
+	animation:music1flow1 2s ease infinite 1.2s;
+}
+.music2{
+	animation:music2flow2 2s ease infinite 1.2s;
+}
+.
