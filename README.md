@@ -39,3 +39,8 @@ ALT + A.
 7、css3 人物摇头动画，全css实现
 
 主要用css的radius、rotate创建人物，并摇头，实现比较粗糙不够精细。
+
+8、小球自由落地运动动画
+
+用requestAnimationFrame 实现，具体内容比较简单,数学不太好，具体下坠和弹起的各个参数乱写的，使得动画看起来有点不太自然。
+大致掌握requestAnimationFrame这个api即可。

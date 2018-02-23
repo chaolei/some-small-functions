@@ -1,0 +1,18 @@
+body,div{margin:0;padding: 0;}
+.land{
+	position: absolute;
+	top: 400px;
+	width: 100%;
+	border-top: 1px solid #000;
+	height: 1px;
+}
+.ball{
+	width: 50px;
+	height: 50px;
+	background: #000;
+	border-radius: 100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -25px;
+}
