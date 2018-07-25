@@ -1,0 +1,149 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>太阳系运动-忽视冥王星</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{margin: 0; padding: 0;width: 100%; height: 100%;text-align: center;background:url(./images/bg.jpg) no-repeat;background-position: center center;}
+            text{stroke: #fff;font-size: 14px;fill: #222}
+            @media screen and (max-width: 500px) { 
+                body {
+                    background-position: top center;
+                    background-repeat: repeat;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 要算运动轨迹，故写死了宽度 -->
+        <svg width="1422" height="100%" version="1.1"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <!-- 定义星球的贴图 -->
+            <defs>
+                <pattern id="sunpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/sun.png"/>
+                </pattern>
+                <pattern id="waterpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/water.png"/>
+                </pattern>
+                <pattern id="goldpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/gold.png"/>
+                </pattern>
+                <pattern id="earthpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/earth.png"/>
+                </pattern>
+                <pattern id="woodpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/wood.png"/>
+                </pattern>
+                <pattern id="firepic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/fire.png"/>
+                </pattern>
+                <pattern id="soilpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/soil.png"/>
+                </pattern>
+                <pattern id="skykingpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/skyking.png"/>
+                </pattern>
+                <pattern id="seakingpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/seaking.png"/>
+                </pattern>
+                <pattern id="deadkingpic" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+                    <image width="1" height="1" xlink:href="./images/deadking.png"/>
+                </pattern>
+            </defs>
+
+            <circle id="sun" cx="50%" cy="300" r="80" fill="url(#sunpic)"/>
+
+            <!-- 行星运动的轨道 -->
+            <ellipse cx="50%" cy="300" rx="130" ry="90" stroke="#333" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="209" ry="110" stroke="#333" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="270" ry="130" stroke="#333" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="337" ry="150" stroke="#666" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="383" ry="170" stroke="#666" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="450" ry="190" stroke="#666" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="511" ry="210" stroke="#999" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="610" ry="230" stroke="#999" stroke-width="2" style="fill:transparent"/>
+            <ellipse cx="50%" cy="300" rx="703" ry="250" stroke="#999" stroke-width="2" style="fill:transparent"/>
+
+            <!-- 
+                行星  水 金 地球 火 木 土 天王 海王 冥王（好像不是行星了,是矮行星）2018-7-23
+                1、增加文字说明 图片收集 2018-7-24 
+                2、公转速度增加并修改贴图 速度以地球为基准，8s，其他的按比例计算，四舍五入
+                周期分别是87.9d  224.7d 1y 1.9y 11.8y 29.5y 84y 164.8y 248y 2018-7-25 木星改为20s，土星 1/10 后面的时间降低为1/20倍
+                3、增加光晕 效果不理想 2018-7-25
+                4、加上自转  
+                5、放大功能 有点鸡肋不做了             
+            -->
+            <g>
+                <circle id="water" cx="581" cy="300" r="8" fill="url(#waterpic)"/>  
+                <text x="581" y="325">水星</text>
+                <animateMotion path="M0 0
+                    A 130 90 0 0 0 260 0
+                    A 130 90 0 0 0 0 0" dur="2s" repeatCount="indefinite"  fill="freeze"/>
+            </g>
+            <g>
+                <circle id="gold" cx="502" cy="300" r="10" fill="url(#goldpic)"/>
+                <text x="502" y="325">金星</text>
+                <animateMotion path="M0 0
+                    A 209 110 0 0 0 418 0
+                    A 209 110 0 0 0 0 0" dur="5s" repeatCount="indefinite"  fill="freeze"/>
+            </g>
+            <g>
+                <circle id="earth" cx="441" cy="300" r="10" fill="url(#earthpic)"/>
+                <text x="441" y="325">地球</text>
+                <animateMotion path="M0 0
+                    A 270 130 0 0 0 540 0
+                    A 270 130 0 0 0 0 0" dur="8s" repeatCount="indefinite"  fill="freeze"/>
+            </g>
+            <g>
+                <circle id="fire" cx="374" cy="300" r="12" fill="url(#firepic)"/>
+                <text x="374" y="330">火星</text>
+                <animateMotion path="M0 0
+                A 337 150 0 0 0 674 0
+                A 337 150 0 0 0 0 0" dur="15s" repeatCount="indefinite"  fill="freeze"/>
+            </g>
+            <g>
+                <circle id="wood" cx="328" cy="300" r="18" fill="url(#woodpic)">
+                </circle>
+                <path d="M313 292 A 23 10 0 0 0 305 300 A 23 10 0 0 0 351 300 A 23 10 0 0 0 343 292" style="fill:transparent;stroke: rgba(255,255,255,0.75);stroke-width:4"></path>
+                <text x="328" y="340">木星</text> 
+                <animateMotion path="M0 0
+                    A 383 170 0 0 0 766 0
+                    A 383 170 0 0 0 0 0" dur="20s" repeatCount="indefinite"  fill="freeze"/>
+            </g>
+            <g>
+                <circle id="soil" cx="261" cy="300" r="18" fill="url(#soilpic)"/>
+                <path d="M246 294 A 23 10 340 0 0 244 310 A 23 10 340 0 0 284 292 A 23 10 340 0 0 273 290" style="fill:transparent;stroke: rgba(255,255,255,0.75);stroke-width:1"></path>
+                <path d="M246 293 A 25 12 340 0 0 243 311 A 25 12 340 0 0 285 291 A 25 12 340 0 0 272 289" style="fill:transparent;stroke: rgba(255,255,255,0.75);stroke-width:1"></path>
+                <path d="M247 292 A 27 14 340 0 0 242 312 A 27 14 340 0 0 286 290 A 27 14 340 0 0 271 288" style="fill:transparent;stroke: rgba(255,255,255,0.75);stroke-width:1"></path>
+                <text x="261" y="340">土星</text>   
+                <animateMotion path="M0 0
+                    A 450 190 0 0 0 900 0
+                    A 450 190 0 0 0 0 0" dur="23s" repeatCount="indefinite"  fill="freeze"/>
+            </g>
+            <g>
+                <circle id="skyking" cx="200" cy="300" r="14" fill="url(#skykingpic)"/>
+                <text x="200" y="330">天王星</text> 
+                <animateMotion path="M0 0
+                    A 511 210 0 0 0 1022 0
+                    A 511 210 0 0 0 0 0" dur="34s" repeatCount="indefinite"  fill="freeze"/> 
+            </g>
+            <g>
+                <circle id="seaking" cx="101" cy="300" r="14" fill="url(#seakingpic)"/>
+                <path d="M106 287 A 23 8 90 0 0 101 275 A 23 8 90 0 0 101 325 A 23 8 90 0 0 106 311" style="fill:transparent;stroke: rgba(255,255,255,0.75);stroke-width:3"></path>
+                <text x="101" y="330">海王星</text> 
+                <animateMotion path="M0 0
+                    A 610 230 0 0 0 1220 0
+                    A 610 230 0 0 0 0 0" dur="66s" repeatCount="indefinite"  fill="freeze"/>   
+            </g>
+            <g>
+                <circle id="deadking" cx="8" cy="300" r="8" fill="url(#deadkingpic)"/>
+                <text x="8" y="325">冥王星</text> 
+                <animateMotion path="M0 0
+                    A 703 250 0 0 0 1406 0
+                    A 703 250 0 0 0 0 0" dur="99s" repeatCount="indefinite" fill="freeze"/>
+            </g>
+        </svg>
+    </body>
+</html>

@@ -7,7 +7,7 @@ var config = {
 	direct: "down", //运动方向
 	distance: 350, //能运动的区间距离
 	reduce: 5, //每一次落地后缩减的高度，越小，弹落得越久。
-	reduceNum: 1 //缩减的高度系数
+	reduceNum: 2 //缩减的高度系数
 }
 function Ball(){
 	this.constructor = function(){}

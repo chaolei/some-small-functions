@@ -44,3 +44,7 @@ ALT + A.
 
 用requestAnimationFrame 实现，具体内容比较简单,数学不太好，具体下坠和弹起的各个参数乱写的，使得动画看起来有点不太自然。
 大致掌握requestAnimationFrame这个api即可。
+
+9、太阳系轨道运动(svg)
+
+这几天学习了一下svg，尝试着写了这个动画。还有点瑕疵。
