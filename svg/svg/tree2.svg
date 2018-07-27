@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="50" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    
+    <path d="M0 93
+        A25 7 0 0 1 50 93
+        A25 7 0 0 1 0 93
+        Z"
+    style="fill:#47951D;"/>
+    <path d="M22 72
+        L30 72
+        L30 95
+        L22 95
+        Z"
+    style="fill:#843B18;"/>
+    <path d="M2 50
+        A20 42 0 0 1 48 50
+        A80 30 0 0 1 35 75
+        L15 75
+        A80 30 0 0 1 2 50
+        Z"
+    style="fill:#239F31;"/>
+
+    <path d="M15 10
+        A30 13 0 0 1 23 23
+        A30 13 0 0 1 15 10
+        "
+    style="fill:#137218;"/>
+    <path d="M27 23
+        A30 13 0 0 1 35 10
+        A30 13 0 0 1 27 23
+        "
+    style="fill:#137218;"/>
+
+    <path d="M12 28
+        A30 14 0 0 1 23 43
+        A30 14 0 0 1 12 28
+        "
+    style="fill:#137218;"/>
+    <path d="M27 43
+        A30 14 0 0 1 38 28
+        A30 14 0 0 1 27 43
+        "
+    style="fill:#137218;"/>
+
+    <path d="M6 45
+        A30 18 0 0 1 23 65
+        A30 18 0 0 1 6 45
+        "
+    style="fill:#137218;"/>
+    <path d="M27 65
+        A30 18 0 0 1 44 45
+        A30 18 0 0 1 27 65
+        "
+    style="fill:#137218;"/>
+
+    
+
+</svg>

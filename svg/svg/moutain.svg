@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="600" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 20
+        L60 40
+        L80 20
+        L180 60
+        L220 30
+        L260 80
+        L340 30
+        L400 35
+        L460 20
+        L500 30
+        L560 0
+        L600 20
+        L600 100
+        L0 100
+        Z"
+    style="fill:#FFFFFF;"/>
+    <path d="M0 20
+        L35 66
+        L62 42
+        L60 40
+        L80 20
+        L90 60
+        L180 62
+        L180 60
+        L220 30
+        L230 70
+        L260 80
+        L340 30
+        L360 55
+        L400 35
+        L460 20
+        L480 50
+        L500 30
+        L560 0
+        L600 50
+
+        L600 100
+        L0 100
+        Z"
+    style="fill:#5FBCDD;"/>
+
+</svg>

@@ -1,0 +1,128 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="170" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    
+    <path d="M40 53
+        L60 53
+        L60 25
+        L150 25
+        L150 83
+        L40 83
+        Z"
+    style="fill:#9BB6BD;"/>
+    <path d="M40 83
+        L150 83
+        L168 73
+        L168 83
+        L168 100
+        L40 100
+        Z"
+    style="fill:#2F4253;"/>
+    <path d="M60 25
+        L152 25
+        L170 15
+        L130 12    
+        L90 12
+        Z"
+    style="fill:#C12C26;"/>
+    <path d="M100 12
+        L100 3
+        L104 3
+        L104 12
+        Z"
+    style="fill:#A1B7AB;"/>
+    <path d="M104 12
+        L104 3
+        L108 3
+        L108 12
+        Z"
+    style="fill:#E8F5E3;"/>
+    <path d="M150 25
+        L152 25
+        L170 16
+        L170 17   
+        L168 19
+        L168 73
+        L150 83
+        Z"
+    style="fill:#fff;"/>
+    <path d="M75 60
+        L78 60
+        L78 71
+        L75 71
+        Z"
+    style="fill:#2D282F;"/>
+    <path d="M83 60
+        L89 60
+        L89 71
+        L83 71
+        Z"
+    style="fill:#2D282F;"/>
+    <path d="M83 60
+        L89 60
+        L89 71
+        L83 71
+        Z"
+    style="fill:#2D282F;"/>
+    <path d="M92 60
+        L95 60
+        L95 71
+        L92 71
+        Z"
+    style="fill:#2D282F;"/>
+
+    <path d="M130 30
+        L136 30
+        L136 41
+        L130 41
+        Z"
+    style="fill:#2D282F;"/>
+    <path d="M140 30
+        L143 30
+        L143 41
+        L140 41
+        Z"
+    style="fill:#2D282F;"/>
+
+    <path d="M0 96
+        L30 78
+        L40 78
+        L40 93
+        L70 95
+        L90 98
+        L120 100        
+        L4 100
+        A 4 4 0 0 1 0 98
+        Z"
+    style="fill:#D9C542;"/>
+
+    <path d="M124 100
+        L124 99
+        L129 99
+        L129 97
+        L135 97
+        L135 96
+        L140 96
+        L140 94
+        L145 94
+        L145 92
+        L151 92
+        L151 90
+        L158 90
+        L158 88
+        L160 88
+        L160 86
+        L163 86
+        L163 85
+        L165 85
+        L165 84
+        L166 83
+        L170 83
+        L170 100
+        Z"
+    style="fill:#FEE250;"/>
+    
+
+</svg>

@@ -1,0 +1,93 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="500" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0
+        L30 0
+        L60 4
+        L90 6
+        L100 8
+        L120 8
+        L140 6
+        L180 6
+        L200 4
+        L210 2
+        L230 0
+        L250 0
+        L260 2
+        L280 4
+        L300 6
+        L340 10
+        L341 12
+        L340 14
+        L380 16
+        L450 18
+
+        L500 18
+        L500 50
+        L0 50
+        Z"
+    style="fill:#6DD5E0;"/>
+    <path d="M0 40
+        L100 8
+        L120 8
+        L140 6
+        L180 6
+        L50 50
+        L0 50
+        Z"
+    style="fill:#5CB6CE;"/>
+    <path d="M300 50
+        L380 16
+        L410 17
+        L340 50
+        Z"
+    style="fill:#A8F2FB;"/>
+
+    <path d="M0 0
+        L30 0
+        L60 4
+        L90 6
+        L100 8
+        L120 8
+        L140 6
+        L180 6
+        L200 4
+        L210 2
+        L230 0
+        L250 0
+        L260 2
+        L280 4
+        L300 6
+        L340 10
+        L341 12
+        L340 14
+        L380 16
+        L450 16
+        L500 16
+
+        L500 20
+        L450 20
+        L380 18
+        L340 16
+        L341 14
+        L340 12
+        L300 8
+        L280 6
+        L260 4
+        L250 2
+        L230 2
+        L210 4
+        L200 6
+        L180 8
+        L140 8
+        L120 10
+        L100 10
+        L90 8
+        L60 6
+        L30 2
+        L0 2
+        Z"
+    style="fill:#579B9A;"/>
+</svg>

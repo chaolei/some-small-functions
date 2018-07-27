@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="150" height="50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 30
+        A15 20 0 0 1 20 23
+        A35 55 0 0 1 55 13
+        A40 46 0 0 1 110 16
+        A16 20 0 0 1 135 20
+        A12 18 0 0 1 150 26
+
+        A20 30 0 0 1 120 35
+        A40 60 0 0 1 85 43
+        A45 60 0 0 1 48 45
+        A30 50 0 0 1 26 38
+        A15 15 0 0 1 0 25
+        Z"
+    style="fill:#fff;"/>
+</svg>

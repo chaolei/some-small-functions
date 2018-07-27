@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="50" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    
+    <path d="M0 95
+        A25 5 0 0 1 50 95
+        A25 5 0 0 1 0 95
+        Z"
+    style="fill:#D9C543;"/>
+    <path d="M18 72
+        L34 72
+        L34 95
+        L18 95
+        Z"
+    style="fill:#843B18;"/>
+    <path d="M25 15
+        L12 34
+        L18 34
+        L8 53
+        L14 53
+        L0 72
+        L50 72
+        L36 53
+        L42 53
+        L32 34
+        L38 34
+        Z"
+    style="fill:#5BB227;"/>
+    
+
+</svg>

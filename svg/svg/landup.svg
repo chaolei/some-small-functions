@@ -1,0 +1,79 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="500" height="70" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0
+        L20 0
+        A 100 10 0 0 0 200 0  
+        A 250 10 0 0 1 280 5   
+        L500 15
+        L500 50
+        L0 50
+        Z"
+    style="fill:#BCF953;"/>
+    <path d="M0 20
+        L150 20
+        A 100 20 0 0 1 300 15
+        A 100 50 0 0 1 400 5
+        L500 10
+        L500 50
+        L0 50  
+        Z"
+    style="fill:#D0FA74;"/>
+    <!-- 左上角房子-->
+    <path d="M60 10
+        L70 10
+        L75 11
+        L75 12
+        L60 12       
+        Z"
+    style="fill:#BA3023;"/>
+    <path d="M70 10
+        L70 6
+        L71 6
+        L71 10   
+        Z"
+    style="fill:#FFF;"/>
+    <path d="M60 12
+        L75 12
+        L75 22
+        L60 22   
+        Z"
+    style="fill:#FFF;"/>   
+
+    <path d="M62 15
+        L63 15
+        L63 17
+        L62 17   
+        Z"
+    style="fill:#000;"/>
+    <path d="M70 15
+        L72 15
+        L72 17
+        L70 17   
+        Z"
+    style="fill:#000;"/>
+
+    <!-- 完-->
+    <path d="M0 15
+        L20 15
+        A100 50 0 0 0 120 13
+        A100 40 0 0 0 250 20
+        L500 25
+        L500 50
+        L0 50  
+        Z"
+    style="fill:#BAE941;"/>
+    <path d="M0 25
+        L10 25
+        A30 10 0 0 0 60 25
+        A70 30 0 0 0 160 25
+        A50 10 0 0 0 240 20
+        L500 20
+        L500 70
+        L0 70  
+        Z"
+    style="fill:#FEE250;"/>
+
+</svg>

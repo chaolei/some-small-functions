@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="600" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 20
+        L60 20
+        L90 15
+        L100 14
+        L180 14
+        A200 100 0 0 1 380 12
+        L400 12
+        A200 90 0 0 1 600 8
+        L600 100
+        L0 100
+        Z"
+    style="fill:#6BCF2F;"/>
+    <path d="M0 50
+        A130 150 0 0 1 80 50
+        A150 200 0 0 0 180 35
+        A200 200 0 0 1 320 30
+        L600 60
+        L600 100
+        L0 100
+        Z"
+    style="fill:#249E31;"/>
+    <path d="M200 100
+        A200 100 0 0 1 380 50
+        A120 90 0 0 0 500 28
+        A100 110 0 0 1 600 40
+        L600 100
+        Z"
+    style="fill:#127218;"/>
+
+</svg>
