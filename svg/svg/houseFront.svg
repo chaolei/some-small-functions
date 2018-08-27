@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="250" height="340" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- 墙-->
+    <path d="M0 340
+        L0 138
+        L125 12
+        L250 138
+        L250 340
+        Z"
+    style="fill:#E8EFF5;"/>
+    <!-- 大窗户-->
+    <!-- 窗户蓝色-->
+    <path
+        d="M60 280
+        L60 160
+        L140 160
+        L180 210
+        L180 280
+        L90 280
+        L60 250
+        Z"
+    style="fill:#93A4CF;"/>
+    <!-- 窗户灰白色-->
+    <path
+        d="M60 280
+        L60 250
+        L90 280
+        Z"
+    style="fill:#F8F7BC;"/>
+    <path
+        d="M140 160
+        L180 160
+        L180 210
+        Z"
+    style="fill:#F8F7BC;"/>
+    <path
+        d="M140 280
+        L180 260
+        L180 268
+        L164 280
+        Z"
+    style="fill:#F8F7BC;"/>
+
+    <!-- 窗户框-->
+    <line x1="60" y1="285" x2="60" y2="155" style="stroke:#C8A862;stroke-width:6"/>
+    <line x1="90" y1="158" x2="90" y2="285" style="stroke:#C8A862;stroke-width:6"/>
+    <line x1="123" y1="158" x2="123" y2="285" style="stroke:#C8A862;stroke-width:6"/>
+    <line x1="153" y1="158" x2="153" y2="285" style="stroke:#C8A862;stroke-width:6"/>    
+    <line x1="183" y1="158" x2="183" y2="285" style="stroke:#C8A862;stroke-width:6"/>
+
+    <line x1="57" y1="158" x2="186" y2="158" style="stroke:#C8A862;stroke-width:8"/>
+    <line x1="57" y1="190" x2="186" y2="190" style="stroke:#C8A862;stroke-width:8"/>
+    <line x1="57" y1="230" x2="186" y2="230" style="stroke:#C8A862;stroke-width:8"/>
+    <line x1="57" y1="260" x2="186" y2="260" style="stroke:#C8A862;stroke-width:8"/>
+    <line x1="57" y1="284" x2="186" y2="284" style="stroke:#C8A862;stroke-width:8"/>
+
+    <!-- 小窗户-->
+    <path
+        d="M100 120
+        L100 70
+        L140 70
+        L140 120
+        Z"
+    style="fill:#F8F7BC;"/>
+    <path
+        d="M100 110
+        L100 70
+        L130 70
+        L140 80
+        L140 108
+        L120 120
+        L110 120
+        Z"
+    style="fill:#93A4CF;"/>
+    <line x1="95" y1="70" x2="145" y2="70" style="stroke:#C8A862;stroke-width:6"/>
+    <line x1="96" y1="93" x2="144" y2="93" style="stroke:#C8A862;stroke-width:6"/>
+    <line x1="95" y1="120" x2="145" y2="120" style="stroke:#C8A862;stroke-width:6"/>
+    <line x1="98" y1="70" x2="98" y2="120" style="stroke:#C8A862;stroke-width:5"/>
+    <line x1="142" y1="70" x2="142" y2="120" style="stroke:#C8A862;stroke-width:5"/>
+</svg>

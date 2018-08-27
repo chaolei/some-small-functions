@@ -1,0 +1,316 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>3d 骰子---可随机产生点数</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{margin: 0; padding: 0;width: 100%; height: 100%; perspective:1600px;background: #666}
+            .box-container{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 300px;
+                height: 300px;
+                perspective:5000px;
+                transform: rotateX(-63deg) rotateY(60deg) translate(-50%, -50%);
+                transform-style: preserve-3d;
+                transform-origin: 0% 0%;
+                transition: all .3S ease-in;
+            }
+            .box{
+                width: 300px;
+                height: 300px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -150px;
+                margin-top: -150px;               
+                transform-origin: 50% 50%;
+                transform-style: preserve-3d;
+                transition: 2.5S ease-in-out;
+            }
+            .box-face{
+                width: 200px;
+                height: 200px;;
+                background: #efefef;
+                background-repeat: repeat;
+                transform-origin: 50% 50%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -100px;
+                margin-top: -100px;
+                line-height: 200px;
+                font-size: 48px;
+                text-align: center;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 15px;
+            }
+            .box-up{
+                transform: rotateX(90deg) translateX(0px) translateY(-0px) translateZ(100px);
+            }
+            .box-down{
+                transform: rotateX(-90deg) translateX(-0px) translateY(-100px) translateZ(200px);
+                transform-origin: 0% 0%;
+            }
+            .box-left{
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+            .box-back{
+                transform: translateZ(-100px) rotateY(180deg);
+            }
+            .box-right {
+                transform: rotateY(90deg) translateZ(100px);
+            }
+            .box-front{
+                transform: translateZ(100px);
+            }
+            .play{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                cursor: pointer;
+                color: #fff;
+                padding: 8px 25px 10px 25px;
+                background: #444;
+                border-radius: 5px;
+                transition: background 0.3s ease-in;
+                letter-spacing: 3px;
+            }
+            .play:hover{
+                background: #111111;
+            }
+            .play.disabled{
+                color: #ccc;
+                cursor: default;
+                background: #999;
+            }
+
+            .point{
+               position: absolute;
+               width: 30px;
+               height: 30px;
+               border-radius: 50%;
+               background: #000; 
+               box-shadow: 0px 0px 1px 4px rgba(0,0,0,0.2);
+            }
+            .point:after{
+                position: absolute;
+                content: "";
+                width:2px;
+                height: 2px;
+                left: 50%;
+                top: 50%;
+                background: #aaa;
+                transform: translate(-50%,-50%);
+                border-radius: 50%;
+                box-shadow: 0px 0px 1px 4px rgba(255, 255, 255, 0.2);
+            }
+            .point1{
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .point2_1{
+                left: 25%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point2_2{
+                left: 75%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point3_1{
+                left: 25%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point3_2{
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .point3_3{
+                left: 75%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point4_1{
+                left: 25%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point4_2{
+                left: 75%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point4_3{
+                left: 25%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point4_4{
+                left: 75%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point5_1{
+                left: 25%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point5_2{
+                left: 75%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point5_3{
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .point5_4{
+                left: 25%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point5_5{
+                left: 75%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point6_1{
+                left: 25%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point6_2{
+                left: 75%;
+                top: 25%;
+                transform: translate(-50%,-50%);
+            }
+            .point6_3{
+                left: 25%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .point6_4{
+                left: 75%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .point6_5{
+                left: 25%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+            .point6_6{
+                left: 75%;
+                top: 75%;
+                transform: translate(-50%,-50%);
+            }
+                        
+        </style>
+    </head>
+    <body>
+        <div class="box-container">
+            <div class="box" id="box">
+                <div class="box-face box-up">
+                    <div class="point point5_1"></div>
+                    <div class="point point5_2"></div>
+                    <div class="point point5_3"></div>
+                    <div class="point point5_4"></div>
+                    <div class="point point5_5"></div>
+                </div>
+                <div class="box-face box-down">
+                    <div class="point point6_1"></div>
+                    <div class="point point6_2"></div>
+                    <div class="point point6_3"></div>
+                    <div class="point point6_4"></div>
+                    <div class="point point6_5"></div>
+                    <div class="point point6_6"></div>
+                </div>
+                <div class="box-face box-left">
+                    <div class="point point4_1"></div>
+                    <div class="point point4_2"></div>
+                    <div class="point point4_3"></div>
+                    <div class="point point4_4"></div>
+                </div>
+                <div class="box-face box-back">
+                    <div class="point point3_1"></div>
+                    <div class="point point3_2"></div>
+                    <div class="point point3_3"></div>
+                </div>
+                <div class="box-face box-right">
+                    <div class="point point2_1"></div>
+                    <div class="point point2_2"></div>
+                </div>
+                <div class="box-face box-front">
+                    <div class="point point1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="play" onClick="play()">Play</div>
+        <script>
+            var _node = document.getElementById("box"),boxy = 0;
+            var relateDeg = {
+                num1: {
+                    direct:'X',
+                    deg: 90
+                },
+                num2: {
+                    direct:'Z',
+                    deg: 270
+                },
+                num3: {
+                    direct:'X',
+                    deg: 270
+                },
+                num4: {
+                    direct:'Z',
+                    deg: 90
+                },
+                num5: {
+                    direct:'Z',
+                    deg: 0
+                },
+                num6: {
+                    direct:'Z',
+                    deg: 180
+                }
+            };
+            function play() {
+                if(document.querySelector(".play").getAttribute("class").indexOf("disabled") > -1) return ;
+                document.querySelector(".play").setAttribute("class", 'play disabled'); 
+                document.querySelector(".box-container").style.top = '-100%';
+                document.querySelector(".box-container").style.left = '70%';
+                setTimeout(function(){
+                    document.querySelector(".box-container").style.top = '50%';
+                    document.querySelector(".box-container").style.left = '50%';                    
+                    var num = randomNum();//骰子点数
+                    var circle = randomCircle();//骰子旋转圈数
+                    console.log(num+"//"+circle);
+                    boxy = boxy == 0 ? circle*360 : 0;
+                    var deg = relateDeg['num'+num] || relateDeg.num1;                
+                    _node.style.transform = 'rotateY('+boxy+'deg) rotate'+deg.direct+'('+(circle*360+deg.deg)+'deg)';
+                },300);                
+
+                setTimeout(function(){document.querySelector(".play").setAttribute("class", 'play'); }, 2800);
+            }
+
+            function randomNum() {
+                var num = Math.ceil(Math.random() * 6);
+                num = num == 0 ? 1 : num;
+                return num;
+            }
+            function randomCircle() {
+                var num = Math.ceil(Math.random() * 10);
+                num = num == 0 ? 1 : num;
+                return num;
+            }
+        </script>
+    </body>
+</html>

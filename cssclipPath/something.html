@@ -1,0 +1,174 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>css3 一些物品变化</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{margin: 0; padding: 0;width: 100%; height: 100%; perspective:1600px;}
+            .something-container{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 500px;
+                height: 400px;
+                transform: translate(-50%, -50%);
+                border: 1px solid #ccc;
+            }
+            .something,.shape-con{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            .shape{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                
+            }
+            .something .shape-con:nth-child(1) .shape{
+                transition: all 0.35s ease-in;
+            }
+            .something .shape-con:nth-child(2) .shape{
+                transition: all 0.5s ease-in;
+            }
+            .something .shape-con:nth-child(3) .shape{
+                transition: all 0.5s ease-in;
+            }
+            .something .shape-con:nth-child(4) .shape{
+                transition: all 0.65s ease-in;
+            }
+            .something .shape-con:nth-child(5) .shape{
+                transition: all 0.45s ease-in;
+            }
+            .something .shape-con:nth-child(6) .shape{
+                transition: all 0.5s ease-in;
+            }
+            .something .shape-con:nth-child(7) .shape{
+                transition: all 0.35s ease-in;
+            }
+
+            .computer .shape-con:nth-child(1) .shape{
+                background: #000;
+                clip-path: polygon(20% 8%, 80% 8%, 80% 62%, 20% 62%);
+            }
+            .computer .shape-con:nth-child(2) .shape{
+                background: #efefef;
+                clip-path: polygon(22% 12%, 78% 12%, 78% 58%, 22% 58%);
+            }
+            .computer .shape-con:nth-child(3) .shape{
+                background: #666;
+                clip-path: ellipse(5px 5px at 50% 10%);
+            }
+            .computer .shape-con:nth-child(4) .shape{
+                background: #000;
+                clip-path: polygon(20% 62%, 20% 90%, 15% 90%);
+            }
+            .computer .shape-con:nth-child(5) .shape{
+                background: #000;
+                clip-path: polygon(20% 62%, 80% 62%, 80% 90%, 20% 90%);
+            }
+            .computer .shape-con:nth-child(6) .shape{
+                background: #000;
+                clip-path: polygon(80% 62%, 85% 90%, 80% 90%);
+            }
+            .computer .shape-con:nth-child(7) .shape{
+                background: #666;
+                clip-path: polygon(46% 80%, 54% 80%, 55% 86%, 45% 86%);
+            }
+
+
+            .mobile .shape-con:nth-child(1) .shape{
+                background: #efefef;
+                clip-path:  polygon(30% 10%, 70% 10%, 70% 90%, 30% 90%);
+            }
+            .mobile .shape-con:nth-child(2) .shape{
+                background: #333;
+                clip-path:  polygon(33% 13%, 67% 13%, 67% 80%, 33% 80%);
+            }
+            .mobile .shape-con:nth-child(3) .shape{
+                background: #333;
+                clip-path:  ellipse(3px 3px at 55% 12%);
+            }
+            .mobile .shape-con:nth-child(4) .shape{
+                background: #333;
+                clip-path:  ellipse(3px 3px at 45% 12%);
+            }
+            .mobile .shape-con:nth-child(5) .shape{
+                background: #333;
+                clip-path:  polygon(47% 11.5%, 53% 11.5%, 53% 12.5%, 47% 12.5%);
+            }
+            .mobile .shape-con:nth-child(6) .shape{
+                background: #999;
+                clip-path:  ellipse(15px 15px at 50% 85%);
+            }
+            .mobile .shape-con:nth-child(7) .shape{
+                background: #999;
+                clip-path:  polygon(40% 85%, 40% 85%, 40% 85%, 40% 85%);;
+            }
+            .next{
+                position: absolute;
+                right: 100px;
+                top: 55%;
+                cursor: pointer;
+            }
+            .prev{
+                position: absolute;
+                right: 100px;
+                top: 50%;
+                cursor: pointer;
+            }
+                        
+        </style>
+    </head>
+    <body>
+        <div class="something-container">
+            <div class="something computer">
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+                <div class="shape-con">
+                    <div class="shape"></div>
+                </div>
+            </div>
+        </div>
+        <div class="next">下一个</div>
+        <div class="prev">上一个</div>
+        <script>
+            var thingArr = ['computer','mobile'], cur=0;
+            var nextbtn = document.querySelector(".next");
+            var prevbtn = document.querySelector(".prev");
+            var thingCon = document.querySelector(".something");
+            nextbtn.addEventListener("click", function(){
+                cur++;
+                cur = cur >= thingArr.length ? 0 : cur;
+                var showName = thingArr[cur];
+                thingCon.setAttribute("class", "something " + showName);
+            });
+            prevbtn.addEventListener("click", function(){
+                cur--;
+                cur = cur < 0 ? thingArr.length-1 : cur;
+                var showName = thingArr[cur];
+                thingCon.setAttribute("class", "something " + showName);
+            });
+        </script>
+    </body>
+</html>

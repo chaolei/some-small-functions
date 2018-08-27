@@ -1,0 +1,143 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>css3 图片碎片</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .photo-container{
+                position: relative;
+                width: 600px;
+                height: 400px;
+                margin: 0 auto;
+            }
+            .photo-container img{
+                width: 100%;
+            }
+            .metro{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                transition: all 0.7s ease-in-out;
+            }
+            .photo-container .metro:nth-child(1){
+                clip-path: polygon(0% 0%, 20% 0%,20% 25%,0% 25%);
+            }
+            .photo-container .metro:nth-child(2){
+                clip-path: polygon(20% 0%, 40% 0%,40% 25%,20% 25%);
+            }
+            .photo-container .metro:nth-child(3){
+                clip-path: polygon(40% 0%, 60% 0%,60% 25%,40% 25%);
+            }
+            .photo-container .metro:nth-child(4){
+                clip-path: polygon(60% 0%, 80% 0%,80% 25%,60% 25%);
+            }
+            .photo-container .metro:nth-child(5){
+                clip-path: polygon(80% 0%, 100% 0%,100% 25%,80% 25%);
+            }
+
+            .photo-container .metro:nth-child(6){
+                clip-path: polygon(0% 25%, 20% 25%,20% 50%,0% 50%);
+            }
+            .photo-container .metro:nth-child(7){
+                clip-path: polygon(20% 25%, 40% 25%,40% 50%,20% 50%);
+            }
+            .photo-container .metro:nth-child(8){
+                clip-path: polygon(40% 25%, 60% 25%,60% 50%,40% 50%);
+            }
+            .photo-container .metro:nth-child(9){
+                clip-path: polygon(60% 25%, 80% 25%,80% 50%,60% 50%);
+            }
+            .photo-container .metro:nth-child(10){
+                clip-path: polygon(80% 25%, 100% 25%,100% 50%,80% 50%);
+            }
+
+            .photo-container .metro:nth-child(11){
+                clip-path: polygon(0% 50%, 20% 50%,20% 75%,0% 75%);
+            }
+            .photo-container .metro:nth-child(12){
+                clip-path: polygon(20% 50%, 40% 50%,40% 75%,20% 75%);
+            }
+            .photo-container .metro:nth-child(13){
+                clip-path: polygon(40% 50%, 60% 50%,60% 75%,40% 75%);
+            }
+            .photo-container .metro:nth-child(14){
+                clip-path: polygon(60% 50%, 80% 50%,80% 75%,60% 75%);
+            }
+            .photo-container .metro:nth-child(15){
+                clip-path: polygon(80% 50%, 100% 50%,100% 75%,80% 75%);
+            }
+
+            .photo-container .metro:nth-child(16){
+                clip-path: polygon(0% 75%, 20% 75%,20% 100%,0% 100%);
+            }
+            .photo-container .metro:nth-child(17){
+                clip-path: polygon(20% 75%, 40% 75%,40% 100%,20% 100%);
+            }
+            .photo-container .metro:nth-child(18){
+                clip-path: polygon(40% 75%, 60% 75%,60% 100%,40% 100%);
+            }
+            .photo-container .metro:nth-child(19){
+                clip-path: polygon(60% 75%, 80% 75%,80% 100%,60% 100%);
+            }
+            .photo-container .metro:nth-child(20){
+                clip-path: polygon(80% 75%, 100% 75%,100% 100%,80% 100%);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="photo-container">            
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+            <div class="metro"><img src="./images/test.jpg"/></div>
+        </div>
+        <script>
+            function initMetro(num){
+                var metros = document.querySelectorAll(".metro");
+                var left = 1, top = 0;
+                for(var i=0;i<metros.length;i++){
+                    if(i%num == 0){
+                        left=1;
+                        top++;
+                    }
+                    metros[i].style.left = 0+'px';
+                    metros[i].style.top = 0+'px';
+                    left++;                    
+                }
+            }
+
+            function go(){
+                var metros = document.querySelectorAll(".metro");
+                var left = 1, top = 0;
+                for(var i=0;i<metros.length;i++){
+                    left = Math.random()* 100;
+                    top = Math.random()* 100;
+                    left  *= Math.random()>0.5?1:-1;
+                    top  *= Math.random()>0.5?1:-1;
+                    metros[i].style.left = left+'px';
+                    metros[i].style.top = top+'px';                  
+                }
+            }
+            initMetro(5);    
+        </script>
+    </body>
+</html>
