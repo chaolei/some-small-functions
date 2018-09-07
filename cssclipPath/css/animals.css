@@ -1,0 +1,307 @@
+body{
+    margin: 0; padding: 0;width: 100%; height: 100%; perspective:1600px;
+    /*background: url(../images/animal.jpg) no-repeat left top;
+    background-size: 720px 510px;*/
+}
+
+.animals-container{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 500px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+}
+.animals,.shape-con{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.shape{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 1s ease-in-out;
+    background: transparent;
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%);
+}
+
+.elephant .shape-con:nth-child(1) .shape{
+    background: #999;
+    clip-path: polygon(10% 55%, 15% 30%, 15% 38%);
+}
+.elephant .shape-con:nth-child(2) .shape{
+    background: #ccc;
+    clip-path: polygon(15% 28%, 15% 50%, 28% 54%);
+}
+.elephant .shape-con:nth-child(3) .shape{
+    background: #bbb;
+    clip-path: polygon(15% 28%, 18% 25%, 28% 54%);
+}
+.elephant .shape-con:nth-child(4) .shape{
+    background: #aaa;
+    clip-path: polygon(18% 25%, 22% 24.5%, 28% 54%);
+}
+.elephant .shape-con:nth-child(5) .shape{
+    background: #ddd;
+    clip-path: polygon(15% 50%, 24% 55.5%, 28% 54%);
+}
+.elephant .shape-con:nth-child(6) .shape{
+    background: #ccc;
+    clip-path: polygon(15% 50%, 24% 55.5%, 23% 80%);
+}
+.elephant .shape-con:nth-child(7) .shape{
+    background: #999;
+    clip-path: polygon(15% 50%, 18.5% 63%, 18% 80%);
+}
+.elephant .shape-con:nth-child(8) .shape{
+    background: #ddd;
+    clip-path: polygon(18% 82%, 18.4% 63%, 23% 80%);
+}
+.elephant .shape-con:nth-child(9) .shape{
+    background: #999;
+    clip-path: polygon(18% 82%, 24.4% 82%, 23% 80%);
+}
+.elephant .shape-con:nth-child(10) .shape{
+    background: #ccc;
+    clip-path: polygon(35% 24.5%, 22% 24.5%, 28% 54%);
+}
+.elephant .shape-con:nth-child(11) .shape{
+    background: #ccc;
+    clip-path: polygon(50% 44%, 35% 24.5%, 28% 54%);
+}
+.elephant .shape-con:nth-child(12) .shape{
+    background: #bbb;
+    clip-path: polygon(50% 44%, 46% 58%, 28% 54%);
+}
+.elephant .shape-con:nth-child(13) .shape{
+    background: #ccc;
+    clip-path: polygon(50% 44%, 46% 58%, 54% 80%);
+}
+.elephant .shape-con:nth-child(14) .shape{
+    background: #bbb;
+    clip-path: polygon(50% 82%, 46% 58%, 54% 80%);
+}
+.elephant .shape-con:nth-child(15) .shape{
+    background: #999;
+    clip-path: polygon(50% 82%, 56% 82%, 54% 80%);
+}
+.elephant .shape-con:nth-child(16) .shape{
+    background: #bbb;
+    clip-path: polygon(35% 24.5%, 50% 44%, 66% 21.5%);
+}
+.elephant .shape-con:nth-child(17) .shape{
+    background: #aaa;
+    clip-path: polygon(60% 46%, 50% 44%, 56% 34%);
+}
+.elephant .shape-con:nth-child(18) .shape{
+    background: #bbb;
+    clip-path: polygon(60% 46%, 50% 44%, 51.5% 60%);
+}
+.elephant .shape-con:nth-child(19) .shape{
+    background: #aaa;
+    clip-path: polygon(55% 54%, 52.5% 67%, 51.5% 60%);
+}
+.elephant .shape-con:nth-child(20) .shape{
+    background: #ccc;
+    clip-path: polygon(60% 46%, 66% 21.5%, 56% 34%);
+}
+.elephant .shape-con:nth-child(21) .shape{
+    background: #ccc;
+    clip-path: polygon(60% 46%, 66% 21.5%, 64% 42%);
+}
+.elephant .shape-con:nth-child(22) .shape{
+    background: #ddd;
+    clip-path: polygon(75% 30%, 66% 21.5%, 64% 42%);
+}
+.elephant .shape-con:nth-child(23) .shape{
+    background: #eee;
+    clip-path: polygon(75% 30%, 76% 41%, 64% 42%);
+}
+.elephant .shape-con:nth-child(24) .shape{
+    background: #ccc;
+    clip-path: polygon(71% 45%, 76% 41%, 64% 42%);
+}
+.elephant .shape-con:nth-child(25) .shape{
+    background: #BF6F34;
+    clip-path: polygon(64% 42%, 64% 40%, 73% 47%);
+}
+.elephant .shape-con:nth-child(26) .shape{
+    background: #bbb;
+    clip-path: polygon(71.5% 44.5%, 76% 41%, 74.5% 47%);
+}
+.elephant .shape-con:nth-child(27) .shape{
+    background: #ccc;
+    clip-path: polygon(76% 41%, 77% 47.5%, 72% 58%);
+}
+.elephant .shape-con:nth-child(28) .shape{
+    background: #bbb;
+    clip-path: polygon(75% 56%, 77% 47.5%, 72% 58%);
+}
+.elephant .shape-con:nth-child(29) .shape{
+    background: #ccc;
+    clip-path: polygon(75% 56%, 70% 63%, 72% 58%);
+}
+.elephant .shape-con:nth-child(30) .shape{
+    background: #ddd;
+    clip-path: polygon(75% 56%, 70% 63%, 71% 63.5%);
+}
+.elephant .shape-con:nth-child(31) .shape{
+    background: #ccc;
+    clip-path: polygon(65.5% 21.5%, 53% 17%, 52.5% 20.5%);
+}
+.elephant .shape-con:nth-child(32) .shape{
+    background: #aaa;
+    clip-path: polygon(65.5% 21.5%, 49% 28%, 52.5% 20.5%);
+}
+.elephant .shape-con:nth-child(33) .shape{
+    background: #999;
+    clip-path: polygon(65.5% 21.5%, 49% 28%, 52.5% 33.5%);
+}
+.elephant .shape-con:nth-child(34) .shape{
+    background: #aaa;
+    clip-path: polygon(65.5% 21.5%, 53% 37%, 52.5% 33.5%);
+}
+.elephant .shape-con:nth-child(35) .shape{
+    background: #999;
+    clip-path: polygon(65.5% 21.5%, 53% 37%, 58.5% 39.5%);
+}
+.elephant .shape-con:nth-child(36) .shape{
+    background: #898989;
+    clip-path: polygon(65.5% 21.5%, 63% 42%, 58.5% 39.5%);
+}
+.elephant .shape-con:nth-child(37) .shape{
+    background: #333;
+    clip-path: polygon(70.5% 31.5%, 71.5% 32.5%, 69% 32%);
+}
+
+.hummer .shape-con:nth-child(1) .shape{
+    background: #CFE4E5;
+    clip-path: polygon(50% 10%, 51.5% 25%, 57% 29%);
+}
+.hummer .shape-con:nth-child(2) .shape{
+    background: #AFDFD9;
+    clip-path: polygon(57% 40%, 51.5% 25%, 57% 29%);
+}
+.hummer .shape-con:nth-child(3) .shape{
+    background: #5FBEA6;
+    clip-path: polygon(57% 40%, 50% 40%, 48% 16%);
+}
+.hummer .shape-con:nth-child(4) .shape{
+    background: #9EE4D4;
+    clip-path: polygon(30% 12%, 47% 29%, 42% 30%);
+}
+.hummer .shape-con:nth-child(5) .shape{
+    background: #D9EBED;
+    clip-path: polygon(58% 41%, 47% 29%, 42% 30%);
+}
+.hummer .shape-con:nth-child(6) .shape{
+    background: #59CBB4;
+    clip-path: polygon(30% 22%, 43% 30%, 40% 32%);
+}
+.hummer .shape-con:nth-child(7) .shape{
+    background: #81D0C2;
+    clip-path: polygon(58% 41%, 43% 30%, 40% 32%);
+}
+.hummer .shape-con:nth-child(8) .shape{
+    background: #59CBB4;
+    clip-path: polygon(33% 32%, 45% 34%, 48% 38%);
+}
+.hummer .shape-con:nth-child(9) .shape{
+    background: #81D0C2;
+    clip-path: polygon(58% 41%, 45% 34%, 48% 38%);
+}
+.hummer .shape-con:nth-child(10) .shape{
+    background: #81D0C2;
+    clip-path: polygon(35% 38%, 48% 38%, 48% 41%);
+}
+.hummer .shape-con:nth-child(11) .shape{
+    background: #81D0C2;
+    clip-path: polygon(58% 41%, 48% 38%, 48% 41%);
+}
+.hummer .shape-con:nth-child(12) .shape{
+    background: #81D0C2;
+    clip-path: polygon(40% 46%, 48% 41%, 49% 44%);
+}
+.hummer .shape-con:nth-child(13) .shape{
+    background: #D9EBED;
+    clip-path: polygon(58% 41%, 48% 41%, 49% 44%);
+}
+.hummer .shape-con:nth-child(14) .shape{
+    background: #81D0C2;
+    clip-path: polygon(35% 70%, 49% 50%, 49% 44%);
+}
+.hummer .shape-con:nth-child(15) .shape{
+    background: #D9EBED;
+    clip-path: polygon(35% 70%, 49% 50%, 44% 61%);
+}
+.hummer .shape-con:nth-child(16) .shape{
+    background: #81D0C2;
+    clip-path: polygon(43% 75%, 49% 50%, 44% 61%);
+}
+.hummer .shape-con:nth-child(17) .shape{
+    background: #D9EBED;
+    clip-path: polygon(43% 75%, 49% 50%, 47.5% 64%);
+}
+.hummer .shape-con:nth-child(18) .shape{
+    background: #81D0C2;
+    clip-path: polygon(50% 75%, 49% 50%, 47.5% 64%);
+}
+.hummer .shape-con:nth-child(19) .shape{
+    background: #D9EBED;
+    clip-path: polygon(50% 75%, 49% 50%, 51% 62%);
+}
+.hummer .shape-con:nth-child(20) .shape{
+    background: #81D0C2;
+    clip-path: polygon(56% 70%, 49% 50%, 51% 62%);
+}
+.hummer .shape-con:nth-child(21) .shape{
+    background: #D9EBED;
+    clip-path: polygon(62% 46%, 49% 50%, 49% 44%);
+}
+.hummer .shape-con:nth-child(22) .shape{
+    background: #81D0C2;
+    clip-path: polygon(60% 46%, 60% 40%, 49% 44%);
+}
+.hummer .shape-con:nth-child(23) .shape{
+    background: #C8EBE7;
+    clip-path: polygon(60% 46%, 49% 50%, 57% 51.5%);
+}
+.hummer .shape-con:nth-child(24) .shape{
+    background: #C8EBE7;
+    clip-path: polygon(60% 46%, 60% 40%, 62% 40%);
+}
+.hummer .shape-con:nth-child(25) .shape{
+    background: #81D0C2;
+    clip-path: polygon(60% 46%, 64% 42%, 62% 40%);
+}
+.hummer .shape-con:nth-child(26) .shape{
+    background: #C8EBE7;
+    clip-path: polygon(60% 46%, 64% 42%, 64% 47%);
+}
+.hummer .shape-con:nth-child(27) .shape{
+    background: #C46671;
+    clip-path: polygon(63% 44.5%, 75% 55%, 62.5% 45.5%);
+}
+.hummer .shape-con:nth-child(28) .shape{
+    background: #000;
+    clip-path: polygon(62% 41.5%, 62.5% 43%, 61.5% 43%);
+}
+
+.next{
+    position: absolute;
+    right: 100px;
+    top: 55%;
+    cursor: pointer;
+}
+.prev{
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    cursor: pointer;
+}

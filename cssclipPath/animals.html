@@ -1,0 +1,47 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>css3 一些动物变化</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/animals.css">
+    </head>
+    <body>
+        <div class="animals-container">
+            <div class="animals hummer">
+            </div>
+        </div>
+        <div class="next">下一个</div>
+        <div class="prev">上一个</div>
+        <script>
+            var thingArr = ['elephant','hummer'], cur=1;
+            var nextbtn = document.querySelector(".next");
+            var prevbtn = document.querySelector(".prev");
+            var thingCon = document.querySelector(".animals");
+            var shapeCon, shapeNode;
+            function init(num){
+                for(var i=0;i<num;i++){
+                    shapeCon = document.createElement("div");
+                    shapeNode = document.createElement("div");
+                    shapeCon.setAttribute("class", "shape-con");
+                    shapeNode.setAttribute("class", "shape");
+                    shapeCon.appendChild(shapeNode);
+                    thingCon.appendChild(shapeCon);
+                }
+            }
+            
+            init(37);
+            nextbtn.addEventListener("click", function(){
+                cur++;
+                cur = cur >= thingArr.length ? 0 : cur;
+                var showName = thingArr[cur];
+                thingCon.setAttribute("class", "something " + showName);
+            });
+            prevbtn.addEventListener("click", function(){
+                cur--;
+                cur = cur < 0 ? thingArr.length-1 : cur;
+                var showName = thingArr[cur];
+                thingCon.setAttribute("class", "something " + showName);
+            });
+        </script>
+    </body>
+</html>

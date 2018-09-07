@@ -84,11 +84,16 @@
             .photo-container .metro:nth-child(20){
                 clip-path: polygon(80% 75%, 100% 75%,100% 100%,80% 100%);
             }
-
+            
+            .change-photo{
+                cursor: pointer;
+                display: inline-block;
+            }
         </style>
     </head>
     <body>
-        <div class="photo-container">            
+        <div class="change-photo change1">碎片变化</div>
+        <div class="photo-container">
             <div class="metro"><img src="./images/test.jpg"/></div>
             <div class="metro"><img src="./images/test.jpg"/></div>
             <div class="metro"><img src="./images/test.jpg"/></div>
@@ -111,6 +116,7 @@
             <div class="metro"><img src="./images/test.jpg"/></div>
         </div>
         <script>
+            var flag=0,changebtn1 = document.querySelector(".change1"),changebtn2 = document.querySelector(".change2");
             function initMetro(num){
                 var metros = document.querySelectorAll(".metro");
                 var left = 1, top = 0;
@@ -137,7 +143,15 @@
                     metros[i].style.top = top+'px';                  
                 }
             }
-            initMetro(5);    
+            changebtn1.addEventListener("click",function(){
+                if(flag == 0){
+                    flag = 1;
+                    go();
+                }else{
+                    flag = 0;
+                    initMetro(5);
+                }
+            });
         </script>
     </body>
 </html>
