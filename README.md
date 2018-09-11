@@ -45,6 +45,18 @@ ALT + A.
 用requestAnimationFrame 实现，具体内容比较简单,数学不太好，具体下坠和弹起的各个参数乱写的，使得动画看起来有点不太自然。
 大致掌握requestAnimationFrame这个api即可。
 
-9、太阳系轨道运动(svg)
+9、太阳系轨道运动,我的家乡，3d房子展示(svg)
 
-这几天学习了一下svg，尝试着写了这个动画。还有点瑕疵。
+这几天学习了一下svg，尝试着写了这个动画。还有点瑕疵。画的过程中找点真的累人。
+
+10、骰子动画(3dbox)
+
+主要用css3的3d属性的运用如，transform-style: preserve-3d;perspective，rotateX，rotateY，translateZ等
+
+11、动物变换（cssclipPath）
+
+主要用css3的clip-path属性画出动物。
+
+12、音乐演奏（music）
+
+主要用html5的audio api发出声音

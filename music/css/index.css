@@ -1,0 +1,58 @@
+body,div,p{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{*+height:1%;}
+.pino{
+    text-align: center;
+    margin-top: 20px;
+}
+.keys{
+    display: inline-block;   
+    position: relative;
+}
+.key{
+    float: left;
+    width: 30px;
+    box-sizing: border-box;
+    padding: 80px 0 5px 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    line-height: 20px;
+    font-size: 13px;
+    padding-left: 5px;
+    text-align: left;
+}
+/*.key:hover,*/ .press.key{
+    border-color: #bbb;
+    background: #efefef;
+}
+.key.spe{
+    width: 26px;
+    font-size: 12px;
+    position: absolute;    
+    padding-left: 5px;
+    bottom: 35px;
+    padding-top: 45px;
+    background: #999;
+    color: #fff;
+}
+/*.key.spe:hover,*/ .press.key.spe{
+    background: #000;
+}
+.keydesc{
+    width: 480px;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 40px;
+    line-height: 25px;
+    font-size: 13px;
+}
+.example{
+    line-height: 
+}
+.notice{
+    color: #f30000;
+}

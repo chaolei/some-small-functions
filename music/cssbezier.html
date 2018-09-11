@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>动画曲线</title>
+        <style>
+            .animnode{
+                position: absolute;
+                left: 0;
+                width: 100px;
+                height: 100px;                
+                background: #000;
+                color: #fff;
+                text-align: center
+            }
+            .animnode.go{
+                left: 50%;
+            }
+            .normal1{
+                top: 10px;
+                transition: 1s left ease;
+            }
+            .normal2{
+                top: 120px;
+                transition: 1s left ease-in;
+            }
+            .bezier1{
+                top: 230px;
+                transition: 1s left cubic-bezier(1, 0, 0, 1) ;
+            }
+        </style>    
+    </head>
+    <body>
+        <div class="anim-con">
+            <div class="normal1 animnode">普通1</div>
+            <div class="normal2 animnode">普通2</div>
+            <div class="bezier1 animnode">普通2</div>
+        </div>
+        <script>
+            document.querySelector(".anim-con").addEventListener('click',function(ev){
+                let node = ev.target;
+                node.setAttribute("class",node.getAttribute("class")+' go');
+            });
+        </script>        
+    </body>
+</html>
