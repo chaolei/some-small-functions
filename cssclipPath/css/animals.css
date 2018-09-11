@@ -8,8 +8,8 @@ body{
     position: absolute;
     left: 50%;
     top: 40%;
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     transform: translate(-50%, -50%);
     border: 1px solid #ccc;
 }
@@ -292,6 +292,72 @@ body{
     background: #000;
     clip-path: polygon(62% 41.5%, 62.5% 43%, 61.5% 43%);
 }
+
+.bird .shape-con:nth-child(1) .shape{
+    background: #ED7888;
+    clip-path: polygon(20% 40%, 22% 37%, 24% 39%);
+}
+.bird .shape-con:nth-child(2) .shape{
+    background: #B1C3DB;
+    clip-path: polygon(22% 37%, 27% 34%, 35% 40%);
+}
+.bird .shape-con:nth-child(3) .shape{
+    background: #7695AA;
+    clip-path: polygon(22% 37%, 24% 39%, 35% 40%);
+}
+.bird .shape-con:nth-child(4) .shape{
+    background: #90A5C0;
+    clip-path: polygon(23.5% 39%, 28% 48%, 35% 40%);
+}
+.bird .shape-con:nth-child(5) .shape{
+    background: #92A7C2;
+    clip-path: polygon(40% 45.5%, 28% 48%, 35% 40%);
+}
+.bird .shape-con:nth-child(6) .shape{
+    background: #92A7C2;
+    clip-path: polygon(40% 45.5%, 28% 48%, 32% 50.5%);
+}
+.bird .shape-con:nth-child(7) .shape{
+    background: #8094AD;
+    clip-path: polygon(40% 45.5%, 40% 52%, 32% 50.5%);
+}
+.bird .shape-con:nth-child(8) .shape{
+    background: #94AAC1;
+    clip-path: polygon(40% 45.5%, 40% 52%, 45% 52.5%);
+}
+.bird .shape-con:nth-child(9) .shape{
+    background: #9EB8D1;
+    clip-path: polygon(46% 56.5%, 40% 52%, 45% 52.5%);
+}
+.bird .shape-con:nth-child(10) .shape{
+    background: #728AA4;
+    clip-path: polygon(46% 56.5%, 51% 55%, 45% 52.5%);
+}
+.bird .shape-con:nth-child(11) .shape{
+    background: #9BB0CB;
+    clip-path: polygon(35% 40%, 38% 32%, 45% 36%);
+}
+.bird .shape-con:nth-child(12) .shape{
+    background: #91AAC0;
+    clip-path: polygon(51% 20%, 38% 32%, 45% 36%);
+}
+.bird .shape-con:nth-child(14) .shape{
+    background: #B5C6E2;
+    clip-path: polygon(40% 45.5%, 40% 36%, 35% 40%);
+}
+.bird .shape-con:nth-child(15) .shape{
+    background: #B5C6E2;
+    clip-path: polygon(40% 45.5%, 40% 36%, 47% 43%);
+}
+.bird .shape-con:nth-child(16) .shape{
+    background: #8DA2BD;
+    clip-path: polygon(60% 38%, 40% 36%, 47% 43%);
+}
+.bird .shape-con:nth-child(17) .shape{
+    background: #333;
+    clip-path: polygon(26.5% 36%, 27% 36.5%, 26% 36.5%);
+}
+
 
 .next{
     position: absolute;
