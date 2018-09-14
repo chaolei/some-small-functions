@@ -1,0 +1,86 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>css旋转--感觉很玄学</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{margin: 0; padding: 0;text-align: center;}
+            @keyframes showball{
+                0%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }  
+            }
+            @keyframes moveY{
+                0%,100%{
+                    transform: translateY(0);
+                }    
+                50%{
+                    transform: translateY(-200px);
+                }
+            }
+            @keyframes moveX{
+                0%,100%{
+                transform: translateX(0);
+                }
+                50%{
+                    transform: translateX(100px);
+                }
+            }
+            .animate{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;;
+            }
+            .r-container{
+                position: absolute;
+                left: 50%;
+                top: 20px;
+                margin-left: -100px;
+                width: 200px;
+                height: 200px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                border-radius: 100%;
+                transform: scale3d(0.5,1,1);
+            }
+            .ball-container{
+                width: 100px;
+                height: 100px;
+                margin-left: 50%;
+                margin-top: 210px;
+                opacity: 0;
+                transform: translateX(-60px);
+                animation: showball 0.5s 1s linear forwards;
+            }
+
+            .go-x{
+                width: 30px;
+                height: 30px;
+                animation: moveX 4s 1s ease-in-out infinite; 
+            }
+            .go-y{
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                background: yellow;
+                animation: moveY 4s 0s ease-in-out infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="animate">
+            <div class="r-container">            
+            </div>
+            <div class="ball-container">
+                <div class="go-x">
+                    <div class="go-y"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -358,6 +358,111 @@ body{
     clip-path: polygon(26.5% 36%, 27% 36.5%, 26% 36.5%);
 }
 
+.goose .shape-con:nth-child(1) .shape{ 
+    background: #D15C53;
+    clip-path: polygon(45% 8%, 56% 11%, 45% 13%);
+}
+.goose .shape-con:nth-child(2) .shape{ 
+    background: #D15C53;
+    clip-path: polygon(45% 13%, 54% 16%, 45% 16.5%);
+}
+.goose .shape-con:nth-child(3) .shape{ 
+    background: #B7C4CC;
+    clip-path: polygon(45% 8%, 45% 16.5%, 47.5% 13%);
+}
+.goose .shape-con:nth-child(4) .shape{ 
+    background: #E2EDF3;
+    clip-path: polygon(45% 8%, 45% 16.5%, 39% 10%);
+}
+.goose .shape-con:nth-child(5) .shape{ 
+    background: #A6B5BC;
+    clip-path: polygon(28% 15.5%, 45% 16.5%, 39% 10%);
+}
+.goose .shape-con:nth-child(6) .shape{ 
+    background: #D2D9E1;
+    clip-path: polygon(28% 15.5%, 36% 16%, 27% 25%);
+}
+.goose .shape-con:nth-child(7) .shape{ 
+    background: #BAC3CA;
+    clip-path: polygon(27% 25%, 32% 20%, 34% 26%);
+}
+.goose .shape-con:nth-child(8) .shape{ 
+    background: #C4CFD1;
+    clip-path: polygon(27% 25%, 40% 35%, 34% 26%);
+}
+.goose .shape-con:nth-child(9) .shape{ 
+    background: #A9B6BC;
+    clip-path: polygon(27% 25%, 40% 35%, 32.5% 38%);
+}
+.goose .shape-con:nth-child(10) .shape{ 
+    background: #D1DDDD;
+    clip-path: polygon(36.5% 44%, 40% 35%, 32.5% 38%);
+}
+.goose .shape-con:nth-child(11) .shape{ 
+    background: #A5AFB8;
+    clip-path: polygon(36.5% 44%, 40% 35%, 52% 46%);
+}
+.goose .shape-con:nth-child(12) .shape{ 
+    background: #C8D1D8;
+    clip-path: polygon(36.5% 44%, 48.5% 55%, 52% 46%);
+}
+.goose .shape-con:nth-child(13) .shape{ 
+    background: #CDD6DB;
+    clip-path: polygon(51% 66%, 48.5% 55%, 52% 46%);
+}
+.goose .shape-con:nth-child(14) .shape{ 
+    background: #A9ADAC;
+    clip-path: polygon(51% 66%, 49% 66%, 50.5% 64%);
+}
+.goose .shape-con:nth-child(15) .shape{ 
+    background: #D44C4C;
+    clip-path: polygon(51% 66%, 45% 69%, 43% 66%);
+}
+.goose .shape-con:nth-child(16) .shape{ 
+    background: #D44C4C;
+    clip-path: polygon(39% 68%, 45% 69%, 43% 66%);
+}
+.goose .shape-con:nth-child(17) .shape{ 
+    background: #BEC9CD;
+    clip-path: polygon(50% 31%, 40% 35%, 52% 46%);
+}
+.goose .shape-con:nth-child(18) .shape{ 
+    background: #D4DFE5;
+    clip-path: polygon(50% 31%, 58% 42%, 52% 46%);
+}
+.goose .shape-con:nth-child(19) .shape{ 
+    background: #A7B1BA;
+    clip-path: polygon(50% 31%, 58% 42%, 61% 37%);
+}
+.goose .shape-con:nth-child(20) .shape{ 
+    background: #CCD7DD;
+    clip-path: polygon(50% 31%, 68% 37.5%, 61% 37%);
+}
+.goose .shape-con:nth-child(21) .shape{ 
+    background: #E2ECED;
+    clip-path: polygon(50% 31%, 68% 37.5%, 75% 32%);
+}
+.goose .shape-con:nth-child(22) .shape{ 
+    background: #A0ABAF;
+    clip-path: polygon(61% 37%, 66% 41.5%, 59.1% 39.5%);
+}
+.goose .shape-con:nth-child(23) .shape{ 
+    background: #A0ABAF;
+    clip-path: polygon(59.1% 39.5%, 63% 43%, 58% 42%);
+}
+.goose .shape-con:nth-child(24) .shape{ 
+    background: #99A6AE;
+    clip-path: polygon(52% 46%, 63% 43%, 58% 42%);
+}
+.goose .shape-con:nth-child(25) .shape{ 
+    background: #B3BDBF;
+    clip-path: polygon(52% 46%, 63% 43%, 51.5% 54%);
+}
+.goose .shape-con:nth-child(26) .shape{ 
+    background: #333;
+    clip-path: polygon(43.5% 10.5%, 44% 11.5%, 43% 11.5%);
+}
+
 
 .next{
     position: absolute;
