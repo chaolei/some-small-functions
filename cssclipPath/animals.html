@@ -5,21 +5,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/animals.css">
     </head>
-    <body>
+    <body class="">
         <div class="animals-container">
-            <div class="animals goose">
+            <div class="animals">
             </div>
         </div>
-        <div class="next">下一个</div>
-        <div class="prev">上一个</div>
+        <div class="show hide">Find it</div>
+        <div class="next hide"><div class="next-arrow"></div></div>
+        <div class="home hide"></div>
+        <div class="prev hide"><div class="prev-arrow"></div></div>
         <script>
-            var thingArr = ['elephant','hummer','bird','goose'], cur=3;
+            var animalArr = ['elephant','hummer','bird','goose'], cur=0;
+            var animalDesc = {
+                elephant: {
+                    name: "大象",
+                    desc: "大大"
+                },
+                hummer: {
+                    name: "蜂鸟",
+                    desc: "大大"
+                },
+                bird: {
+                    name: "鸽子",
+                    desc: "的大锅饭"
+                },
+                goose: {
+                    name: "鹅",
+                    desc: "从VB下次v"
+                }
+            };
             var nextbtn = document.querySelector(".next");
             var prevbtn = document.querySelector(".prev");
             var thingCon = document.querySelector(".animals");
             var shapeCon, shapeNode;
+
             function init(num){
-                for(var i=0;i<num;i++){
+                for(var i=0;i<num;i++){//没用fragment，无所谓
                     shapeCon = document.createElement("div");
                     shapeNode = document.createElement("div");
                     shapeCon.setAttribute("class", "shape-con");
@@ -27,20 +48,85 @@
                     shapeCon.appendChild(shapeNode);
                     thingCon.appendChild(shapeCon);
                 }
+                setTimeout(showLoading, 100);
+            }
+
+            function showLoading(){
+                var show = document.querySelector(".show");
+                show.setAttribute("class", "show hide");
+                thingCon.setAttribute("class", "animals ");
+                document.body.setAttribute("class", "loading"); 
+                setTimeout(showWarp, 1200);
+            }
+
+            function showWarp(){
+                document.querySelector(".animals-container").style.width = "400px";
+                document.querySelector(".animals-container").style.height = "400px";
+                setTimeout(function(){
+                    document.querySelector(".animals-container").style.width = "";
+                    document.querySelector(".animals-container").style.height = "";
+                    
+                    showWrapNode(10);
+                }, 200);
+            }
+
+            function showWrapNode(num){
+                document.body.setAttribute("class", "wrap");
+
+                var nodes = document.querySelectorAll(".shape");
+                var random1,random2,p2x,p2y,p3x,p3y;
+                for(var i=0;i<num;i++){
+                    random1 = Math.floor(Math.random()*100);
+                    random2 = Math.floor(Math.random()*100);
+                    p2x = random1+Math.random()*10 +"%";
+                    p2y = random1+Math.random()*10+"%";
+                    p3x = random1-Math.random()*5+"%";
+                    p3y = random1+Math.random()*10+"%";
+                    random1 = random1 + "%";
+                    random2 = random2 + "%";
+                    nodes[i].setAttribute("style","clip-path: polygon("+random1+" "+random2+", "+p2x+" "+p2y+", "+p3x+" "+p3y+")");
+                }
+
+                setTimeout(showTitle, 1800);
+            }
+
+            function showTitle(){
+                
+                var nodes = document.querySelectorAll(".shape");
+                for(var i=0;i<10;i++){
+                    nodes[i].setAttribute("style","");
+                }
+
+                document.body.setAttribute("class", "words");
+
+                setTimeout(() => {
+                    var show = document.querySelector(".show");
+                    show.setAttribute("class", "show");
+                    show.addEventListener("click", function(){
+                        show.setAttribute("class","show hide");
+                        var showName = animalArr[0];
+                        thingCon.setAttribute("class", "animals " + showName);
+                        document.body.setAttribute("class", showName);
+                        nextbtn.setAttribute("class","next");
+                        prevbtn.setAttribute("class","prev");
+                    });
+                }, 1500);
             }
             
             init(37);
             nextbtn.addEventListener("click", function(){
                 cur++;
-                cur = cur >= thingArr.length ? 0 : cur;
-                var showName = thingArr[cur];
-                thingCon.setAttribute("class", "something " + showName);
+                cur = cur >= animalArr.length ? 0 : cur;
+                var showName = animalArr[cur];
+                thingCon.setAttribute("class", "animals " + showName);
+                document.body.setAttribute("class", showName);
             });
             prevbtn.addEventListener("click", function(){
                 cur--;
-                cur = cur < 0 ? thingArr.length-1 : cur;
-                var showName = thingArr[cur];
-                thingCon.setAttribute("class", "something " + showName);
+                cur = cur < 0 ? animalArr.length-1 : cur;
+                var showName = animalArr[cur];
+                thingCon.setAttribute("class", "animals " + showName);
+                document.body.setAttribute("class", showName);
             });
         </script>
     </body>
