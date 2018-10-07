@@ -14,17 +14,29 @@ body.goose{
     background: radial-gradient(#F9B29C 5%, #F69273 50%,  #F68F6F 100%);    
     background: -webkit-radial-gradient(#F9B29C 5%, #F69273 50%,  #F68F6F 100%);    
 }
+.goose .next:after, .goose .prev:after, .goose .home:after{
+    background: #F68F6F;
+}
 body.hummer{
     background: radial-gradient(#F2CB78 5%, #EDBA4A 50%, #EDB948 100%);  
     background: -webkit-radial-gradient(#F2CB78 5%, #EDBA4A 50%,  #EDB948 100%);    
+}
+.hummer .next:after, .hummer .prev:after, .hummer .home:after{
+    background: #EDB948;
 }
 body.bird{
     background: radial-gradient(#B1A5EF 5%, #9B8BEB 50%,  #9787EA 100%);   
     background: -webkit-radial-gradient(#B1A5EF 5%, #9B8BEB 50%,  #9787EA 100%);    
 }
+.bird .next:after, .bird .prev:after, .bird .home:after{
+    background: #9787EA;
+}
 body.elephant{
     background: radial-gradient(#8CD4C1 5%, #6CC8B0 50%, #63C5AB 100%);   
     background: -webkit-radial-gradient(#8CD4C1 5%, #6CC8B0 50%, #63C5AB 100%);    
+}
+.elephant .next:after, .elephant .prev:after, .elephant .home:after{
+    background: #63C5AB;
 }
 .hide{
     display: none;
@@ -748,7 +760,7 @@ body.elephant{
     transition: transform 1s linear 0.5s;
 }
 .wrap .animals{
-    transform: rotate(360deg);
+    transform: rotate(180deg);
 }
 
 .words .shape-con .shape{
@@ -833,7 +845,28 @@ body.elephant{
 .words .shape-con:nth-child(26) .shape{
     clip-path: polygon(29% 65%, 70% 64%, 70% 66%);
 }
-
+@keyframes changeColor1{
+    0%{background: #232326;}
+    40%{background: #09090A;}
+    90%{background: #232326;}
+}
+@keyframes changeColor2{
+    0%{background: #09090A;}
+    40%{background: #232326;}
+    90%{background: #09090A;}
+}
+.wrap .shape-con:nth-child(odd) .shape{
+    background: #232326;
+}
+.wrap .shape-con:nth-child(13) .shape, .wrap .shape-con:nth-child(5) .shape, .wrap .shape-con:nth-child(9) .shape, .wrap .shape-con:nth-child(17) .shape{
+    animation: changeColor1 1.5s ease-in infinite;
+}
+.wrap .shape-con:nth-child(even) .shape{
+    background: #09090A;
+}
+.wrap .shape-con:nth-child(4) .shape, .wrap .shape-con:nth-child(8) .shape, .wrap .shape-con:nth-child(14) .shape, .wrap .shape-con:nth-child(20) .shape{
+    animation: changeColor2 1.5s ease-in infinite;
+}
 
 
 .next{
@@ -898,7 +931,7 @@ body.elephant{
 .prev{
     position: absolute;
     right: 100px;
-    top: 250;
+    top: 190px;
     width: 60px;
     height: 60px;
     cursor: pointer;
@@ -983,4 +1016,42 @@ body.elephant{
     width: 138px;
     height: 32px;
     line-height: 32px;
+}
+.home{
+    position: absolute;
+    right: 90px;
+    top: 260px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.home:before{
+    position: absolute;
+    content: "";
+    top:0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: url(../images/green-texture.png) repeat;
+}
+.home:hover:before{
+    top: -4px;
+    left: -4px;
+    width: 88px;
+    height: 88px;
+}
+.home:after{
+    position: absolute;
+    content: "Home";
+    top: 4px;
+    left: 4px;
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    text-align: center;
+    border-radius: 100%;
+    color: #fff;
 }
