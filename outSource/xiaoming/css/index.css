@@ -1,0 +1,174 @@
+body,div,p,span{margin:0;padding:0}
+body{
+    background: transparent;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+    background: #232125;    
+    -webkit-border-radius: 12px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #675862;
+    -webkit-border-radius: 12px
+}
+.container{
+    width: 720px;
+    height: 473px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.8);
+    border-top: none;
+    box-sizing: border-box;
+}
+.fleft{
+    float: left;
+    width: 62.5%;
+}
+.fright{
+    float: left;    
+    width: 267px;
+}
+.hide{
+    display: none
+}
+
+.data-header{
+    color: #FFD193;
+    font-size: 24px;
+    background: url(../images/dollar.png) no-repeat;
+    background-position: 2px -10px;
+    height: 48px;
+}
+.data2-list .data-header{
+    background-position: 1px -78px;
+}
+.header-title{
+    text-align: center;
+}
+.layout{
+    position: relative;
+    padding-left: 45%;
+}
+.layout1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+}
+.datas{
+    height: 360px;
+    overflow-y: auto;    
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+.data-item{
+    line-height: 32px;
+    color: #fff;
+    width: 98%;
+    box-sizing: border-box;
+    margin: 0px auto 4px auto;
+    background: url(../images/dollar.png) no-repeat;
+    background-position: -4px -128px;
+}
+.data-item.last{
+    color: #FFE087;
+}
+
+.top-item, .bottom-item{
+    border: 1px solid #7C587A;
+    border-radius: 5px;
+}
+.item-data table{
+    border-collapse: collapse;
+    margin: 2px auto;
+}
+.item-data td{
+    border: 1px solid #7C587A;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    padding-top: 0px;
+    padding-bottom: 2px;
+}
+
+.item-data table tr:nth-child(1) td,.item-data table tr:last-child td{
+    color: #FFE087;
+}
+.item-data table td:nth-child(1) div{
+    display: inline-block;
+    width: 40px;
+    margin: 0 auto;
+    color: #FFE087;
+}
+.item-header{
+    background: url(../images/dollar.png) no-repeat;
+    height: 46px;
+}
+.item-header span{
+    display: inline-block;
+    margin-left: 110px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 7px;
+}
+.top-item .item-header{
+    background-position: -456px -82px;
+}
+.bottom-item{
+    margin-top: 5px;
+}
+.bottom-item td{
+    color: #FFE087;
+    font-weight: bold;
+}
+.bottom-item .item-header{
+    background-position: -456px -361px;
+    margin-bottom: 10px;
+}
+.account{
+    width: 100px;
+    background: #111;
+    border: 0;
+    padding: 3px 0 3px 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.btn{
+    background: url(../images/dollar.png) no-repeat;
+    display: inline-block;
+    cursor: pointer;
+}
+.get-cash-area{
+    text-align: center;
+    margin: 10px 0 8px 0;
+}
+.btn-lists{
+    text-align: center;
+    margin-top: 10px;
+}
+.get-cash{
+    width: 112px;
+    height: 53px;
+    background-position: -536px -493px;
+}
+.record1{
+    width: 131px;
+    height: 46px;
+    background-position: -11px -496px;
+}
+.record2{
+    width: 131px;
+    height: 46px;
+    background-position: -160px -496px;
+    margin-left: 10px;
+}
+.club{
+    width: 130px;
+    height:46px;
+    background-position: -310px -496px;
+    margin-left: 10px;
+}
