@@ -1,0 +1,16 @@
+body,div,p,span{margin:0;padding:0}
+body{
+    background: transparent;
+}
+
+.container{
+    position: relative;
+    width: 934px;
+    height: 506px;
+    margin: 0 auto;
+    background: url(../images/changebg.png) no-repeat;
+    background-position: -37px -110px;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    box-sizing: border-box;
+}

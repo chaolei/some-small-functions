@@ -1,0 +1,111 @@
+.videoshow{
+    position: relative;
+    background: #333;
+}
+.videoshow:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.videoshow img{
+    width: 100px;
+}
+.playvideo{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    display: none;
+    background: url(../i/vplay_normal.png) no-repeat;
+}
+.videoshow.complete .playvideo{
+    opacity: 1;
+    display: block;
+}
+@keyframes loadingstart{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.videoloading{
+    position: absolute;    
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    animation: loadingstart 1s linear infinite;
+    opacity: 0;
+    z-index: 1;
+}
+
+.init .videoloading{
+    opacity: 1;
+}
+.loadingIn{
+    position: absolute;  
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    transform: rotate(-15deg);
+    transform-origin: right center;
+}
+.loadingIn2{
+    position: absolute;  
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+}
+.loadingIn:before{
+    position: absolute;
+    content: "";
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+.loadingIn2:before{
+    position: absolute;
+    content: "";
+    box-sizing: border-box;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+
+.processcon{
+    position: absolute;  
+    left: 50%;
+    top: 50%;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: rgba(0,0,0,0.4);
+    
+}
+#process-animation{
+    transition: all 0.1s linear;
+}

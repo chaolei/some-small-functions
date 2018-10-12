@@ -3,6 +3,8 @@ function _init(){
     var btn2 = document.querySelector(".record2");
     var list1 = document.querySelector(".data1-list");
     var list2 = document.querySelector(".data2-list");
+    var getCash = document.querySelector(".get-cash");
+    var close = document.querySelector(".tips-close");
 
     btn1.addEventListener("click", function(){
         var cls = btn1.getAttribute("class");
@@ -21,5 +23,17 @@ function _init(){
         list1.setAttribute("class","data1-list hide");
         list2.setAttribute("class","data2-list");
     });
+
+    getCash.addEventListener("click", function(){
+        var tips = document.querySelector(".cash-tips-mask");
+        tips.setAttribute("class", "cash-tips-mask show");
+    });
+
+    close.addEventListener("click", function(){
+        var tips = document.querySelector(".cash-tips-mask");
+        tips.setAttribute("class", "cash-tips-mask");
+    });
+
+
 } 
 _init();
