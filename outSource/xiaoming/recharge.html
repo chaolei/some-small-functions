@@ -1,4 +1,3 @@
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -8,8 +7,92 @@
     </head>
     <body>
         <div class="container">
-            
+            <div class="mycharge">
+                <div class="cash">18888</div>
+                <div class="cashbox">38888</div>
+            </div>
+            <div class="menulist">
+                <div class="nav " data-list="gov-charge">官方充值</div>
+                <div class="nav cur" data-list="other-charge" data-type="zhifubao">支付宝</div>
+                <div class="nav" data-list="other-charge" data-type="weixin">微信充值</div>
+                <div class="nav" data-list="other-charge" data-type="qq">QQ充值</div>
+                <div class="nav" data-list="other-charge" data-type="blank">银联充值</div>
+                <div class="nav" data-list="other-charge" data-type="jd">京东充值</div>
+            </div>
+            <div class="content-list ">
+                <div class="gov-charge hide list-type">
+                    <div class="gov-title">请选择官方代理充值</div>
+                    <div class="gov-btns">
+                        <div class="charge charge-btn1"></div>
+                        <div class="charge charge-btn2"></div>
+                        <div class="charge charge-btn3"></div>
+                        <div class="charge charge-btn4"></div>
+                        <div class="charge charge-btn5"></div>
+                        <div class="charge charge-btn6"></div>
+                    </div>
+                    <div class="myinfo">
+                        <div class="info">
+                            <span>昵称：<span>Skehus125</span></span>
+                            <span>我的ID：<span>8886660</span></span>
+                        </div>
+                        <div class="copy"></div>
+                    </div>
+                    <div class="tips">
+                        <p>温馨提示： </p>
+                        <p>各位亲爱的玩家！每笔充值必须在游戏里核对你添加的VIP代理充值微信号、 QQ号是否还在官方授权下！平台提供官方代理充值、线上充值两种方式，其他途径非本平台充值，谨防受骗！</p>
+                    </div>
+                </div>
+                <div class="other-charge list-type">
+                    <div class="cash-tips ">充值比例：1元=1金币</div>
+                    <div class="charge-input">
+                        <input type="text"/>
+                        <div class="clearinput"></div>
+                    </div>
+                    <div class="chargenum">
+                        <div class="charge-money money1"></div>
+                        <div class="charge-money money2"></div>
+                        <div class="charge-money money3"></div>
+                        <div class="charge-money money4"></div>
+                        <div class="charge-money money5"></div>
+                        <div class="charge-money money6"></div>
+                    </div>
+                    <div class="confirm-area">
+                        <div class="confirm"></div>
+                    </div>
+                    <div class="other-tips">
+                        <div class="tips1">点击确定跳转支付界面，充值成功会自动更新金币，充值最低10元，需安装<span class="plat-name">支付宝</span>客户端</div>
+                        <div class="tips2">如遇无法充值情况，请切换左边其他充值方式，给你带来不便请谅解</div>
+                    </div>
+                </div>
+            </div>
+            <div class="charge-mask hide">
+                <div class="wrap">
+                    <div class="modal-header">
+                        <div class="modal-title"></div>
+                        <div class="modal-close"></div>
+                    </div>
+                    <div class="modal-content">
+                        <div class="company">
+                            xxxx(代理商)
+                        </div>
+                        <div class="sprate"></div>
+                        <div class="copy-area">
+                            <div class="copy-weixin">
+                                <div class="plat-ico"></div>
+                                <div class="plat-account">ID名_FTYJ</div>
+                                <div class="copyname"></div>
+                            </div>
+                            <div class="copy-qq">
+                                <div class="plat-ico"></div>
+                                <div class="plat-account">ID名_FTYJ</div>
+                                <div class="copyname"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <script src="./js/jquery-1.7.2.js"></script>
         <script src="./js/recharge.js"></script>
     </body>
 </html>

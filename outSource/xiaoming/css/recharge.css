@@ -1,6 +1,7 @@
 body,div,p,span{margin:0;padding:0}
 body{
     background: transparent;
+    font-weight: bold;
 }
 
 .container{
@@ -13,4 +14,331 @@ body{
     border-radius: 0 0 5px 5px;
     border-top: none;
     box-sizing: border-box;
+}
+.hide{
+    display: none;
+}
+.mycharge{
+    position: absolute;
+    width: 538px;
+    height: 50px;
+    top: 10px;
+    left: 300px;
+    background: url(../images/changebg.png) no-repeat;
+    background-position: -248px -635px;
+}
+.mycharge div{
+    color: #FFD88C;
+    font-weight: bold;
+    font-size: 20px;
+}
+.cash{
+    position: absolute;
+    left: 55px;
+    top: 12px;
+}
+.cashbox{
+    position: absolute;
+    left: 355px;
+    top: 12px; 
+}
+.menulist{
+    position: absolute;
+    left: 90px;
+    top: 75px;
+    width: 140px;
+}
+.nav{
+    line-height: 60px;
+    height: 60px;
+    color: #98778E;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+.nav.cur{
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -16px -485px;
+    color: #FFD88C;
+}
+.content-list{
+    position: absolute;
+    width: 570px;
+    left: 264px;
+    top: 73px;
+}
+.gov-title{
+    text-align: center;
+    color: #EBB478;
+    font-weight: bold;
+    font-size: 22px;
+}
+.gov-btns{
+    background: rgba(0,0,0,0.2);
+    padding-top: 10px;
+    border-radius: 6px;
+    border-bottom: 1px solid #4A3B3D;
+}
+.gov-btns .charge{
+    display: inline-block;
+    width: 257px;
+    height: 72px;
+    background-image: url(../images/changeico.png);
+    background-repeat: no-repeat;
+    margin-left: 17px;
+    cursor: pointer;
+}
+.charge-btn1{
+    background-position: -82px -11px;
+}
+.charge-btn2{
+    background-position: -360px -11px;
+}
+.charge-btn3{
+    background-position: -82px -81px;
+}
+.charge-btn4{
+    background-position: -360px -81px;
+}
+.charge-btn5{
+    background-position: -82px -156px;
+}
+.charge-btn6{
+    background-position: -360px -156px;
+}
+.myinfo{
+    position: relative;
+    padding-top: 10px;
+}
+.info{
+    background: rgba(0,0,0,0.3);
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 1px 10px;
+    display: inline-block;
+    border-bottom: 1px solid #4A3B3D;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.info > span:first-child{
+    margin-right: 20px;
+}
+.copy{
+    position: absolute;
+    width: 110px;
+    height: 54px;
+    right: 10px;
+    top: 5px;    
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -475px -486px;
+    cursor: pointer;
+}
+.tips{
+    color: #EBB478;
+    font-size: 15px;
+    font-weight: bold;
+}
+.cash-tips{
+    position: relative;
+    height: 40px;
+    padding-left: 50px;
+    line-height: 40px;
+    color: #EBB478;  
+    font-weight: bold;
+}
+.cash-tips:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;    
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -19px -227px;
+}
+.zhifubao.cash-tips:before{
+    background-position: -19px -227px;
+}
+.weixin.cash-tips:before{
+    background-position: -19px -174px;
+}
+.qq.cash-tips:before{
+    background-position: -19px -290px;
+}
+.jd.cash-tips:before{
+    background-position: -19px -347px;
+}
+.charge-input{
+    position: relative;
+}
+.clearinput{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 120px;
+    height: 54px;
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -460px -264px;
+}
+.charge-input input{
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    line-height: 40px;
+    padding-left: 10px;
+    height: 40px;
+    width: 355px;
+    margin-left: 50px;
+    margin-top: 5px;
+    border-bottom: 1px solid #4A3B3D;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.chargenum{
+    margin-top: 10px;
+}
+.charge-money{
+    width: 124px;
+    height: 62px;
+    display: inline-block;    
+    background: url(../images/changeico.png) no-repeat;
+    margin-left: 48px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+.money1{
+    background-position: -79px -331px;
+}
+.money2{
+    background-position: -249px -331px;
+}
+.money3{
+    background-position: -419px -331px;
+}
+.money4{
+    background-position: -79px -401px;
+}
+.money5{
+    background-position: -249px -401px;
+}
+.money6{
+    background-position: -419px -401px;
+}
+.confirm-area{
+    text-align: center;
+    margin: 15px 0;
+}
+.confirm{
+    display: inline-block;
+    width: 172px;
+    height: 69px;
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -222px -483px;
+    cursor: pointer;
+}
+.other-tips{
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+.tips1{
+    color: #E0BE7D;
+    margin-bottom: 5px;
+}
+.tips2{
+    color: #D8A9CA;
+}
+.charge-mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: rgba(0,0,0,0.1);
+}
+.wrap{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    width: 726px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.92);
+}
+.modal-header{
+    height: 64px;
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -8px -578px;
+    text-align: center;
+}
+.modal-title{
+    display: inline-block;    
+    margin-top: 2px;
+    width: 228px;
+    height: 56px;
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -88px -248px;
+}
+.modal-close{
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    width: 62px;
+    height: 62px;
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -340px -240px;
+    cursor: pointer;
+}
+.modal-content{
+    padding: 40px;
+}
+.company{
+    text-align: center;
+    color: #877766;
+    font-size: 18px;
+}
+.sprate{
+    line-height: 1px;
+    height: 1px;
+    background: #4C4239;
+    margin-top: 30px;
+}
+.copy-area > div{
+    margin-top: 30px;
+    text-align: center;
+}
+.copy-weixin > div, .copy-qq > div{
+    display: inline-block;
+    vertical-align: middle;
+}
+.plat-ico{
+    width: 40px;
+    height: 40px;
+    background: url(../images/changeico.png) no-repeat;    
+}
+.plat-account{
+    width: 123px;
+    margin: 0 10px;
+    color: #877766;
+    text-align: left;
+}
+.copy-weixin .plat-ico{
+    background-position: -19px -174px;
+}
+.copy-qq .plat-ico{
+    background-position: -19px -290px;
+}
+.copyname{
+    width: 110px;
+    height: 48px;
+    background: url(../images/changeico.png) no-repeat;
+    background-position: -475px -488px;
+    cursor: pointer;
 }
