@@ -56,11 +56,44 @@ body{
     font-size: 24px;
     text-align: center;
     cursor: pointer;
+    letter-spacing: 3px;
+    text-indent: -999px;
+    background: url(../images/selectico.png) no-repeat;
 }
-.nav.cur{
-    background: url(../images/changeico.png) no-repeat;
-    background-position: -16px -485px;
-    color: #FFD88C;
+
+.menulist .nav:nth-child(1){
+    background-position: -623px -410px;
+}
+.menulist .nav:nth-child(2){
+    background-position: -494px -450px;
+}
+.menulist .nav:nth-child(3){
+    background-position: -494px -513px;
+}
+.menulist .nav:nth-child(4){
+    background-position: -494px -577px;
+}
+.menulist .nav:nth-child(5){
+    background-position: -494px -644px;
+}
+.menulist .nav:nth-child(6){
+    background-position: -494px -706px;
+}
+
+.menulist .nav:nth-child(1).cur{
+    background-position: -15px -427px;
+}
+.menulist .nav:nth-child(2).cur{
+    background-position: -16px -632px;
+}
+.menulist .nav:nth-child(3).cur{
+    background-position: -261px -632px;
+}
+.menulist .nav:nth-child(4).cur{
+    background-position: -261px -547px;
+}
+.menulist .nav:nth-child(6).cur{
+    background-position: -16px -546px;
 }
 .content-list{
     position: absolute;
@@ -268,14 +301,17 @@ body{
     left: 50%;
     top: 40%;
     transform: translate(-50%,-50%);
-    width: 726px;
+    width: 728px;
     border-radius: 5px;
-    background: rgba(0,0,0,0.92);
+    background: url(../images/selectico.png) no-repeat;
+    background-position: 0px -30px;
+    height: 360px;
+    border-radius: 15px;
 }
 .modal-header{
     height: 64px;
     background: url(../images/changeico.png) no-repeat;
-    background-position: -8px -578px;
+    background-position: -7px -578px;
     text-align: center;
 }
 .modal-title{
@@ -301,14 +337,11 @@ body{
 }
 .company{
     text-align: center;
-    color: #877766;
+    color: #B29C86;
     font-size: 18px;
 }
-.sprate{
-    line-height: 1px;
-    height: 1px;
-    background: #4C4239;
-    margin-top: 30px;
+.copy-area{
+    margin-top: 60px;
 }
 .copy-area > div{
     margin-top: 30px;
@@ -326,7 +359,7 @@ body{
 .plat-account{
     width: 123px;
     margin: 0 10px;
-    color: #877766;
+    color: #B29C86;
     text-align: left;
 }
 .copy-weixin .plat-ico{
