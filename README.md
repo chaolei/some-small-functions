@@ -60,3 +60,7 @@ ALT + A.
 12、音乐演奏（music）
 
 主要用html5的audio api发出声音
+
+13、饼图加载（loadProcess）
+
+一个加载动画，先转圈加载，然后执行loading方法，进度开始，用的svg的一个小技巧。很方便。

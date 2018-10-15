@@ -52,60 +52,29 @@
 .init .videoloading{
     opacity: 1;
 }
-.loadingIn{
-    position: absolute;  
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    left: 0;
-    top: 0;
-    transform: rotate(-15deg);
-    transform-origin: right center;
+.videoshow{
+	position: relative;
+	width: 100px;
+	height: 200px;
+	background: #333;
 }
-.loadingIn2{
-    position: absolute;  
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    right: 0;
-    top: 0;
-}
-.loadingIn:before{
-    position: absolute;
-    content: "";
-    box-sizing: border-box;
-    left: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 100%;
-}
-.loadingIn2:before{
-    position: absolute;
-    content: "";
-    box-sizing: border-box;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 100%;
-}
-
 .processcon{
-    position: absolute;  
-    left: 50%;
-    top: 50%;
-    width: 36px;
-    height: 36px;
-    border: 2px solid #fff;
-    border-radius: 100%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    background: rgba(0,0,0,0.4);
-    
+	position: absolute;  
+	left: 50%;
+	top: 50%;
+	width: 36px;
+	height: 36px;
+	border: 2px solid #fff;
+	border-radius: 100%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	background: rgba(0,0,0,0.4);
+	display: none;
+	
+}
+.process .processcon{
+	display: block;
 }
 #process-animation{
-    transition: all 0.1s linear;
+	transition: all 0.1s linear;
 }
