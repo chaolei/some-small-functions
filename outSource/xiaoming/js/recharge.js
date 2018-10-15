@@ -6,6 +6,9 @@ var platName = {
     blank: "银联"
 }
 $(function(){
+    new ClipboardJS('.copyinfo');
+    new ClipboardJS('.copyacount1');
+    new ClipboardJS('.copyacount2');
 
     $(".nav").on("click",function(){
         var _this = $(this);
@@ -25,5 +28,19 @@ $(function(){
     });
     $(".modal-close").on("click",function(){
         $(".charge-mask").addClass("hide");
-    })
+    });
+    $(".other-charge").on("click",".charge-money",function(){
+        var money = +$(this).data("money");
+        var now = parseInt($(".other-charge-input").val());
+        var result = isNaN(now)?money:now+money;
+        $(".other-charge-input").val(result);
+    });
+    $(".clearinput").on("click",function(){
+        $(".other-charge-input").val('');
+    });
+    $(".blank-charge").on("click",".charge-money",function(){
+        $(".blank-charge .charge-money").removeClass("cur");
+        $(this).addClass("cur");
+    });
+
 });

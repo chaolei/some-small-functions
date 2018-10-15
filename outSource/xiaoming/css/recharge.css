@@ -57,7 +57,7 @@ body{
     text-align: center;
     cursor: pointer;
     letter-spacing: 3px;
-    text-indent: -999px;
+    text-indent: -9999px;
     background: url(../images/selectico.png) no-repeat;
 }
 
@@ -91,6 +91,10 @@ body{
 }
 .menulist .nav:nth-child(4).cur{
     background-position: -261px -547px;
+}
+.menulist .nav:nth-child(5).cur{
+    background: url(../images/blankico.png) no-repeat;
+    background-position: -26px -248px;
 }
 .menulist .nav:nth-child(6).cur{
     background-position: -16px -546px;
@@ -140,8 +144,14 @@ body{
 .charge-btn6{
     background-position: -360px -156px;
 }
-.myinfo{
+.gov-charge{
     position: relative;
+    height: 400px;
+}
+.myinfo{
+    position: absolute;
+    width: 100%;
+    bottom: 82px;
     padding-top: 10px;
 }
 .info{
@@ -170,6 +180,9 @@ body{
     cursor: pointer;
 }
 .tips{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
     color: #EBB478;
     font-size: 15px;
     font-weight: bold;
@@ -181,6 +194,9 @@ body{
     line-height: 40px;
     color: #EBB478;  
     font-weight: bold;
+}
+.cash-tips.blank{
+    padding-left: 67px;
 }
 .cash-tips:before{
     position: absolute;
@@ -204,8 +220,16 @@ body{
 .jd.cash-tips:before{
     background-position: -19px -347px;
 }
+.blank.cash-tips:before{
+    width: 57px;
+    background: url(../images/blankico.png) no-repeat;
+    background-position: -189px 0px;
+}
 .charge-input{
     position: relative;
+}
+.blank-charge .charge-input{
+    padding-left: 140px;
 }
 .clearinput{
     cursor: pointer;
@@ -216,6 +240,15 @@ body{
     height: 54px;
     background: url(../images/changeico.png) no-repeat;
     background-position: -460px -264px;
+}
+.blank_card{
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    width: 136px;
+    height: 45px;    
+    background: url(../images/blankico.png) no-repeat;
+    background-position: -262px -43px;
 }
 .charge-input input{
     background: rgba(0,0,0,0.4);
@@ -233,6 +266,9 @@ body{
     font-size: 18px;
     font-weight: bold;
 }
+.blank-charge .charge-input input{
+    width: 335px;
+}
 .chargenum{
     margin-top: 10px;
 }
@@ -245,23 +281,63 @@ body{
     margin-top: 6px;
     cursor: pointer;
 }
+
+.blank-charge .charge-money{
+    background: url(../images/blankico.png) no-repeat;
+}
 .money1{
     background-position: -79px -331px;
+}
+.blank-charge .money1{
+    background-position: -260px -245px;
+}
+.money1.cur{
+    background-position: -260px -102px;
 }
 .money2{
     background-position: -249px -331px;
 }
+.blank-charge .money2{
+    background-position: -430px -245px; 
+}
+.money2.cur{
+    background-position: -430px -102px;
+}
 .money3{
     background-position: -419px -331px;
+}
+.blank-charge .money3{
+    background-position: -600px -245px; 
+}
+.money3.cur{
+    background-position: -600px -102px;
 }
 .money4{
     background-position: -79px -401px;
 }
+.blank-charge .money4{
+    background-position: -260px -315px; 
+}
+.money4.cur{
+    background-position: -260px -172px;
+}
 .money5{
     background-position: -249px -401px;
 }
+.blank-charge .money5{
+    background-position: -430px -315px; 
+}
+.money5.cur{
+    background-position: -430px -172px;
+}
 .money6{
     background-position: -419px -401px;
+}
+.blank-charge .money6{
+    background-position: -600px -315px; 
+}
+.money6.cur{
+    background-position: -600px -172px;
 }
 .confirm-area{
     text-align: center;

@@ -16,7 +16,7 @@
                 <div class="nav" data-list="other-charge" data-type="zhifubao">支付宝</div>
                 <div class="nav" data-list="other-charge" data-type="weixin">微信充值</div>
                 <div class="nav" data-list="other-charge" data-type="qq">QQ充值</div>
-                <div class="nav" data-list="other-charge" data-type="blank">银联充值</div>
+                <div class="nav" data-list="blank-charge">银联充值</div>
                 <div class="nav" data-list="other-charge" data-type="jd">京东充值</div>
             </div>
             <div class="content-list ">
@@ -31,11 +31,11 @@
                         <div class="charge charge-btn6"></div>
                     </div>
                     <div class="myinfo">
-                        <div class="info">
+                        <div class="info" id="myinfo">
                             <span>昵称：<span>Skehus125</span></span>
                             <span>我的ID：<span>8886660</span></span>
                         </div>
-                        <div class="copy"></div>
+                        <div class="copy copyinfo" data-clipboard-target="#myinfo"></div>
                     </div>
                     <div class="tips">
                         <p>温馨提示： </p>
@@ -45,22 +45,44 @@
                 <div class="other-charge list-type hide">
                     <div class="cash-tips ">充值比例：1元=1金币</div>
                     <div class="charge-input">
-                        <input type="text"/>
+                        <input type="text" class="other-charge-input"/>
                         <div class="clearinput"></div>
                     </div>
                     <div class="chargenum">
-                        <div class="charge-money money1"></div>
-                        <div class="charge-money money2"></div>
-                        <div class="charge-money money3"></div>
-                        <div class="charge-money money4"></div>
-                        <div class="charge-money money5"></div>
-                        <div class="charge-money money6"></div>
+                        <div class="charge-money money1" data-money="10"></div>
+                        <div class="charge-money money2" data-money="50"></div>
+                        <div class="charge-money money3" data-money="100"></div>
+                        <div class="charge-money money4" data-money="200"></div>
+                        <div class="charge-money money5" data-money="500"></div>
+                        <div class="charge-money money6" data-money="1000"></div>
                     </div>
                     <div class="confirm-area">
                         <div class="confirm"></div>
                     </div>
                     <div class="other-tips">
                         <div class="tips1">点击确定跳转支付界面，充值成功会自动更新金币，充值最低10元，需安装<span class="plat-name">支付宝</span>客户端</div>
+                        <div class="tips2">如遇无法充值情况，请切换左边其他充值方式，给你带来不便请谅解</div>
+                    </div>
+                </div>
+                <div class="blank-charge list-type hide">
+                    <div class="cash-tips blank">充值比例：1元=1金币</div>
+                    <div class="charge-input">
+                        <input type="text" class="card-input"/>
+                        <div class="blank_card"></div>
+                    </div>
+                    <div class="chargenum">
+                        <div class="charge-money money1 cur" data-money="10"></div>
+                        <div class="charge-money money2" data-money="50"></div>
+                        <div class="charge-money money3" data-money="100"></div>
+                        <div class="charge-money money4" data-money="200"></div>
+                        <div class="charge-money money5" data-money="500"></div>
+                        <div class="charge-money money6" data-money="1000"></div>
+                    </div>
+                    <div class="confirm-area">
+                        <div class="confirm"></div>
+                    </div>
+                    <div class="other-tips">
+                        <div class="tips1">点击确定跳转支付界面，充值成功会自动更新金币，充值最低10元。</div>
                         <div class="tips2">如遇无法充值情况，请切换左边其他充值方式，给你带来不便请谅解</div>
                     </div>
                 </div>
@@ -78,20 +100,21 @@
                         <div class="copy-area">
                             <div class="copy-weixin">
                                 <div class="plat-ico"></div>
-                                <div class="plat-account">ID名_FTYJ</div>
-                                <div class="copyname"></div>
+                                <div class="plat-account" id="acountname1">ID名_FTYJ1</div>
+                                <div class="copyname copyacount1" data-clipboard-target="#acountname1"></div>
                             </div>
                             <div class="copy-qq">
                                 <div class="plat-ico"></div>
-                                <div class="plat-account">ID名_FTYJ</div>
-                                <div class="copyname"></div>
+                                <div class="plat-account" id="acountname2">ID名_FTYJ2</div>
+                                <div class="copyname copyacount2" data-clipboard-target="#acountname2"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="./js/jquery-1.7.2.js"></script>
+        <script src="./js/clipboard.min.js"></script>
+        <script src="./js/jquery-1.7.2.js"></script>        
         <script src="./js/recharge.js"></script>
     </body>
 </html>

@@ -1,0 +1,126 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/recharge.css">
+        <link rel="stylesheet" href="./css/withdraw.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="mycharge">
+                <div class="cash">18888</div>
+                <div class="cashbox">38888</div>
+            </div>
+            <div class="menulist">
+                <div class="nav cur" data-list="withdraw-method"data-type="zhifubao">结算(支付宝)</div>
+                <div class="nav " data-list="withdraw-method" data-type="blank">结算(银行卡)</div>
+                <div class="nav" data-list="withdraw-procss" >结算进度</div>
+                <div class="nav" data-list="bind-info" >绑定信息</div>
+            </div>
+            <div class="content-list ">
+                <div class="withdraw-method list-type">
+                    <div class="withdraw-tips">兑换金额至你绑定的<span class="plat-name">支付宝</span>账号中</div>
+                    <div class="withdraw-tips2">100元以上可兑换，只能提取50的倍数，兑换将收取2%的手续费，兑换500以上免收手续费。</div>
+                    <div class="withdraw-inputcon">
+                        <span>存入金额：</span>
+                        <input type="text" class="withdraw-input"/>
+                        <span class="clear-draw"></span>
+                    </div>
+                    <div class="withdraw-money">
+                        <div class="withdraw-num num1" data-money="100"></div>
+                        <div class="withdraw-num num2" data-money="1000"></div>
+                        <div class="withdraw-num num3"  data-money="12345"></div>
+                    </div>
+                    <div class="withdraw-tips3 show">
+                        账号余额不可低于6元
+                    </div>
+                    <div class="withdraw-btn"></div>
+                </div>
+                
+                <div class="withdraw-procss list-type hide">                    
+                    <div class="process-list">
+                        <div class="process-item pheader">
+                            <div>结算账号</div>
+                            <div>结算金额</div>
+                            <div>结算日期</div>
+                            <div>结算状态</div>
+                        </div>
+                        <div class="process-item">
+                            <div>结算账号</div>
+                            <div>结算金额</div>
+                            <div>结算日期</div>
+                            <div>结算状态</div>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-btn">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="bind-info list-type hide">
+                    <div class="info-item">
+                        <div class="info-left">姓名</div>
+                        <div class="info-right">支付宝账号</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-left">
+                            <input type="text" class="name">
+                        </div>
+                        <div class="info-right">
+                            <input type="text" class="zfb-account">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-left">开户行</div>
+                        <div class="info-right">银行卡账号</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-left">                            
+                            <div class="blank-name-con">
+                                <select class="blank-name">
+                                    <option value="0">请选择</option>
+                                    <option value="1">建设银行</option>
+                                    <option value="2">工商银行</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="info-right">
+                            <input type="text" class="card-account">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-left">开户行省份/城市</div>
+                        <div class="info-right">开户行支行</div>
+                    </div>
+                    <div class="last-info">
+                        <input type="text" class="card-pro"> 省
+                        <input type="text" class="card-city"> 市
+                        <input type="text" class="card-zhihang">
+                    </div>
+                   
+                    <div class="other-tips">
+                        <div class="">提示：银行卡、支付宝姓名采用实名制，绑定后无法修改。</div>
+                        <div class="">请认真核对你填写的姓名和账号。如有疑问，请联系客服！</div>
+                    </div>
+                    <div class="confirm-area">
+                        <div class="confirm"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="charge-mask hide">
+                <div class="wrap">
+                    <div class="modal-content">
+                        <input type="text" id="with-input">
+                        <div class="modal-copy" data-clipboard-target="#with-input"></div>
+                    </div>
+                    <div class="modal-close"></div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/clipboard.min.js"></script>
+        <script src="./js/jquery-1.7.2.js"></script>        
+        <script src="./js/withdraw.js"></script>
+    </body>
+</html>
