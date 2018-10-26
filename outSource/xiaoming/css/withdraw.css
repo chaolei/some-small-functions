@@ -52,35 +52,48 @@
     width: 110px;
 }
 .blank-name-con{
+    position: relative;
     width: 220px;
     margin: 0 auto;    
     background: rgba(0, 0, 0, 0.4);
     line-height: 30px;
     height: 30px;
     border-bottom: 1px solid #4A3B3D;
-}
-.blank-name{
-    appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    padding-right: 40px;
-    width: 220px;
-    background: transparent;
-    border: none;
-    height: 30px;
-    line-height: 30px;
+    cursor: default;
     color: #fff;
-    font-weight: bold;
     font-size: 18px;
-    outline: none;
-    padding-left: 10px;
 }
-option{
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-    line-height: 40px;
-    height: 40px;;
+.blank-name-con:after{
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    width: 42px;
+    height: 30px;
+    background: url(../images/withdraw.png) no-repeat;
+    background-position: -392px -139px;
 }
+.blank-list{
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    top: 30px;
+    display: none;
+    max-height: 180px;
+    overflow-y: auto;
+}
+.blank-item{
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 25px;
+}
+.open .blank-list{
+    display: block;
+}
+
 .other-tips{
     color:#B23530;
     margin-top: 20px;
@@ -107,7 +120,7 @@ option{
     background-position: -20px -153px;
 }
 .menulist .nav:nth-child(4){
-    text-indent: 0;
+    background-position: -490px -41px;
 }
 .menulist .nav:nth-child(1).cur{
     background-position: -229px -32px;
@@ -120,7 +133,6 @@ option{
 }
 .menulist .nav:nth-child(4).cur{
     background-position: -19px -216px;
-    text-indent: -9999px;
 }
 .process-item{
     display: flex;
@@ -146,6 +158,27 @@ option{
 .contact{
     text-align: center;
     margin-top: 15px;
+    position: relative;
+}
+.pagesprocess{
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    top: 10px;
+    background: url(../images/withdraw.png) no-repeat;    
+}
+.pagesprocess a{
+    display: inline-block;
+    width: 100%;
+    height: 52px;
+}
+.page-prev{
+    background-position: -195px -409px;
+    left: 10px;
+}
+.page-next{
+    right: 10px;
+    background-position: -734px -409px;
 }
 .contact-btn{
     width: 192px;

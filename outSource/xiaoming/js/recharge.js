@@ -43,4 +43,13 @@ $(function(){
         $(this).addClass("cur");
     });
 
+    $(".confirm").on("click", function(e){
+        var tips = $(".operate-tips-mask");
+        tips.addClass("show");
+    });
+    $(".tips-close").on("click", function(e){
+        var tips = $(".operate-tips-mask");
+        tips.removeClass("show");
+    });
+
 });

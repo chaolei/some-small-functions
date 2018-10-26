@@ -33,4 +33,33 @@ $(function(){
     $(".clear-draw").on("click",function(){
         $(".withdraw-input").val('');
     });
+    
+    $(".blank-name-con").on("click", function(e){
+        e.stopPropagation();
+        if($(".blank-name-con").hasClass("open")){
+            $(".blank-name-con").removeClass("open");
+        }else{
+            $(".blank-name-con").addClass("open");
+        }        
+    });
+
+    $(".blank-list").on("click",".blank-item",function(e){
+        e.stopPropagation();
+        $(".blank-name-con").removeClass("open");
+        $(".blank-show").text($(this).text());
+        $(".blank-name").val($(this).data("val"));
+    });
+    $(".withdraw-btn").on("click", function(e){
+        var tips = $(".operate-tips-mask");
+        tips.addClass("show");
+    });
+    $(".confirm").on("click", function(e){
+        var tips = $(".operate-tips-mask");
+        tips.addClass("show");
+    });
+    $(".tips-close").on("click", function(e){
+        var tips = $(".operate-tips-mask");
+        tips.removeClass("show");
+    });
+    
 });

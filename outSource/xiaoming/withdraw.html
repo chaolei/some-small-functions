@@ -54,9 +54,9 @@
                         </div>
                     </div>
                     <div class="contact">
-                        <div class="contact-btn">
-
-                        </div>
+                        <div class="contact-btn"></div>
+                        <div class="pagesprocess page-prev"><a href="#"></a></div>
+                        <div class="pagesprocess page-next"><a href="#"></a></div>                        
                     </div>
                 </div>
                 <div class="bind-info list-type hide">
@@ -79,11 +79,18 @@
                     <div class="info-item">
                         <div class="info-left">                            
                             <div class="blank-name-con">
-                                <select class="blank-name">
-                                    <option value="0">请选择</option>
-                                    <option value="1">建设银行</option>
-                                    <option value="2">工商银行</option>
-                                </select>
+                                <input type="hidden" class="blank-name"/>
+                                <span class="blank-show">请选择</span>
+                                <div class="blank-list">
+                                    <div class="blank-item" data-val="0">请选择</div>
+                                    <div class="blank-item" data-val="1">中国农业银行</div>
+                                    <div class="blank-item" data-val="2">交通银行</div>
+                                    <div class="blank-item" data-val="3">中国建设银行</div>
+                                    <div class="blank-item" data-val="4">中国工商银行</div>
+                                    <div class="blank-item" data-val="5">深圳发展银行</div>
+                                    <div class="blank-item" data-val="6">招商银行</div>
+                                    <div class="blank-item" data-val="7">中国邮政银行</div>
+                                </div>
                             </div>
                         </div>
                         <div class="info-right">
@@ -112,10 +119,16 @@
             <div class="charge-mask hide">
                 <div class="wrap">
                     <div class="modal-content">
-                        <input type="text" id="with-input">
+                        <input type="text" id="with-input" value="qq号在这里">
                         <div class="modal-copy" data-clipboard-target="#with-input"></div>
                     </div>
                     <div class="modal-close"></div>
+                </div>
+            </div>
+            <div class="operate-tips-mask">
+                <div class="operate-tips">
+                    <div class="tips-close">×</div>
+                    <div class="tips-content">提现成功</div>
                 </div>
             </div>
         </div>

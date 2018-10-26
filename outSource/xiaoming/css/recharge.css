@@ -126,22 +126,22 @@ body{
     margin-left: 17px;
     cursor: pointer;
 }
-.charge-btn1{
+.gov-btns .charge:nth-child(1){
     background-position: -82px -11px;
 }
-.charge-btn2{
+.gov-btns .charge:nth-child(2){
     background-position: -360px -11px;
 }
-.charge-btn3{
+.gov-btns .charge:nth-child(3){
     background-position: -82px -81px;
 }
-.charge-btn4{
+.gov-btns .charge:nth-child(4){
     background-position: -360px -81px;
 }
-.charge-btn5{
+.gov-btns .charge:nth-child(5){
     background-position: -82px -156px;
 }
-.charge-btn6{
+.gov-btns .charge:nth-child(6){
     background-position: -360px -156px;
 }
 .gov-charge{
@@ -288,56 +288,32 @@ body{
 .money1{
     background-position: -79px -331px;
 }
-.blank-charge .money1{
-    background-position: -260px -245px;
-}
-.money1.cur{
-    background-position: -260px -102px;
-}
 .money2{
     background-position: -249px -331px;
-}
-.blank-charge .money2{
-    background-position: -430px -245px; 
-}
-.money2.cur{
-    background-position: -430px -102px;
 }
 .money3{
     background-position: -419px -331px;
 }
-.blank-charge .money3{
-    background-position: -600px -245px; 
-}
-.money3.cur{
-    background-position: -600px -102px;
-}
 .money4{
     background-position: -79px -401px;
-}
-.blank-charge .money4{
-    background-position: -260px -315px; 
-}
-.money4.cur{
-    background-position: -260px -172px;
 }
 .money5{
     background-position: -249px -401px;
 }
-.blank-charge .money5{
-    background-position: -430px -315px; 
-}
-.money5.cur{
-    background-position: -430px -172px;
-}
 .money6{
     background-position: -419px -401px;
 }
-.blank-charge .money6{
-    background-position: -600px -315px; 
+.blank-charge .charge-money{
+    text-align: center;
+    color: #FFF1BE;
+    line-height: 56px;
+    width: 120px;
+    background-position: 0 -41px; 
+    font-size: 28px;
+    text-shadow: 2px 5px 5px #000; 
 }
-.money6.cur{
-    background-position: -600px -172px;
+.blank-charge .charge-money.cur{
+    background-position: 0 -122px; 
 }
 .confirm-area{
     text-align: center;
@@ -450,4 +426,55 @@ body{
     background: url(../images/changeico.png) no-repeat;
     background-position: -475px -488px;
     cursor: pointer;
+}
+
+.operate-tips-mask{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;    
+    transform: translate(-50%, -50%);
+    height: 0;
+    background: rgba(0,0,0,0);
+    transition: all 0.2s linear;
+}
+.operate-tips-mask.show{
+    width: 100%;
+    height: 100%;
+}
+.operate-tips{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    background: #3A3438;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 0px;
+}
+.show .operate-tips{
+    opacity: 1;
+    width: 200px;
+    height: 80px; 
+    line-height: 80px;
+    border: 2px solid #74635F;
+    border-radius: 4px;
+    box-shadow: 0px 0px 0 5px rgba(0,0,0,0.2);
+}
+.tips-close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.tips-close:hover{
+    color: #f30000;
 }
