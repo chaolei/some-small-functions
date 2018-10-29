@@ -1,0 +1,78 @@
+@keyframes lineChange{
+    0%{height: 10px;}
+    10%{height: 15%;}
+    20%{height: 15%;}
+    30%{height: 32%;}
+    40%{height: 32%;}
+    50%{height: 49%;}
+    60%{height: 49%;}
+    70%{height: 66%;}
+    80%{height: 66%;}
+    90%{height: 83%;}
+    100%{height: 83%;}
+}
+@keyframes pointChange{
+    0%{top: 0px;}
+    10%{top: 15%;}
+    20%{top: 15%;}
+    30%{top: 32%;}
+    40%{top: 32%;}
+    50%{top: 49%;}
+    60%{top: 49%;}
+    70%{top: 66%;}
+    80%{top: 66%;}
+    90%{top: 83%;}
+    100%{top: 83%;}
+}
+.cur .timeline{
+    animation: lineChange 10s linear forwards;
+}
+.cur .timetag{
+    animation: pointChange 10s linear forwards;
+}
+
+@keyframes nodeShow{
+    0%{opacity: 1;}
+    100%{opacity: 1;left: 10%;}
+}
+@keyframes dateShow{
+    0%{opacity: 1;}
+    100%{opacity: 1;top:0;}
+}
+.cur .timenode1{
+    animation: nodeShow 0.5s ease 1s forwards;
+}
+.cur .timenode1 .node-time{
+    animation: dateShow 0.2s ease 1.5s forwards;
+}
+.cur .timenode2{
+    animation: nodeShow 0.5s ease 3s forwards;
+}
+.cur .timenode2 .node-time{
+    animation: dateShow 0.2s ease 3.5s forwards;
+}
+.cur .timenode3{
+    animation: nodeShow 0.5s ease 5s forwards;
+}
+.cur .timenode3 .node-time{
+    animation: dateShow 0.2s ease 5.5s forwards;
+}
+.cur .timenode4{
+    animation: nodeShow 0.5s ease 7s forwards;
+}
+.cur .timenode4 .node-time{
+    animation: dateShow 0.2s ease 7.5s forwards;
+}
+.cur .timenode5{
+    animation: nodeShow 0.5s ease 9s forwards;
+}
+.cur .timenode5 .node-time{
+    animation: dateShow 0.2s ease 9.5s forwards;
+}
+
+.slide-wrap .slide-item:nth-child(2).cur .screen-arrow{
+    animation: arrowshow 0.5s ease 10s forwards;
+} 
+.slide-wrap .slide-item:nth-child(2).cur .arrow{
+    animation: arrowmove 1s ease 10.5s infinite forwards;
+} 

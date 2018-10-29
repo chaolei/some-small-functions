@@ -6,24 +6,220 @@ body,div,p{margin:0;padding:0;}
     overflow: hidden;
 }
 .slide-item{
+    position: relative;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
 }
 
 .slide-container .slide-item:nth-child(1){
-    background: #f00;
+    background: #E3E3E3;
 }
 .slide-container .slide-item:nth-child(2){
-    background: #0f0;
+    background: #E3E3E3;
 }
 .slide-container .slide-item:nth-child(3){
-    background: #00f;
+    background: #E3E3E3;
 }
 
 .slide-wrap{
 
 }
-
+/*第一屏元素*/
+.screen1-fox{
+    position: absolute;
+    width: 92px;
+    margin-left: -46px;
+    height: 236px;    
+}
+.screen1-fox:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/screen1/welcome.png) no-repeat;
+}
+.screen1-fox:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+.fox1{
+    left: 25%;
+    top: 95%;
+}
+.fox1:before{
+    background-position: 2px 0;
+}
+.fox1:after{
+    transform: translate(0,30px);
+    font-size: 13px;
+    left: 8px;
+    content: "Welcome";
+}
+.fox2{
+    left: 50%;
+    top: 90%;
+}
+.fox2:before{
+    background-position: -95px 0;
+}
+.fox2:after{
+    left: 30px;
+    transform: translate(0, 26px);
+    font-size: 20px;
+    content: "to";
+}
+.fox3{
+    left: 75%;
+    top: 95%;
+}
+.fox3:before{
+    background-position: -195px 0;    
+}
+.fox3:after{
+    transform: translate(0, 30px);
+    left: 27px;
+    content: "mysite";
+}
+.screen1-words{
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    height: 30px;
+    width: 200px;
+    opacity: 0;
+}
+.words1{
+    background: url(../images/screen1/words1.PNG) no-repeat center center;
+}
+.words2{
+    left: 10%;
+    bottom: 15%;
+    background: url(../images/screen1/words2.PNG) no-repeat center center;
+}
+.screen-arrow{
+    position: absolute;
+    left: 50%;
+    width: 70px;
+    margin-left: -35px;
+    bottom: 10%;
+    opacity: 0;
+}
+.arrow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.arrow2{
+    top: 15px;
+}
+.arrow:before{
+    position: absolute;
+    box-sizing: border-box;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 6px;
+    width: 18px;
+    transform: rotate(40deg);
+    transform-origin: left top;
+    background: #39C1D1;
+    border-radius: 3px;
+    box-shadow: -1px 0 0 1px rgba(0,0,0,0.3);
+}
+.arrow:after{
+    position: absolute;
+    box-sizing: border-box;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 6px;
+    width: 18px;
+    transform: rotate(-40deg);
+    transform-origin: right top;
+    background: #39C1D1;
+    border-radius: 3px;
+    box-shadow: 0px -1px 0px 1px rgba(0,0,0,0.3);
+}
+/*第二屏元素*/
+.timeline{
+    position: absolute;
+    left: 10%;
+    top: 0;
+    width: 2px;
+    height: 10px;
+    border-radius: 1px;
+    background: #39C1D1;
+}
+.timetag{
+    position: absolute;
+    left: 10%;
+    margin-left: -4px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #F05035;
+}
+.timenode{
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    font-size: 14px; 
+    opacity: 0;
+    transform: translate(0,-16px);
+}
+.timenode2{
+    top: 32%;
+}
+.timenode3{
+    top: 49%;
+}
+.timenode4{
+    top: 66%;
+}
+.timenode5{
+    top: 83%;
+}
+.timenode:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 135px;
+    top: 49.5%;
+    border-top: 1px solid #39C1D1;
+}
+.timenode:after{
+    position: absolute;
+    content: "";
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #F05035;
+    top: 50%;
+    margin-top: -5px;
+}
+.node-time{
+    position: absolute;
+    left: 15px;
+    top: -10px;
+    opacity: 0;
+}
+.node-content{
+    border: 1px solid #39C1D1;
+    border-right: none;
+    padding: 10px;
+    margin-left: 135px;
+    line-height: 20px;
+    box-sizing: border-box;
+}
 @media (min-width: 750px){
     .slide-container{
         max-width: 750px;

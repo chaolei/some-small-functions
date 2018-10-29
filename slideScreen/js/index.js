@@ -14,7 +14,9 @@ function addSlideEvent(){
         moveFlag = true;
     });
     wraper.addEventListener("mouseup",function(e){
+        moveFlag = false;
         var ml = e.clientY - startY;
+        if(ml == 0) return ;
         var endTime = new Date().getTime();
         var sep = endTime - startTime;
         var derect;
@@ -32,10 +34,13 @@ function addSlideEvent(){
         }
 
         slide(num);        
-        moveFlag = false;
+        
     });
     wraper.addEventListener("touchend",function(e){
+        moveFlag = false;        
         var ml = e.changedTouches[0].clientY - startY;
+        if(ml == 0) return ;
+
         var endTime = new Date().getTime();
         var sep = endTime - startTime;
         var derect;
@@ -52,8 +57,7 @@ function addSlideEvent(){
             }
         }
 
-        slide(num);        
-        moveFlag = false;
+        slide(num);
     });
     wraper.addEventListener("mousemove",function(e){
         if(!moveFlag) return;
@@ -70,8 +74,16 @@ function addSlideEvent(){
 }
 
 function slide(num){
+    var nodes = document.querySelectorAll(".slide-item");
+    var showNode = nodes[num-1];
     wraper.style.transform = "translate(0,"+(-(num-1)*step)+"px)";
     wraper.style.transition = "transform 0.3s ease";
+    if(showNode.getAttribute("class").indexOf("cur")  < 0){
+        setTimeout(function(){
+            document.querySelector(".slide-item.cur").setAttribute("class","slide-item");
+            showNode.setAttribute("class","slide-item cur");
+        },300);        
+    }
 }
 
 function checkCurShow(derect){

@@ -1,0 +1,78 @@
+@keyframes fox1fly{
+    0%{}
+    100%{top: 13%;}
+}
+@keyframes fox2fly{
+    0%{}
+    100%{top: 5%;}
+}
+@keyframes fox3fly{
+    0%{}
+    100%{top: 18%;}
+}
+@keyframes foxmove{
+    0%{top: 0;}
+    50%{top: 15px;}
+    100%{top: 0px;}
+}
+.cur .fox1{
+    animation: fox1fly 1s ease-out 0.2s forwards;
+}
+.cur .fox1:before{
+    animation: foxmove 2s ease 1.2s infinite;
+}
+.cur .fox1:after{
+    animation: foxmove 2s ease 1.2s infinite;
+}
+.cur .fox2{
+    animation: fox2fly 1s ease-out forwards;
+}
+.cur .fox2:before{
+    animation: foxmove 2s ease 1s infinite;
+}
+.cur .fox2:after{
+    animation: foxmove 2s ease 1s infinite;
+}
+.cur .fox3{
+    animation: fox3fly 1s ease-out 0.4s forwards;
+}
+.cur .fox3:before{   
+    animation: foxmove 2s ease 1.4s infinite;
+}
+.cur .fox3:after{
+    animation: foxmove 2s ease 1.4s infinite;
+}
+
+@keyframes words1move{
+    0%{}
+    30%{opacity: 1;}
+    100%{opacity: 1;left: 40%;transform: translate(-50%,0)}
+}
+@keyframes words2move{
+    0%{}
+    30%{opacity: 1;}
+    100%{opacity: 1;left: 60%;transform: translate(-50%,0)}
+}
+.cur .words1{
+    animation: words1move 1s ease 1.6s forwards;
+}
+.cur .words2{
+    animation: words2move 1s ease 3.2s forwards;
+}
+
+@keyframes arrowshow{
+    0%{}
+    30%{opacity: 1;}
+    100%{opacity: 1;bottom: 8%;}
+}
+@keyframes arrowmove{
+    0%{}
+    50%{transform: translate(0,-8px);}
+    100%{transform: translate(0,0);}
+}
+.slide-wrap .slide-item:nth-child(1).cur .screen-arrow{
+    animation: arrowshow 0.5s ease 4.5s forwards;
+} 
+.slide-wrap .slide-item:nth-child(1).cur .arrow{
+    animation: arrowmove 1s ease 5s infinite forwards;
+} 
