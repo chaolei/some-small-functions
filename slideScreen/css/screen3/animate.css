@@ -1,0 +1,174 @@
+@keyframes treenodeGrow{
+    0%{}
+    8%{
+        border-bottom: 200px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    24%{
+        border-bottom: 200px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    32%{
+        border-bottom: 350px solid #AE701D;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+    48%{
+        border-bottom: 350px solid #AE701D;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+    56%{
+        border-bottom: 470px solid #AE701D;  
+        border-left: 7px solid transparent;
+        border-right: 6px solid transparent;
+    }
+    72%{
+        border-bottom: 470px solid #AE701D;
+        border-left: 7px solid transparent;
+        border-right: 6px solid transparent;
+    }
+    80%{
+        border-bottom: 600px solid #AE701D;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+    }
+    100%{
+        border-bottom: 600px solid #AE701D;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+    }
+}
+.cur .tree-node{
+    animation: treenodeGrow  12s ease forwards;
+}
+@keyframes leafGrow1{
+    0%{opacity: 1;}
+    5%{
+        opacity: 1;
+        border-bottom: 50px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    50%{
+        opacity: 1;
+        border-bottom: 50px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    100%{
+        opacity: 1;
+        border-bottom: 150px solid #AE701D;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+    }
+}
+@keyframes leafGrow2{
+    0%{opacity: 1;}
+    8%{
+        opacity: 1;
+        border-bottom: 50px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    50%{
+        opacity: 1;
+        border-bottom: 50px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    100%{
+        opacity: 1;
+        border-bottom: 120px solid #AE701D;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+}
+@keyframes leafGrow3{
+    0%{opacity: 1;}
+    25%{
+        opacity: 1;
+        border-bottom: 50px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    75%{
+        opacity: 1;
+        border-bottom: 50px solid #AE701D;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+    }
+    100%{
+        opacity: 1;
+        border-bottom: 90px solid #AE701D;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+}
+@keyframes leafGrow4{
+    0%{opacity: 1;}
+    100%{
+        opacity: 1;
+        border-bottom: 70px solid #AE701D;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+    }
+}
+.cur .tree-leaf1{
+    animation: leafGrow1 8s ease 1s forwards;
+}
+.cur .tree-leaf2{
+    animation: leafGrow1 8s ease 2s forwards;
+}
+.cur .tree-leaf3{
+    animation: leafGrow2 5s ease 4s forwards;
+}
+.cur .tree-leaf4{
+    animation: leafGrow2 5s ease 5s forwards;
+}
+.cur .tree-leaf5{
+    animation: leafGrow3 2s ease 7s forwards;
+}
+.cur .tree-leaf6{
+    animation: leafGrow3 1.5s ease 8s forwards;
+}
+.cur .tree-leaf7{
+    animation: leafGrow4 1s ease 9s forwards;
+}
+.cur .tree-leaf8{
+    animation: leafGrow4 1s ease 10s forwards;
+}
+
+@keyframes showleafName{
+    0%{opacity: 1;}
+    100%{
+        opacity: 1;
+        top: -20px;
+    }
+}
+.cur .tree-leaf1 .leaf-name{
+    animation: showleafName 0.3s ease 1.4s forwards;
+}
+.cur .tree-leaf2 .leaf-name{
+    animation: showleafName 0.3s ease 2.4s forwards;
+}
+.cur .tree-leaf3 .leaf-name{
+    animation: showleafName 0.3s ease 4.4s forwards;
+}
+.cur .tree-leaf4 .leaf-name{
+    animation: showleafName 0.3s ease 5.4s forwards;
+}
+.cur .tree-leaf5 .leaf-name{
+    animation: showleafName 0.3s ease 7.3s forwards;
+}
+.cur .tree-leaf6 .leaf-name{
+    animation: showleafName 0.3s ease 8.3s forwards;
+}
+.cur .tree-leaf7 .leaf-name{
+    animation: showleafName 0.3s ease 9.3s forwards;
+}
+.cur .tree-leaf8 .leaf-name{
+    animation: showleafName 0.3s ease 10.3s forwards;
+}

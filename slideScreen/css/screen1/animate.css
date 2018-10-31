@@ -63,7 +63,7 @@
 @keyframes arrowshow{
     0%{}
     30%{opacity: 1;}
-    100%{opacity: 1;bottom: 8%;}
+    100%{opacity: 1;bottom: 5%;}
 }
 @keyframes arrowmove{
     0%{}

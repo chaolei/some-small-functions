@@ -105,9 +105,10 @@ body,div,p{margin:0;padding:0;}
 .screen-arrow{
     position: absolute;
     left: 50%;
-    width: 70px;
-    margin-left: -35px;
+    width: 20px;
+    margin-left: -10px;
     bottom: 10%;
+    height: 30px;
     opacity: 0;
 }
 .arrow{
@@ -145,7 +146,7 @@ body,div,p{margin:0;padding:0;}
     transform-origin: right top;
     background: #39C1D1;
     border-radius: 3px;
-    box-shadow: 0px -1px 0px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 0px 0px 1px rgba(0,0,0,0.3);
 }
 /*第二屏元素*/
 .timeline{
@@ -219,6 +220,63 @@ body,div,p{margin:0;padding:0;}
     margin-left: 135px;
     line-height: 20px;
     box-sizing: border-box;
+}
+/*第三屏css*/
+.tree-node{
+    position: absolute;
+    width: 1px;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,0);
+    border-bottom: 10px solid #AE701D;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+.tree-leaf{
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    opacity: 0;
+    transform: rotate(60deg) translate(-8px,0);
+    transform-origin: center bottom;
+    border-bottom: 5px solid #AE701D;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-radius: 0 0 8px 8px;
+}
+.leaf-name{
+    position: absolute;
+    left: 0;
+    top: -30px;
+    font-size: 16px;
+    color: #f30000;
+    transform: translate(-50%, 0);
+    opacity: 0;
+}
+.tree-leaf2{
+    bottom: 110px;
+    transform: rotate(-60deg) translate(-5px,0);
+}
+.tree-leaf3{
+    bottom: 200px;
+}
+.tree-leaf4{    
+    transform: rotate(-60deg) translate(-6px,0);
+    bottom: 210px;
+}
+.tree-leaf5{
+    bottom: 300px;
+}
+.tree-leaf6{    
+    transform: rotate(-60deg) translate(-8px,0);
+    bottom: 310px;
+}
+.tree-leaf7{
+    bottom: 400px;
+}
+.tree-leaf8{    
+    transform: rotate(-60deg) translate(-8px,0);
+    bottom: 410px;
 }
 @media (min-width: 750px){
     .slide-container{
