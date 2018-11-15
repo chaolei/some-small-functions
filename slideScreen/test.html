@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>css多行文本省略号</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .container{
+                width: 30%;
+                margin: 0 auto;
+            }
+            .wrap{
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrap">
+                <div class="text">ECMAScript 提供了两种方法从子串创建字符串值，即 slice() 和 substring()。这两种方法返回的都是要处理的字符串的子串，都接受一个或两个参数。第一个参数是要获取的子串的起始位置，第二个参数（如果使用的话）是要获取子串终止前的位置（也就是说，获取终止位置处的字符不包括在返回的值内）。如果省略第二个参数，终止位就默认为字符串的长度。</div>
+            </div>
+        </div>
+    </body>
+</html>

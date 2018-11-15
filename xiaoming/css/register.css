@@ -1,0 +1,121 @@
+body,div{margin:0;padding:0;}
+body{background: #15031B;}
+.container{
+    position: relative;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.r-panel{
+    position: absolute;
+    width: 82%;    
+    top: 39%;
+    left: 9%;
+}
+.r-item{
+    margin-top: 35px;
+}
+.r-item span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.r-item-title{
+    color: #FEDAA4;
+    font-size: 36px;
+    width: 30%;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.8);
+}
+.r-item-input{
+    width: 68%;
+}
+.spe .r-item-input{
+    width: 47%;
+}
+.spe .r-item-vimg{
+    float: right;
+    width: 19%;
+}
+.r-item-vimg img{
+    vertical-align: middle;
+    max-height: 50px;
+}
+.r-item-input input{
+    background: -webkit-linear-gradient(top,#2E2222 0%, #312527 8%,#312527 8%,#362930 100%);
+    min-height: 50px;
+    background-position: -29px -134px;
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 34px;
+    color: #fff;
+    padding-left: 10px;     
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.3);
+}
+.register-btn{
+    text-align: center;
+    margin-top: 45px;
+}
+.register{
+    display: inline-block;
+    width: 263px;
+    cursor: pointer;
+}
+.register img{
+    outline: none;
+}
+.re-info{
+    text-align: center;
+    color: #CE9D69;
+}
+.info-qq{
+    font-size: 24px;
+    color: #EDC669;
+    margin-top: 20px;
+}
+.info-qq span:last-child{
+    color: #FFF2A7;
+}
+.re-info a{
+    color: #FF5358;
+    text-decoration: none;
+}
+.re-info a:hover,.re-info a:active{
+    color: #FF5358;
+}
+.info-download{
+    font-size: 28px;
+    margin-top: 10px;
+}
+@media (max-width: 750px){
+    .container{
+        width: 100%;
+        background-size: contain;
+    }
+    .r-item{
+        margin-top: 3.5vw;
+    }
+    .register-btn{
+        margin-top: 5vw;
+    }
+    .r-item-title{
+        font-size: 4vw;
+    }
+    .register{
+        width: 36vw;
+    }
+    .r-item-input input{
+        min-height: 8vw;
+        font-size: 3.5vw;
+    }
+    .r-item-vimg img{
+        max-height: 8vw;
+    }
+    .info-qq{
+        margin-top: 2.5vw;
+        font-size: 2.5vw;
+    }
+    .info-download{
+        margin-top: 1.5vw;
+        font-size: 3vw;
+    }
+}

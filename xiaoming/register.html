@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>注册</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+		<link rel="stylesheet" href="./css/register.css">
+	</head>
+	<body>
+        <div class="container">
+            <img src="./images/r-bg.png" width="100%" alt="背景图"/>
+            <div class="r-panel">
+                <div class="r-item">
+                    <span class="r-item-title">手机号</span>
+                    <span class="r-item-input">
+                        <input class="mobile" placeholder="手机号，用于找回密码"/>
+                    </span>
+                </div>
+                <div class="r-item spe">
+                    <span class="r-item-title">验证码</span>
+                    <span class="r-item-input">
+                        <input class="veryCode" placeholder="图片验证码"/>
+                    </span>
+                    <span class="r-item-vimg">
+                        <img width="100%" src="https://imgsa.baidu.com/exp/pic/item/ea85a94543a9822667c933468682b9014a90eb0c.jpg">
+                    </span>
+                </div>
+                <div class="r-item">
+                    <span class="r-item-title">密码</span>
+                    <span class="r-item-input">
+                        <input class="password" placeholder="密码"/>
+                    </span>
+                </div>
+                <div class="r-item">
+                    <span class="r-item-title">确认密码</span>
+                    <span class="r-item-input">
+                        <input class="repassword" placeholder="确认密码"/>
+                    </span>
+                </div>
+                <div class="register-btn">
+                    <div class="register">
+                        <img src="./images/r-ico.png" width="100%" alt="注册">
+                    </div>
+                </div>
+                <div class="re-info">
+                    <div class="info-qq">
+                        <span>客服QQ号：</span>
+                        <span>123456</span>
+                    </div>
+                    <div class="info-download">
+                        已经注册的老玩家<a>点击下载</a>客户端
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function init(){
+                document.querySelector(".register").addEventListener("click",function(e){
+                    e.stopPropagation();
+                    alert("注册成功");
+                });
+                document.querySelector(".register").addEventListener("touchstart",function(e){
+                    e.stopPropagation();
+                    alert("注册成功");
+                });
+            }
+            init();
+        </script>
+	</body>
+</html>
