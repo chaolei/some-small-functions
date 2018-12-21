@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+        <title>loading 有背景色版本</title>
+        <style>
+            @keyframes rotate1{
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            .loading{
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+                overflow: hidden;
+                background: rgba(0,0,0,0.5);
+                animation: rotate1 1s linear infinite;
+            }
+            .loading:after{
+                position: absolute;
+                content: '';
+                left: 10px;
+                top: 10px;
+                width: 180px;
+                height: 180px;
+                background: #fff;
+                border-radius: 100%;
+                z-index: 1;
+            }
+            .right{
+                background: linear-gradient(to bottom, #ccc,#999);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 50%;
+            }
+            .left{
+                background:linear-gradient(to top, #999,#333);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: -50%;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="loading">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+	</body>
+</html>
