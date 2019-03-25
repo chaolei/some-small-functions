@@ -1,4 +1,4 @@
-var curshow = 1, total = 3, moveFlag = false, startY, startTime, step = window.window.innerHeight;
+var curshow = 1, total = 3, moveFlag = false, startY, startTime, step = window.innerHeight;
 var wraper = document.querySelector('.slide-wrap');
 function addSlideEvent(){
     wraper.addEventListener("mousedown",function(e){
@@ -71,6 +71,10 @@ function addSlideEvent(){
         var base = -(curshow-1)*step
         wraper.style.transform = "translate(0,"+(base+ml)+"px)";
     });
+
+    window.onresize = function(){
+        step = window.innerHeight;
+    }
 }
 
 function slide(num){
