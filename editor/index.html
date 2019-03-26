@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>编辑器demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <link rel="stylesheet" href="./myEditor/css/editor.css">
+        <style>
+            .view-panel{
+                min-height: 300px;
+                overflow-y: auto;
+                border: 1px solid #ccc;
+            }
+            .editor-con{
+                margin-top: 8px;
+            }
+            .chat-bunble{
+                display: inline-block;                
+                border-radius: 5px;
+                background: #ccc;
+                padding: 10px;
+                margin-left: 10px;
+            }
+            .chat-con{
+                margin-top: 10px;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="view-panel">
+
+        </div>   
+        <div class="editor-con">
+
+        </div>
+        <div><button class='sendbtn'>发送</button></div>
+
+        <script type="module" src="./myEditor/components/toolbar.js"></script>
+        <script type="module" src="./myEditor/components/editorMain.js"></script>
+        <script type="module" src="./myEditor/editor.js"></script>
+        <script type="module">
+            import {Editor} from './myEditor/editor.js';
+            let editor = new Editor('.editor-con');
+
+            document.querySelector('.sendbtn').addEventListener('click', () => {
+                let node = document.createElement('div');
+                let chatCon = document.createElement('div');
+                node.setAttribute('class', 'chat-bunble');
+                chatCon.setAttribute('class', 'chat-con');
+                node.innerHTML = editor.getEditorContent();
+                chatCon.append(node);
+                document.querySelector('.view-panel').append(chatCon);
+                editor.clearContent();
+            })
+        </script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+.editor-myEditor{    
+    border: 1px solid #ccc;
+}
+.editor-toolbar{
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+}
+.editor-area{
+    max-height: 150px;
+    min-height: 100px;
+    padding: 10px;
+    overflow-y: auto;
+}
+/*toolbar*/
+.bar-item{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: default;
+}
+.font-item{
+    line-height: 22px;
+    width: 22px;
+    text-align: center;
+    border: 1px solid #fff;
+    font-size: 13px;
+    margin-top: 4px;
+    color: #000;
+    text-decoration: none;
+}
+.font-item:hover{
+    background: #FFF5D4;
+    border: 1px solid #DCAC6C;
+}
+.font-bold{
+    font-style: bold;
+    margin-left: 5px;
+}
+.font-italic{
+    font-style: italic;
+}
+.font-underline{
+    text-decoration: underline;
+}

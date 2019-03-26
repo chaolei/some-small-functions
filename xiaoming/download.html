@@ -8,12 +8,11 @@
             body,div{margin:0;padding:0;}
             .wrap2{
                 position: fixed;
-                left: 50%;
+                left: 0;
                 top: 0;
-                width: 750px;
-                transform: translate(-50%,0);
+                width: 100%;
                 height: 100%;
-                background: rgba(0,0,0,0.9);
+                background: rgba(0,0,0,0.8);
                 display: none;
                 opacity: 0;
                 transition: opacity 0.4s ease-out;
@@ -55,7 +54,7 @@
         </style>
 	</head>
 	<body>
-		<input type="hidden" class="download" value="https://scleichao.cn/xiaoming/imgs/app-release.apk"/>
+		<input type="hidden" class="download" value="https://xxx.xxx.com/xx.apk"/>
         <div class="wrap2">
             <div class="arrow"></div>
             <div class="op-tips">
@@ -74,10 +73,10 @@
             }
             function init(){
 				var flag = isWeiXin();
-				if(!flag){
+				if(flag){
 					document.querySelector(".wrap2").setAttribute("class", "wrap2 show");
 				}else{
-					window.open(document.querySelector(".download").value);
+					location.href = document.querySelector(".download").value;
 				}
             }
             init();
