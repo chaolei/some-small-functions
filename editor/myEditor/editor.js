@@ -16,7 +16,7 @@ class MyEditor{
         container.append(editorCon);
 
         this.editor = new EditorMain('.'+this.editorName);
-        new Toolbar('.'+this.editorName, this.editor.editorCenter);        
+        new Toolbar('.'+this.editorName, this.editor);        
     }
 
     getEditorName() {

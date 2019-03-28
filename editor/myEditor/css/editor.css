@@ -1,15 +1,17 @@
-.editor-myEditor{    
+.editor-myEditor{
     border: 1px solid #ccc;
 }
 .editor-toolbar{
     height: 30px;
     border-bottom: 1px solid #ccc;
+    background: #efefef;
 }
 .editor-area{
     max-height: 150px;
     min-height: 100px;
     padding: 10px;
     overflow-y: auto;
+    outline: none;
 }
 /*toolbar*/
 .bar-item{
@@ -21,7 +23,7 @@
     line-height: 22px;
     width: 22px;
     text-align: center;
-    border: 1px solid #fff;
+    border: 1px solid #efefef;
     font-size: 13px;
     margin-top: 4px;
     color: #000;
@@ -40,4 +42,55 @@
 }
 .font-underline{
     text-decoration: underline;
+}
+.img-emoji{
+    height: 22px;
+    background: url(../imgs/emojiico.png) no-repeat center center;
+    background-size: 16px 16px;
+}
+.font-item.img-emoji:hover{
+    background: #FFF5D4 url(../imgs/emojiico.png) no-repeat center center;
+    background-size: 16px 16px;
+    border: 1px solid #DCAC6C;
+}
+.emoji-con{
+    position: relative;
+}
+.emoji-content{
+    position: absolute;
+    left: 0;
+    width: 344px;
+    padding: 3px 1px;
+    bottom: 28px;
+    border: 1px solid #ccc;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in;
+}
+.emoji-content.open{
+    visibility: visible;
+    opacity: 1;
+}
+.emoji-content:after{
+    display: inline-block;
+    content: '';
+    clear: both;
+    zoom: 1;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    width: 0;
+}
+.emoji-item{
+    float: left;
+    position: relative;
+    margin: 4px;
+    width: 35px;
+    height: 35px;
+    background: url(../imgs/yface.gif) no-repeat;
+}
+.emoji-item:hover{
+    background: #FFF5D4 url(../imgs/yface.gif) no-repeat;
+    outline: 1px solid #DCAC6C;
 }
