@@ -76,7 +76,7 @@ class Toolbar {
             
             //editor.focus();
             _this.editor.restoreSelection();
-            document.execCommand('insertImage', false, eurl);            
+            document.execCommand('insertImage', false, eurl);
         });
         eicon.addEventListener('click', function(e){
             e.stopPropagation();

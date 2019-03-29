@@ -20,10 +20,53 @@ class EditorMain {
         this.editorCenter.addEventListener('keyup', () => {
             this.saveSelection();
         });*/
-        //网络钟的是给编辑器加鼠标点击及键盘事件，那样调用太平凡，暂时改成给编辑器添加失去焦点事件即可
+        //网络中的是给编辑器加鼠标点击及键盘事件，那样调用太频繁，暂时改成给编辑器添加失去焦点事件即可
         this.editorCenter.addEventListener('blur', () => {
             this.saveSelection();
         });
+        this.editorCenter.addEventListener('paste', (e) => {
+            let data = e.clipboardData || e.originalEvent && e.originalEvent.clipboardData || {}
+            let items = data.items;
+
+            if(items && items.length > 0){
+                this.handleImg(items, e);
+            }
+        });
+        this.editorCenter.addEventListener('keydown', (e) => {
+            let code = e.key;
+            if(code == '/'){
+                e.preventDefault();
+                this.handleInputEmoji();
+            }
+        });
+    }
+
+    handleInputEmoji() {
+        document.execCommand('insertHTML', null, '<span class="emoji-tag">/<span>');
+        let barCon = document.createElement('div');
+    }
+
+    handleImg(items, e) {
+        let imgList = [], imgItem, file, reader, _this = this;
+        for (var i = 0; i < items.length; ++i) {
+            imgItem = items[i];
+            if (imgItem.kind == 'file' && imgItem.type.indexOf('image/') !== -1) {
+                e.preventDefault();
+                file = imgItem.getAsFile();
+                reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function () {
+                    _this.insertLinkImg(reader.result);
+                };
+            }    
+        }
+        if(imgList.length == 0) return ;
+        this.handleImg(imgList);
+    }
+
+    insertLinkImg(imgLink) {
+        if(!imgLink) return ;
+        document.execCommand('insertHTML', null, '<img src="' + imgLink + '" style="max-width:100%;"/>');
     }
 
     /* 获取当前光标位置或选中区域 */

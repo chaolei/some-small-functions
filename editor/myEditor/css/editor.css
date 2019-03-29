@@ -1,4 +1,5 @@
 .editor-myEditor{
+    position: relative;
     border: 1px solid #ccc;
 }
 .editor-toolbar{
