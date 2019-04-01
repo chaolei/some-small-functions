@@ -95,3 +95,34 @@
     background: #FFF5D4 url(../imgs/yface.gif) no-repeat;
     outline: 1px solid #DCAC6C;
 }
+/*/快捷表情*/
+.emoji-shotcon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0; 
+    visibility: hidden;  
+    transition: opacity 0.3s ease-in;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background: #efefef;
+}
+.emoji-shotcon.open{
+    opacity: 1; 
+    visibility: visible;  
+}
+.shotEmoji-item{
+    background: url(../imgs/yface.gif) no-repeat;
+    display: block;
+    cursor: default;
+    color: #000;
+    padding-left: 40px;
+    min-width: 80px;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+}
+.shotEmoji-item:hover{
+    background: #ddd url(../imgs/yface.gif) no-repeat;
+}

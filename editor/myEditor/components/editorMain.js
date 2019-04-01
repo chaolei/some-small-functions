@@ -34,6 +34,7 @@ class EditorMain {
         });
         this.editorCenter.addEventListener('keydown', (e) => {
             let code = e.key;
+            console.log(code);
             if(code == '/'){
                 e.preventDefault();
                 this.handleInputEmoji();
@@ -43,7 +44,60 @@ class EditorMain {
 
     handleInputEmoji() {
         document.execCommand('insertHTML', null, '<span class="emoji-tag">/<span>');
+        let inode = document.querySelector('.emoji-tag');
+        let eNode = document.querySelector('.emoji-shotcon');
+        if(!eNode){
+            eNode = this.initEmojiShot();
+        }
+
+        eNode.style.left = `${inode.offsetLeft + 10}px`;
+        eNode.style.top = `${-(205 - inode.offsetTop)}px`;
+
+        eNode.setAttribute('class', 'emoji-shotcon open');
+    }
+
+    initEmojiShot() {      
         let barCon = document.createElement('div');
+        barCon.setAttribute('class', 'emoji-shotcon');
+        let eFrag = document.createDocumentFragment();
+
+        let emojis;
+        let titles = ["男兜", "女兜", "开心", "乖乖", "偷笑", "大笑", "抽泣", "大哭", "无奈", "滴汗", "叹气", "狂晕", "委屈", "超赞", "??", "疑问", "飞吻", "天使", "撒花", "生气", "被砸", "口水", "泪奔", "吓傻", "吐舌头", "点头", "随意吐", "旋转", "困困", "鄙视", "狂顶", "篮球", "再见", "欢迎光临", "恭喜发财", "稍等", "我在线", "恕不议价", "库房有货", "货在路上"];
+
+        for(let i = 0; i < 40; i++){
+            emojis = document.createElement('a');
+            emojis.setAttribute('href','javascript:;');
+            emojis.setAttribute('class', 'shotEmoji-item');
+            emojis.setAttribute('data-enum', i+1);
+            emojis.setAttribute('title', titles[i]);
+            emojis.style.backgroundPosition = `0 -${i*35}px`;
+            emojis.innerText = `/${i > 8 ? i+1 : '0'+(i+1)}`;
+            eFrag.append(emojis);
+        }
+
+        barCon.append(eFrag);
+        document.querySelector('.editor-myEditor').append(barCon);
+
+        this.addEmojiListener();
+
+        return barCon;
+    }
+
+    addEmojiListener() {
+        let enode = document.querySelector('.emoji-shotcon');
+        enode.addEventListener('click', function(e){
+            e.stopPropagation();
+            let cnode = e.target;
+            let emojiMum = cnode.getAttribute('data-enum');
+            if(!emojiMum) return ;
+
+            let eurl = `http://img.baidu.com/hi/youa/y_00${emojiMum>9 ? emojiMum : '0'+emojiMum}.gif`;
+            
+            //_this.editor.restoreSelection();
+            document.querySelector('.emoji-tag').remove();
+            document.execCommand('insertImage', false, eurl);
+            enode.setAttribute('class', 'emoji-shotcon');
+        });
     }
 
     handleImg(items, e) {

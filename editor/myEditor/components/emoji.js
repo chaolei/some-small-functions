@@ -7,6 +7,7 @@ class Emoji {
         container.setAttribute('class', 'bar-item emoji-con');
         emoji.setAttribute('class', 'bar-item font-item img-emoji');
         emoji.setAttribute('href','javascript:;');
+        emoji.setAttribute('title','表情');
 
         let emojiCon = this.initEmoji();
 

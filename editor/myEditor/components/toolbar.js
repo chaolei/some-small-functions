@@ -90,6 +90,10 @@ class Toolbar {
         document.addEventListener('click', function(e){
             let cls = econtent.getAttribute('class');
             econtent.setAttribute('class', cls.replace(/ open$/, ''));
+            if(document.querySelector('.emoji-shotcon')){
+                document.querySelector('.emoji-shotcon').setAttribute('class', 'emoji-shotcon');
+                document.querySelector('.emoji-tag').setAttribute('class', '');
+            }
         });
     }
 
