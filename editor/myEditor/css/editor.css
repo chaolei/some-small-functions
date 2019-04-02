@@ -95,6 +95,72 @@
     background: #FFF5D4 url(../imgs/yface.gif) no-repeat;
     outline: 1px solid #DCAC6C;
 }
+.table-item{
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    background: url(../imgs/table.png) no-repeat;
+    margin-top: 4px;
+}
+.table-item:hover{
+    background: #FFF5D4 url(../imgs/table.png) no-repeat;
+    outline: 1px solid #DCAC6C;
+}
+.table-con{
+    position: relative;
+}
+.cell-con{
+    position: absolute;
+    left: 28px;
+    top: -25px;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #ccc;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+.cell-con.open{
+    visibility: visible;
+    opacity: 1;
+}
+.cell-items{
+    background: url(../imgs/unhighlighted.gif) repeat;
+    height: 220px;
+    width: 220px;
+}
+.cell-selected{
+    background: url(../imgs/highlighted.gif) repeat;
+}
+.cell-info{
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.add-table{
+    background-position: 2px 3px;
+}
+.add-table:hover{
+    background-position: 2px 3px;
+}
+.del-table{
+    background-position: -39px 3px;
+}
+.del-table:hover{
+    background-position: -39px 3px;
+}
+.combine-cell{
+    background-position: -76px 3px;
+}
+.combine-cell:hover{
+    background-position: -76px 3px;
+}
+.split-cell{
+    background-position: -116px 3px;
+}
+.split-cell:hover{
+    background-position: -116px 3px;
+}
 /*/快捷表情*/
 .emoji-shotcon{
     position: absolute;
@@ -125,4 +191,13 @@
 }
 .shotEmoji-item:hover{
     background: #ddd url(../imgs/yface.gif) no-repeat;
+}
+.inserted-table{
+    margin: 10px 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    padding: 5px 10px;
+    border: 1px solid #DDD;
 }
