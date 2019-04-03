@@ -12,6 +12,7 @@ class Toolbar {
 
         this.initBar(barCon, eCon);
         this.editor = editor;
+        this.tables = {};
     }
 
     initTable() {
@@ -158,6 +159,11 @@ class Toolbar {
             _this.handleTableEvent(cNode);            
         });
 
+        delTab.addEventListener('click', function(e){
+            e.stopPropagation();
+            _this.deleteTable();
+        });
+
         addTab.addEventListener('mousemove', function(e){
             let cNode = e.target;
             if(cNode.getAttribute('class').indexOf('cell-items') > -1 || cNode.getAttribute('class').indexOf('cell-selected') > -1){
@@ -214,19 +220,53 @@ class Toolbar {
         let bar = document.querySelector('.editor-toolbar');
         let editorWitdh = bar.offsetWidth - 20;
         let tdW = Math.floor(editorWitdh / vnum);
-        let tableStr = '<table class="inserted-table">';
+        let tid = 'table-' + new Date().getTime();
+        let tableStr = `<table class="inserted-table ${tid}">`;
         for(let i=0; i<hnum; i++) {
             tableStr += '<tr>';
             for(let j=0; j<vnum; j++) {
-                tableStr += `<td width='${tdW}'>&nbsp;</td>`;
+                tableStr += `<td width='${tdW}'></td>`;
             }
             tableStr += '</tr>';
         }
 
-        tableStr += '</table>';
+        tableStr += '</table></br>';
 
         this.editor.restoreSelection();
         document.execCommand('insertHTML', null, tableStr);
+
+        this.tables[tid] = tid;
+        this.addTableEvent(tid);
+    }
+
+    deleteTable() {
+        let tid = this.activeTable;
+        if(!tid) {
+            this.editor.restoreSelection();
+            return;
+        }
+        let table = document.querySelector('.'+tid);
+        //table.removeEventListener('mousemove');
+        //table.removeEventListener('mousedown');
+        table.remove();
+        this.editor.restoreSelection();
+    }
+
+    addTableEvent(tid) {
+        let _this = this;
+        let table = document.querySelector('.'+tid);
+        table.addEventListener('mousedown',function(){
+            _this.activeTable = tid;
+        });
+        table.addEventListener('blur',function(){
+            _this.activeTable = tid;
+        });
+        table.addEventListener('mousemove',function(e){
+            
+        });
+        table.addEventListener('mouseup',function(e){
+            //_this.editor.restoreSelection();
+        });
     }
 
     handleSelectedCells(event) {
