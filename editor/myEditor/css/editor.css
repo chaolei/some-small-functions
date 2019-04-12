@@ -170,6 +170,7 @@
     visibility: hidden;  
     transition: opacity 0.3s ease-in;
     height: 200px;
+    min-width: 137px;
     overflow-y: auto;
     border: 1px solid #ccc;
     background: #efefef;
@@ -200,4 +201,7 @@
 td {
     padding: 5px 10px;
     border: 1px solid #DDD;
+}
+.selected-td{
+    background: #edf5fa !important;
 }

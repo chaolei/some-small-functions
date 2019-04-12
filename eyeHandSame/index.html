@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>眼手合一-css</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <link rel="stylesheet" href="./css/index.css">
+	</head>
+	<body>
+        <div class="person-con">
+            <div class="head">
+                <div class="eye-con left">
+                    <div class="eye"></div>
+                </div>
+                <div class="eye-con right">
+                    <div class="eye"></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+            <div class="body">
+                <div class="hand left"></div>
+                <div class="hand right"></div>
+            </div>
+        </div>
+        <script>
+            let eye1, eye2, hand1, hand2, eye1Pos, eye2Pos, hand1Pos, hand2Pos;
+            function handleMove(e) {                
+                let {clientX, clientY} = e;
+
+                let eye1DirectX = clientX >= eye1Pos.x ? 'right' : 'left';
+                let eye1DirectY = clientY >= eye1Pos.y ? 'bottom' : 'top';
+                let eye2DirectX = clientX >= eye2Pos.x ? 'right' : 'left';
+                let eye2DirectY = clientY >= eye2Pos.y ? 'bottom' : 'top';
+
+                let hand1DirectX = clientX >= hand1Pos.x ? 'right' : 'left';
+                let hand1DirectY = clientY >= hand1Pos.y ? 'bottom' : 'top';
+                let hand2DirectX = clientX >= hand2Pos.x ? 'right' : 'left';
+                let hand2DirectY = clientY >= hand2Pos.y ? 'bottom' : 'top';
+
+                let eye1Line1 = Math.abs(eye1Pos.y - clientY);
+                let eye1Line2 = Math.abs(eye1Pos.x - clientX);                
+                let eye2Line1 = Math.abs(eye2Pos.y - clientY);
+                let eye2Line2 = Math.abs(eye2Pos.x - clientX);
+
+                let hand1Line1 = Math.abs(hand1Pos.y - clientY);
+                let hand1Line2 = Math.abs(hand1Pos.x - clientX);                
+                let hand2Line1 = Math.abs(hand2Pos.y - clientY);
+                let hand2Line2 = Math.abs(hand2Pos.x - clientX);
+
+                let eye1Deg = Math.atan(eye1Line1/eye1Line2)/Math.PI*180;
+                let eye2Deg = Math.atan(eye2Line1/eye2Line2)/Math.PI*180;
+
+                let hand1Deg = Math.atan(hand1Line1/hand1Line2)/Math.PI*180;
+                let hand2Deg = Math.atan(hand2Line1/hand2Line2)/Math.PI*180;
+
+                eye1Deg = calDeg(eye1Deg, eye1DirectX, eye1DirectY);
+                eye2Deg = calDeg(eye2Deg, eye2DirectX, eye2DirectY);
+                hand1Deg = calDeg(hand1Deg, hand1DirectX, hand1DirectY);
+                hand2Deg = calDeg(hand2Deg, hand2DirectX, hand2DirectY);
+
+
+                eye1.style.transform = `rotate(${eye1Deg}deg)`;
+                eye2.style.transform = `rotate(${eye2Deg}deg)`;
+
+                hand1.style.transform = `rotate(${hand1Deg}deg)`;
+                hand2.style.transform = `rotate(${hand2Deg}deg)`;
+            }
+
+            function calDeg(eyeDeg, directX, directY){
+                let deg;
+                if(directX == 'right'){
+                    deg = directY == 'bottom' ? eyeDeg : -eyeDeg;
+                }else{
+                    deg = directY == 'bottom' ? 180 - eyeDeg : 180 + eyeDeg;
+                }
+                return deg;
+            }
+
+            function init() {
+                eye1 = document.querySelector('.left .eye');
+                eye2 = document.querySelector('.right .eye');
+                hand1 = document.querySelector('.left.hand');
+                hand2 = document.querySelector('.right.hand');
+
+                let eye1x = eye1.offsetLeft + eye1.parentNode.offsetLeft + eye1.parentNode.parentNode.offsetLeft + eye1.parentNode.parentNode.parentNode.offsetLeft - 90;
+                let eye2x = eye2.offsetLeft + eye2.parentNode.offsetLeft + eye2.parentNode.parentNode.offsetLeft + eye2.parentNode.parentNode.parentNode.offsetLeft - 90;
+                let hand1x = hand1.offsetLeft + hand1.parentNode.offsetLeft + hand1.parentNode.parentNode.offsetLeft - 90;
+                let hand2x = hand2.offsetLeft + hand2.parentNode.offsetLeft + hand2.parentNode.parentNode.offsetLeft - 90;
+
+                let eye1y = eye1.offsetTop + eye1.parentNode.offsetTop + eye1.parentNode.parentNode.offsetTop + eye1.parentNode.parentNode.parentNode.offsetTop + 4;
+                let eye2y = eye2.offsetTop + eye2.parentNode.offsetTop + eye2.parentNode.parentNode.offsetTop + eye2.parentNode.parentNode.parentNode.offsetTop + 4;
+                let hand1y = hand1.offsetTop + hand1.parentNode.offsetTop + hand1.parentNode.parentNode.offsetTop + 10;
+                let hand2y = hand2.offsetTop + hand2.parentNode.offsetTop + hand2.parentNode.parentNode.offsetTop + 10;
+                
+                eye1Pos = {
+                    x: eye1x,
+                    y: eye1y
+                };
+                eye2Pos = {
+                    x: eye2x,
+                    y: eye2y
+                };
+                hand1Pos = {
+                    x: hand1x,
+                    y: hand1y
+                };
+                hand2Pos = {
+                    x: hand2x,
+                    y: hand2y
+                };
+                document.addEventListener('mousemove', (e) => {
+                    handleMove(e);
+                });
+            }
+            init();
+        </script>
+	</body>
+</html>

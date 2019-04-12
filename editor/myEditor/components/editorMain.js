@@ -40,6 +40,9 @@ class EditorMain {
                 this.handleInputEmoji();
             }
         });
+        this.editorCenter.addEventListener('keyup', (e) => {
+            this.handleEmojiFilter(e.key);
+        });
     }
 
     handleInputEmoji() {
@@ -54,6 +57,31 @@ class EditorMain {
         eNode.style.top = `${-(205 - inode.offsetTop)}px`;
 
         eNode.setAttribute('class', 'emoji-shotcon open');
+    }
+
+    handleEmojiFilter(code) {
+        let tag = document.querySelector('.emoji-tag');
+        if(!tag || tag.innerText.indexOf('/') == -1 || tag.innerText.length > 4) {
+            document.querySelector('.emoji-shotcon')?document.querySelector('.emoji-shotcon').setAttribute('class', 'emoji-shotcon'): '';
+            document.querySelector('.emoji-tag')?document.querySelector('.emoji-tag').removeAttribute('class'):'';
+            return;
+        }
+
+        let inputCode = tag.innerText;
+        let emojis = document.querySelectorAll('.shotEmoji-item'), emojiNode, emojiTxt;
+
+        for(let i=0; i< emojis.length; i++){
+            emojiNode = emojis[i];
+            emojiTxt = emojiNode.innerText;
+            if(emojiTxt.indexOf(inputCode) > -1){
+                emojiNode.style.display = 'block';
+                if(emojiTxt == inputCode){
+                    this.insertEmoji(emojiNode.getAttribute('data-enum'));
+                }                
+            }else{
+                emojiNode.style.display = 'none';  
+            }
+        }
     }
 
     initEmojiShot() {      
@@ -83,20 +111,28 @@ class EditorMain {
         return barCon;
     }
 
+    insertEmoji(emojiMum, enode) {
+        if(!emojiMum) return ;
+
+        if(!enode) {
+            enode = document.querySelector('.emoji-shotcon');
+        }
+
+        let eurl = `http://img.baidu.com/hi/youa/y_00${emojiMum>9 ? emojiMum : '0'+emojiMum}.gif`;
+        
+        //_this.editor.restoreSelection();
+        document.querySelector('.emoji-tag').remove();
+        document.execCommand('insertImage', false, eurl);
+        enode.setAttribute('class', 'emoji-shotcon');
+    }
+
     addEmojiListener() {
         let enode = document.querySelector('.emoji-shotcon');
-        enode.addEventListener('click', function(e){
+        enode.addEventListener('click', (e) => {
             e.stopPropagation();
             let cnode = e.target;
             let emojiMum = cnode.getAttribute('data-enum');
-            if(!emojiMum) return ;
-
-            let eurl = `http://img.baidu.com/hi/youa/y_00${emojiMum>9 ? emojiMum : '0'+emojiMum}.gif`;
-            
-            //_this.editor.restoreSelection();
-            document.querySelector('.emoji-tag').remove();
-            document.execCommand('insertImage', false, eurl);
-            enode.setAttribute('class', 'emoji-shotcon');
+            this.insertEmoji(emojiMum, enode);
         });
     }
 

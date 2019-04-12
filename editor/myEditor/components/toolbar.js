@@ -163,6 +163,14 @@ class Toolbar {
             e.stopPropagation();
             _this.deleteTable();
         });
+        combineCell.addEventListener('click', function(e){
+            e.stopPropagation();
+            _this.combineCell();
+        });
+        splitCell.addEventListener('click', function(e){
+            e.stopPropagation();
+            _this.splitCell();
+        });
 
         addTab.addEventListener('mousemove', function(e){
             let cNode = e.target;
@@ -180,9 +188,77 @@ class Toolbar {
                 document.querySelector('.emoji-shotcon').setAttribute('class', 'emoji-shotcon');                
             }
             if(document.querySelector('.emoji-tag')){
-                document.querySelector('.emoji-tag').setAttribute('class', '');
+                document.querySelector('.emoji-tag').removeAttribute('class');
             }
         });
+    }
+
+    combineCell() {
+        if(!document.querySelector('.selected-td')) return ;//没有选中单元格
+
+        let {sh, sNum} = this.selectStart;
+        let {eh, eNum} = this.selectEnd;
+        let combineh = Math.abs(eh - sh) + 1;
+        let combinecol = Math.abs(eNum - sNum) + 1;
+
+        let tdNodes = document.querySelectorAll('.selected-td'), tdNode;
+        for(let i=0; i<tdNodes.length; i++) {
+            tdNode = tdNodes[i];
+            if(i == 0) {
+                tdNode.setAttribute('rowspan', combineh);
+                tdNode.setAttribute('colspan', combinecol);
+                tdNode.removeAttribute('class');
+            }else {
+                tdNode.remove();
+            }
+        }
+
+        this.editor.restoreSelection();
+    }
+
+    splitCell() {
+        let td = this.focusTd;
+        if(!td) {
+            this.editor.restoreSelection();
+            return ;
+        }
+
+        let rows = td.getAttribute('rowspan');
+        let cols = td.getAttribute('colspan');
+
+        if((!rows || rows == '1') && (!cols || cols == '1')) return ;//没有合并不能拆分
+
+        let sh = td.parentNode.rowIndex;
+        let std = td.cellIndex;
+
+        let fragment1;
+        let colNum, ntd, targetNode, parentNode;
+
+        for(let i=0; i<rows; i++) {
+            colNum = i == 0 ? cols - 1 : cols;
+            fragment1 = document.createDocumentFragment();
+            for(let m=0; m<colNum; m++){
+                ntd = document.createElement('td');
+                fragment1.append(ntd);
+            }
+
+            if(i == 0) {
+                parentNode = td.parentNode
+                targetNode = td;
+                if(targetNode.nextSibling){
+                    parentNode.insertBefore(fragment1, targetNode.nextSibling);
+                }else{
+                    parentNode.append(fragment1);
+                }                
+            }else{
+                parentNode = parentNode.nextSibling;
+                targetNode = parentNode.querySelectorAll('td')[std];
+                parentNode.insertBefore(fragment1, targetNode)
+            }
+        }
+
+        td.removeAttribute('rowspan', '');
+        td.removeAttribute('colspan', '');
     }
 
     handleTableEvent(cnode) {
@@ -208,8 +284,8 @@ class Toolbar {
                 document.querySelector('.cell-info-v').innerText = '0';
 
                 let selectedNode = document.querySelector('.cell-selected');
-                selectedNode.style.width = `0px`;
-                selectedNode.style.height = `0px`;
+                selectedNode.style.width = '0px';
+                selectedNode.style.height = '0px';
 
                 this.insertTable(hnum, vnum);
             }
@@ -249,24 +325,139 @@ class Toolbar {
         //table.removeEventListener('mousemove');
         //table.removeEventListener('mousedown');
         table.remove();
+        this.activeTable = null;
         this.editor.restoreSelection();
     }
 
     addTableEvent(tid) {
         let _this = this;
         let table = document.querySelector('.'+tid);
-        table.addEventListener('mousedown',function(){
+        table.addEventListener('mousedown',function(e){
             _this.activeTable = tid;
+            _this.selectTable = true;
+
+            let tds = table.querySelectorAll('td')
+            for(let i=0; i<tds.length ; i++) {
+                tds[i].removeAttribute('class');
+            }
+
+            if(e.target.localName == 'td'){
+                _this.focusTd = e.target;
+                _this.selectStart = _this.selectStart || {};
+                _this.selectStart.sh = e.target.parentNode.rowIndex,
+                _this.selectStart.sNum = e.target.cellIndex;
+            }
         });
         table.addEventListener('blur',function(){
-            _this.activeTable = tid;
+            _this.activeTable = null;
         });
         table.addEventListener('mousemove',function(e){
-            
+            if(!_this.selectTable) return ;
+            if(e.target.localName == 'td'){
+                _this.selectEnd = _this.selectEnd || {};
+                _this.selectEnd.eh = e.target.parentNode.rowIndex,
+                _this.selectEnd.eNum = e.target.cellIndex;
+            }
+            _this.showSelectedTd();
         });
         table.addEventListener('mouseup',function(e){
-            //_this.editor.restoreSelection();
+            //if(document.querySelector('.selected-td')) _this.editor.restoreSelection();
+            _this.selectTable = false;           
         });
+    }
+
+    showSelectedTd() {
+        let {sh, sNum} = this.selectStart;
+        let {eh, eNum} = this.selectEnd;
+        let table = document.querySelector('.'+ this.activeTable);
+        if(!table) return ;
+        
+        let srow = Math.min(sh, eh);
+        let erow = Math.max(sh, eh);
+        let scol = Math.min(sNum, eNum);
+        let ecol = Math.max(sNum, eNum);        
+
+        let tds = table.querySelectorAll('td'), td, rNum, cIndex;
+        if(srow == erow && scol == ecol) {
+            for(let i=0; i<tds.length ; i++) {
+                td = tds[i];
+                td.removeAttribute('class');
+            }
+        }else{
+            //TODO 考虑有合并单元格的情况
+            let rows, cols, speCells = [], speEndRow, speEndCol, comFlag;
+            for(let i=0; i<tds.length ; i++) {
+                td = tds[i];
+                rNum = td.parentNode.rowIndex;
+                cIndex = td.cellIndex;
+                rows = td.getAttribute('rowspan');
+                cols = td.getAttribute('colspan');
+                console.log('1--',srow,scol,erow,ecol)
+                if(rows || cols) {
+                    if(cIndex > ecol || cIndex < scol || rNum > erow || rNum> srow) continue;
+
+                    if(rows) {
+                        speEndRow = +rows + rNum - 1;
+                        erow = speEndRow > erow ? speEndRow : erow;
+                    }
+
+                    if(cols) {
+                        speEndCol = +cols + cIndex - 1;
+                        ecol = speEndCol > ecol ? speEndCol : ecol;
+                    }
+
+                    speCells.push({
+                        rNum: rNum, 
+                        rows: rows, 
+                        cols: cols,
+                        cIndex: cIndex
+                    });                    
+                }
+
+                if(rNum == erow && cIndex == ecol){
+                    break;
+                }
+            }
+            //console.log(srow,scol,erow,ecol,speCells);
+            console.log('2--',srow,scol,erow,ecol)
+            for(let i=0; i<tds.length ; i++) {
+                td = tds[i];
+                rNum = td.parentNode.rowIndex;
+                cIndex = td.cellIndex;
+                rows = td.getAttribute('rowspan');
+                cols = td.getAttribute('colspan');
+                
+                if(rNum >= srow && rNum <= erow && cIndex >= scol && cIndex <= ecol){
+                    comFlag = this.handleSpecialCell(speCells, rNum, cIndex, ecol);
+                    if(comFlag){
+                        td.setAttribute('class', 'selected-td');
+                    }else{
+                        td.removeAttribute('class');
+                    }
+                }else{
+                    td.removeAttribute('class');
+                }
+            }
+        } 
+    }
+
+    handleSpecialCell(speCells, rNum, cIndex) {
+        let flag = true, speCell, speCol;
+        for(let s=0; s<speCells.length; s++){
+            speCell = speCells[s];
+
+            if(speCell.rNum == rNum && speCell.cols && speCell.cIndex != cIndex && speCell.cIndex < cIndex && ((speCell.cIndex + speCell.cols) > cIndex)){//同一行，有选择多列的情况
+                flag = false;
+            }
+            if(speCells.rows && (speCell.rNum + speCells.rows > rNum) ){
+                speCol = speCell.cols ? (speCell.cIndex+speCell.cols-1) : speCell.cIndex;
+                if(cIndex <= speCol){
+                    flag = false;
+                }
+            }
+        }
+
+        return flag
     }
 
     handleSelectedCells(event) {
