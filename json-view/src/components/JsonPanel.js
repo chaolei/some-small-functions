@@ -17,75 +17,101 @@ class JsonPanel extends PureComponent {
         let {jsonstr} = this.props, jsonview;
         let fstr = trim(jsonstr);
         if(!fstr) return ; //空字符串不处理
-
+        
         try {
             let json = JSON.parse(fstr);
+
             jsonview = this.getJsonNode(json);
         } catch (error) {
-            jsonview = 'json格式错误，请修改';
+            jsonview = error.toString();
         }
 
         return jsonview;
     }
 
+    handleArrayAttr = (jsonObj, spe) => {
+        let type, view, data;
+
+        return (
+            <div className='json-block'>
+                <div>
+                    <span className='json-switch open' onClick={this.handleObjHideShow}>-</span>
+                    <span className='json-obj-start'>{'['}</span>
+                    <span className='json-obj-sumary hide'>{`Array[${jsonObj.length}]`}</span>
+                </div>
+                <div className='json-obj-content'>
+                    {jsonObj.map((val,index) => {
+                        data = val;
+                        type = typeof data, view = 'invalid';
+                        switch(type){
+                            case 'string': view = <span>"<span className='json-words'>{data}</span>"</span>; break;
+                            case 'number': view = <span className='json-number'>{data}</span>; break;
+                            case 'object': 
+                                        if(data === null){
+                                            view = <span className='json-null'>null</span>;
+                                        }else{
+                                            view = this.getJsonNode(data, index!=jsonObj.length-1); 
+                                        }
+                                        break;
+                        }
+
+                        return (
+                            <div className='json-level' key={index}>{view} {index==jsonObj.length-1 || type == 'object'  ? '' : ','}</div>
+                        )
+                    })}
+                    <div>{spe ? '],' : ']'}</div>
+                </div>
+            </div>
+        )
+    }
+
+    handleObjectAttr = (jsonObj, spe) => {
+        let keys = Object.keys(jsonObj);
+        let type, view, data;
+
+        return (
+            <div className='json-block'>
+                <div>
+                    <span className='json-switch open' onClick={this.handleObjHideShow}>-</span>
+                    <span className='json-obj-start'>{'{'}</span>
+                    <span className='json-obj-sumary hide'>{'Object{...}'}</span>
+                </div>
+                <div className='json-obj-content'>
+                    {keys.map((key, index) => {
+                        data = jsonObj[key];
+                        type = typeof data, view = 'invalid';
+
+                        switch(type){
+                            case 'string': view = <span>"<span className='json-words'>{data}</span>"</span>; break;
+                            case 'number': view = <span className='json-number'>{data}</span>; break;
+                            case 'object': 
+                                        if(data === null){
+                                            view = <span className='json-null'>null</span>;
+                                        }else{
+                                            view = this.getJsonNode(data, index!=jsonObj.length-1); 
+                                        }
+                                        break;
+                        }
+
+                        return (
+                            <div className='json-level' key={key}><span>"{key}"</span>: {view}</div>
+                        )
+                    })}
+                    <div>{spe ? '},' : '}'}</div>
+                </div>
+            </div>
+        )
+    }
+
     getJsonNode = (jsonObj, spe) => {
+        let views = '';
         if(jsonObj.length){//数组
-            let type, view, data;
-            return (
-                <div className='json-block'>
-                    <div>
-                        <span className='json-switch open' onClick={this.handleObjHideShow}>-</span>
-                        <span className='json-obj-start'>{'['}</span>
-                        <span className='json-obj-sumary hide'>{`Array[${jsonObj.length}]`}</span>
-                    </div>
-                    <div className='json-obj-content'>
-                        {jsonObj.map((val,index) => {
-                            data = val;
-                            type = typeof data, view = 'invalid';
-                            switch(type){
-                                case 'string': view = <span>"<span className='json-words'>{data}</span>"</span>; break;
-                                case 'number': view = <span className='json-number'>{data}</span>; break;
-                                case 'object': view = this.getJsonNode(data, index!=jsonObj.length-1); break;
-                            }
-
-                            return (
-                                <div className='json-level' key={index}>{view} {index==jsonObj.length-1 || type == 'object'  ? '' : ','}</div>
-                            )
-                        })}
-                        <div>{spe ? '],' : ']'}</div>
-                    </div>
-                </div>
-            )
+            views = this.handleArrayAttr(jsonObj, spe);            
         }else{//对象
-            let keys = Object.keys(jsonObj);
-            let type, view, data;
-            return (
-                <div className='json-block'>
-                    <div>
-                        <span className='json-switch open' onClick={this.handleObjHideShow}>-</span>
-                        <span className='json-obj-start'>{'{'}</span>
-                        <span className='json-obj-sumary hide'>{'Object{...}'}</span>
-                    </div>
-                    <div className='json-obj-content'>
-                        {keys.map((key, index) => {
-                            data = jsonObj[key];
-                            type = typeof data, view = 'invalid';
-
-                            switch(type){
-                                case 'string': view = <span>"<span className='json-words'>{data}</span>"</span>; break;
-                                case 'number': view = <span className='json-number'>{data}</span>; break;
-                                case 'object': view = this.getJsonNode(data, index!=keys.length-1); break;
-                            }
-
-                            return (
-                                <div className='json-level' key={key}><span>"{key}"</span>: {view}</div>
-                            )
-                        })}
-                        <div>{spe ? '},' : '}'}</div>
-                    </div>
-                </div>
-            )
-        }        
+            views = this.handleObjectAttr(jsonObj, spe);            
+        }
+        
+        return views
     }
 
     handleObjHideShow = (e) => {

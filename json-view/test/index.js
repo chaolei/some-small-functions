@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import JsonView from '../src/JsonView';
-import JsonView from '../lib';
+import JsonView from '../src/JsonView';
 
 
 class Test extends Component {

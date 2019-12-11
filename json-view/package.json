@@ -1,6 +1,6 @@
 {
 	"name": "react-json-string-viewer",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": "leichao",
 	"main": "lib/index.js",
 	"description": "json查看插件",
