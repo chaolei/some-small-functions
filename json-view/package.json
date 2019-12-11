@@ -15,6 +15,10 @@
 		"start": "webpack-dev-server --config scripts/webpack.config.dev.js --open",
 		"build": "webpack --config scripts/webpack.config.js"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chaolei/some-small-functions/tree/master/json-view"
+	},
 	"devDependencies": {
 		"@babel/core": "7.6.0",
 		"@babel/plugin-proposal-class-properties": "7.5.5",
