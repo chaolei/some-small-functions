@@ -1,0 +1,44 @@
+{
+	"name": "react-json-string-viewer",
+	"version": "0.0.2",
+	"author": "leichao",
+	"main": "lib/index.js",
+	"description": "json查看插件",
+	"keywords": [
+		"json",
+		"json查看",
+		"json解析",
+		"json查看插件",
+		"类似json.cn功能"
+	],
+	"scripts": {
+		"start": "webpack-dev-server --config scripts/webpack.config.dev.js --open",
+		"build": "webpack --config scripts/webpack.config.js"
+	},
+	"devDependencies": {
+		"@babel/core": "7.6.0",
+		"@babel/plugin-proposal-class-properties": "7.5.5",
+		"@babel/plugin-transform-runtime": "7.6.0",
+		"@babel/preset-env": "7.6.0",
+		"@babel/preset-react": "7.0.0",
+		"@babel/runtime": "7.6.0",
+		"babel-core": "6.26.3",
+		"babel-loader": "8.0.6",
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^3.2.0",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"less": "^3.10.3",
+		"less-loader": "^5.0.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"style-loader": "^1.0.0",
+		"url-loader": "^2.1.0",
+		"webpack": "4.40.2",
+		"webpack-cli": "3.3.8",
+		"webpack-dev-server": "3.8.1",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"dependencies": {
+		"react": "16.9.0",
+		"react-dom": "16.9.0"
+	}
+}
