@@ -22,6 +22,7 @@ class ImagePanel extends PureComponent {
         this.mouseDown = false;
         this.startX = 0;
         this.startY = 0;
+        this.handleScrollScale = this.handleScrollScale.bind(this);
     }
 
     componentDidMount() {
@@ -56,6 +57,10 @@ class ImagePanel extends PureComponent {
         document.addEventListener('mouseup', function(){
             _this.mouseDown = false;
         });
+
+        //let content = document.querySelector('.c-viewer_content');
+        document.addEventListener('DOMMouseScroll', this.handleScrollScale, false); 
+        window.onmousewheel = document.onmousewheel = this.handleScrollScale;
     }
 
     startMove = (e) => {
@@ -207,6 +212,19 @@ class ImagePanel extends PureComponent {
         this.initShowImage(this.props.src);
     }
 
+    handleScrollScale = (e) => {
+        if(!this.props.visible) return ;
+
+        let {per} = this.state;
+        if(e.wheelDelta == -120){
+            per -= 10;
+        }else{
+            per += 10;
+        }
+        
+        this.handleScaleImage(per);
+    }
+
 	render() {
         let {loading, width, height, left, top, per} = this.state;
         return (
@@ -215,7 +233,7 @@ class ImagePanel extends PureComponent {
                     <div>{this.props.title || '测试图片'}</div>
                     <CloseBtn onClick={this.props.onClose}>x</CloseBtn>
                 </TitleBar>
-                <Content>
+                <Content className='c-viewer_content'>
                     {!loading && <img onMouseDown={this.startMove} src={this.props.src} style={{width: `${width}px`, height: `${height}px`, left: `${left}px`, top: `${top}px`}}/>}
                     {!loading && 
                         <ImageOP>
