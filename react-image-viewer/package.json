@@ -1,16 +1,18 @@
 {
-	"name": "react-image-viewer",
-	"version": "0.0.1",
+	"name": "react-big-image-viewer",
+	"version": "0.0.2",
 	"author": "leichao",
 	"main": "lib/index.js",
-	"description": "图片查看组件",
+	"description": "图片大图查看组件",
 	"keywords": [
+		"大图",
 		"图片",
 		"图片查看组件"
 	],
 	"scripts": {
 		"start": "webpack-dev-server --config scripts/webpack.config.dev.js --open",
-		"build": "webpack --config scripts/webpack.config.js"
+		"build": "webpack --config scripts/webpack.config.js",
+		"analyz": "NODE_ENV=production npm_config_report=true npm run build"
 	},
 	"repository": {
 		"type": "git",
@@ -31,10 +33,12 @@
 		"less": "^3.10.3",
 		"less-loader": "^5.0.0",
 		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"react-big-image-viewer": "0.0.1",
 		"style-loader": "^1.0.0",
 		"styled-components": "^4.4.1",
 		"url-loader": "^2.1.0",
 		"webpack": "4.40.2",
+		"webpack-bundle-analyzer": "^3.6.0",
 		"webpack-cli": "3.3.8",
 		"webpack-dev-server": "3.8.1",
 		"webpack-node-externals": "^1.7.2"
