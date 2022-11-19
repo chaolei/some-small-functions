@@ -37,7 +37,7 @@
 		"style-loader": "^1.0.0",
 		"url-loader": "^2.1.0",
 		"webpack": "4.40.2",
-		"webpack-cli": "3.3.8",
+		"webpack-cli": "3.3.12",
 		"webpack-dev-server": "3.8.1",
 		"webpack-node-externals": "^1.7.2"
 	},
